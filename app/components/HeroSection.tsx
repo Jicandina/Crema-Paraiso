@@ -70,10 +70,9 @@ export default function HeroSection() {
       {/* Main content */}
       <div style={{
         flex: 1,
-        maxWidth: "1200px",
         width: "100%",
-        margin: "0 auto",
-        padding: "clamp(80px, 12vh, 120px) clamp(24px, 5vw, 60px) clamp(60px, 8vh, 80px) clamp(12px, 2vw, 28px)",
+        margin: "0",
+        padding: "clamp(80px, 12vh, 120px) 0 clamp(60px, 8vh, 80px) clamp(16px, 3vw, 48px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -160,17 +159,6 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Sello — bloque izquierdo, sobre fondo marrón */}
-        <div className="reveal-left" style={{ marginTop: "1.5rem", transitionDelay: "150ms" }}>
-          <Image
-            src={SELLO}
-            alt="Crema Paraíso — desde 1951"
-            width={88}
-            height={88}
-            style={{ display: "block" }}
-          />
         </div>
 
         {/* Lower: description + CTAs + categories */}
