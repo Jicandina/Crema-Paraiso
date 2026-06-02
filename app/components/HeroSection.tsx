@@ -238,7 +238,9 @@ export default function HeroSection() {
             paddingTop: "1.5rem",
             display: "flex",
             gap: "0",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
+            overflowX: "auto",
+            scrollbarWidth: "none",
           }}>
             {categorias.map((cat, i) => (
               <div key={cat} style={{
