@@ -24,7 +24,7 @@ export default function MarqueeSection() {
               src="/images/logo-navbar.png"
               alt=""
               aria-hidden="true"
-              style={{ height: "60px", width: "60px", objectFit: "contain", mixBlendMode: "screen", borderRadius: "50%", flexShrink: 0 }}
+              style={{ height: "60px", width: "60px", objectFit: "contain", filter: "invert(1)", borderRadius: "50%", flexShrink: 0 }}
             />
             <span style={{
               fontFamily: "var(--font-playfair)",
