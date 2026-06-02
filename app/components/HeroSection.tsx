@@ -64,19 +64,17 @@ export default function HeroSection() {
       {/* Particles */}
       <ParticlesCanvas />
 
-      {/* Top orange bar */}
-      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0, position: "relative", zIndex: 2 }} />
 
       {/* Main content */}
       <div style={{
         flex: 1,
         width: "100%",
         margin: "0",
-        padding: "clamp(80px, 12vh, 120px) 0 clamp(60px, 8vh, 80px) clamp(16px, 3vw, 48px)",
+        padding: "clamp(40px, 6vh, 64px) 0 clamp(40px, 6vh, 64px) clamp(16px, 3vw, 48px)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        gap: "4rem",
+        justifyContent: "flex-start",
+        gap: "2.5rem",
         position: "relative",
         zIndex: 2,
       }}>
@@ -89,7 +87,7 @@ export default function HeroSection() {
             borderRadius: "4px",
             backgroundColor: "rgba(232, 115, 42, 0.15)",
             border: "1px solid rgba(232, 115, 42, 0.3)",
-            marginBottom: "2rem",
+            marginBottom: "1rem",
           }}>
             <span style={{
               fontFamily: "var(--font-jakarta)",
@@ -105,12 +103,12 @@ export default function HeroSection() {
 
           <h1 className="reveal-left" style={{
             fontFamily: "var(--font-playfair)",
-            fontSize: "clamp(3rem, 7vw, 7rem)",
+            fontSize: "clamp(2.4rem, 5.5vw, 5.5rem)",
             fontWeight: 900,
             lineHeight: 0.95,
             color: "var(--color-cream)",
             letterSpacing: "-0.03em",
-            marginBottom: "2rem",
+            marginBottom: "1.2rem",
             transitionDelay: "60ms",
           }}>
             El divino
@@ -138,7 +136,7 @@ export default function HeroSection() {
               }}>
                 <div style={{
                   fontFamily: "var(--font-playfair)",
-                  fontSize: "2rem",
+                  fontSize: "1.6rem",
                   fontWeight: 800,
                   color: "var(--color-orange)",
                   lineHeight: 1,
@@ -166,8 +164,8 @@ export default function HeroSection() {
           <div style={{
             display: "flex",
             flexDirection: "column",
-            gap: "2rem",
-            marginBottom: "1.5rem",
+            gap: "1.2rem",
+            marginBottom: "1rem",
           }}>
             <p className="reveal-left" style={{
               fontFamily: "var(--font-jakarta)",

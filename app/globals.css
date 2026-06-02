@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background-color: #FDF3E3;
+  background-color: #2E1208;
   color: #3D1505;
   font-family: var(--font-jakarta), system-ui, sans-serif;
   overflow-x: hidden;
@@ -97,6 +97,25 @@ button:active {
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* Marquee */
+.mq-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: max-content;
+  animation: mq-scroll 20s linear infinite;
+}
+.mq-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+@keyframes mq-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* Scrollbar */

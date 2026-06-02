@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import MarqueeSection from "./components/MarqueeSection";
 import NosotrosSection from "./components/NosotrosSection";
 import ProductosSection from "./components/ProductosSection";
 import BebidasSection from "./components/BebidasSection";
@@ -11,7 +12,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main style={{ paddingTop: "72px" }}>
+        <MarqueeSection />
         <HeroSection />
         <NosotrosSection />
         <ProductosSection />
