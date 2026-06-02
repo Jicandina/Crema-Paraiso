@@ -69,8 +69,8 @@ export default function Navbar() {
           <Image
             src="/images/logo-navbar.png"
             alt="Crema Paraíso"
-            width={52}
-            height={52}
+            width={68}
+            height={68}
             style={{ mixBlendMode: "screen", display: "block" }}
           />
         </button>

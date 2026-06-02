@@ -73,7 +73,7 @@ export default function HeroSection() {
         maxWidth: "1200px",
         width: "100%",
         margin: "0 auto",
-        padding: "clamp(80px, 12vh, 120px) clamp(24px, 5vw, 60px) clamp(60px, 8vh, 80px)",
+        padding: "clamp(80px, 12vh, 120px) clamp(24px, 5vw, 60px) clamp(60px, 8vh, 80px) clamp(12px, 2vw, 28px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
