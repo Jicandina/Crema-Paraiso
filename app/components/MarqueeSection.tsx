@@ -20,12 +20,14 @@ export default function MarqueeSection() {
       }}>
         {[...ITEMS, ...ITEMS].map((_, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
-            <img
-              src="/images/logo-navbar.png"
-              alt=""
-              aria-hidden="true"
-              style={{ height: "60px", width: "60px", objectFit: "contain", filter: "invert(1)", borderRadius: "50%", flexShrink: 0 }}
-            />
+            <div style={{ width: "60px", height: "60px", borderRadius: "50%", overflow: "hidden", backgroundColor: "#2E1208", flexShrink: 0 }}>
+              <img
+                src="/images/logo-navbar.png"
+                alt=""
+                aria-hidden="true"
+                style={{ width: "100%", height: "100%", objectFit: "contain", mixBlendMode: "screen", display: "block" }}
+              />
+            </div>
             <span style={{
               fontFamily: "var(--font-playfair)",
               fontSize: "0.75rem",
