@@ -10,7 +10,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: "var(--color-brown-dark)", borderTop: "4px solid #E8732A" }}>
+    <footer style={{ backgroundColor: "var(--color-brown-dark)", borderTop: "4px solid var(--color-orange)" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "3.5rem clamp(24px, 5vw, 48px) 2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }} className="footer-grid">
 

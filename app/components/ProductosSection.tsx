@@ -33,7 +33,7 @@ const productos: Producto[] = [
     cert: "Permisos sanitarios SENCAMER vigentes",
     bg: "#3D1505",
     text: "#FDF3E3",
-    accent: "#E8732A",
+    accent: "#C9A227",
     fotos: ["/images/helado-chocolate-4l.png", "/images/helado-mantecado-2l.png", "/images/helado-fresa-2l.png"],
   },
   {
@@ -51,7 +51,7 @@ const productos: Producto[] = [
     cert: "Almacenamiento dual: congelado <-15°C o refrigerado <4°C",
     bg: "#FDF3E3",
     text: "#3D1505",
-    accent: "#E8732A",
+    accent: "#C9A227",
     fotos: ["/images/soft-serve.png", "/images/soft-galon.png"],
   },
   {
@@ -66,7 +66,7 @@ const productos: Producto[] = [
     ],
     presentaciones: ["Galón 4.84 kg (Food Service)"],
     cert: "Agítese bien antes de usar",
-    bg: "#E8732A",
+    bg: "#C9A227",
     text: "#FDF3E3",
     accent: "#3D1505",
     fotos: ["/images/sirope-fresa.png", "/images/sirope-chocolate.png", "/images/sirope-caramelo.png"],
