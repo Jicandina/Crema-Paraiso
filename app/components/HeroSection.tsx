@@ -82,7 +82,7 @@ export default function HeroSection() {
         zIndex: 2,
       }}>
         {/* Upper: headline block */}
-        <div style={{ maxWidth: "52%", position: "relative" }} className="hero-top">
+        <div style={{ maxWidth: "52%" }} className="hero-top">
 
           <div className="reveal-left" style={{
             display: "inline-block",
@@ -120,22 +120,6 @@ export default function HeroSection() {
             <br />
             <span style={{ color: "var(--color-orange)" }}>la tradición.</span>
           </h1>
-
-          {/* Sello circular */}
-          <div className="reveal-left" style={{
-            position: "absolute",
-            top: 0,
-            right: "-80px",
-            transitionDelay: "80ms",
-          }}>
-            <Image
-              src={SELLO}
-              alt="Crema Paraíso — desde 1951"
-              width={100}
-              height={100}
-              style={{ display: "block", borderRadius: "50%" }}
-            />
-          </div>
 
           {/* Stats */}
           <div className="reveal-left hero-stats" style={{
@@ -283,6 +267,26 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Sello — flota en la zona de la imagen con fade radial */}
+      <div className="reveal" style={{
+        position: "absolute",
+        top: "clamp(90px, 14vh, 140px)",
+        left: "58%",
+        zIndex: 2,
+        pointerEvents: "none",
+        WebkitMaskImage: "radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 55%, transparent 78%)",
+        maskImage: "radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 55%, transparent 78%)",
+        transitionDelay: "100ms",
+      }}>
+        <Image
+          src={SELLO}
+          alt="Crema Paraíso — desde 1951"
+          width={150}
+          height={150}
+          style={{ display: "block" }}
+        />
       </div>
 
       {/* Bottom orange bar */}
