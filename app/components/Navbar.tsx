@@ -38,14 +38,14 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: scrolled ? "rgba(61, 21, 5, 0.97)" : "#3D1505",
+        backgroundColor: scrolled ? "rgba(61, 21, 5, 0.97)" : "var(--color-brown)",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(232, 115, 42, 0.15)" : "none",
         transition: "background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
       {/* Orange top bar */}
-      <div style={{ height: "4px", backgroundColor: "#E8732A" }} />
+      <div style={{ height: "4px", backgroundColor: "var(--color-orange)" }} />
 
       <nav
         aria-label="Navegación principal"
@@ -67,14 +67,14 @@ export default function Navbar() {
             fontFamily: "var(--font-playfair)",
             fontSize: "1.25rem",
             fontWeight: 700,
-            color: "#FDF3E3",
+            color: "var(--color-cream)",
             background: "none",
             border: "none",
             cursor: "pointer",
             letterSpacing: "-0.01em",
           }}
         >
-          Crema<span style={{ color: "#E8732A" }}>Paraíso</span>
+          Crema<span style={{ color: "var(--color-orange)" }}>Paraíso</span>
         </button>
 
         {/* Desktop nav */}
@@ -98,7 +98,7 @@ export default function Navbar() {
                   transition: "color 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = "#FDF3E3";
+                  e.currentTarget.style.color = "var(--color-cream)";
                   e.currentTarget.style.backgroundColor = "rgba(232, 115, 42, 0.12)";
                 }}
                 onMouseLeave={(e) => {
@@ -122,8 +122,8 @@ export default function Navbar() {
             fontWeight: 600,
             letterSpacing: "0.07em",
             textTransform: "uppercase" as const,
-            color: "#3D1505",
-            backgroundColor: "#E8732A",
+            color: "var(--color-brown)",
+            backgroundColor: "var(--color-orange)",
             textDecoration: "none",
             display: "block",
             padding: "10px 22px",
@@ -135,7 +135,7 @@ export default function Navbar() {
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#E8732A";
+            e.currentTarget.style.backgroundColor = "var(--color-orange)";
             e.currentTarget.style.transform = "translateY(0)";
           }}
         >
@@ -148,7 +148,7 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           className="md:hidden"
-          style={{ color: "#FDF3E3", background: "none", border: "none", cursor: "pointer", padding: "10px", minWidth: "44px", minHeight: "44px", display: "flex", alignItems: "center", justifyContent: "center" }}
+          style={{ color: "var(--color-cream)", background: "none", border: "none", cursor: "pointer", padding: "10px", minWidth: "44px", minHeight: "44px", display: "flex", alignItems: "center", justifyContent: "center" }}
         >
           {open ? <X size={22} weight="light" /> : <List size={22} weight="light" />}
         </button>
@@ -158,7 +158,7 @@ export default function Navbar() {
         <div
           id="mobile-menu"
           style={{
-            backgroundColor: "#3D1505",
+            backgroundColor: "var(--color-brown)",
             padding: "1rem 1.5rem 1.5rem",
             borderTop: "1px solid rgba(232, 115, 42, 0.15)",
           }}
@@ -181,7 +181,7 @@ export default function Navbar() {
                     minHeight: "44px",
                     transition: "color 0.2s, background-color 0.2s",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "#FDF3E3"; e.currentTarget.style.backgroundColor = "rgba(232, 115, 42, 0.1)"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.backgroundColor = "rgba(232, 115, 42, 0.1)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253, 243, 227, 0.8)"; e.currentTarget.style.backgroundColor = "transparent"; }}
                 >
                   {link.label}

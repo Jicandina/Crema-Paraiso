@@ -10,13 +10,13 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: "#2A0D02", borderTop: "4px solid #E8732A" }}>
+    <footer style={{ backgroundColor: "var(--color-brown-dark)", borderTop: "4px solid #E8732A" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "3.5rem clamp(24px, 5vw, 48px) 2rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }} className="footer-grid">
 
           <div>
-            <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#FDF3E3", marginBottom: "0.75rem" }}>
-              Crema<span style={{ color: "#E8732A" }}>Paraíso</span>
+            <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "var(--color-cream)", marginBottom: "0.75rem" }}>
+              Crema<span style={{ color: "var(--color-orange)" }}>Paraíso</span>
             </div>
             <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(253, 243, 227, 0.4)", maxWidth: "30ch" }}>
               Fábrica venezolana de helados, siropes, cremas y bases para limonada. Desde Guarenas para toda Venezuela.
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Navegación del pie de página">
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#E8732A", marginBottom: "1.25rem" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-orange)", marginBottom: "1.25rem" }}>
               Navegación
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
@@ -47,7 +47,7 @@ export default function Footer() {
                       color: "rgba(253, 243, 227, 0.4)", textDecoration: "none",
                       display: "block", transition: "color 0.2s",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#FDF3E3")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-cream)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253, 243, 227, 0.4)")}
                   >
                     {item.label}
@@ -58,7 +58,7 @@ export default function Footer() {
           </nav>
 
           <div>
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#E8732A", marginBottom: "1.25rem" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-orange)", marginBottom: "1.25rem" }}>
               Redes
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={red}>
                   <a href={`https://${red.toLowerCase()}.com/cremaparaiso`} target="_blank" rel="noopener noreferrer"
                     style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 400, color: "rgba(253, 243, 227, 0.4)", textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#FDF3E3")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-cream)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253, 243, 227, 0.4)")}
                   >
                     {red}

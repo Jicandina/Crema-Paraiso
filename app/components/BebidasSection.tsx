@@ -22,8 +22,8 @@ const kindys = [
       { formato: "Galón 3.78 L", rinde: "~25 – 35 L" },
     ],
     conservacion: "Congelado <-15°C o refrigerado <4°C",
-    bg: "#E8732A",
-    textClr: "#FDF3E3",
+    bg: "var(--color-orange)",
+    textClr: "var(--color-cream)",
     foto: "/images/kindy-vaso.png",
     fotoProducto: "/images/kindy-galon.png",
   },
@@ -46,7 +46,7 @@ const kindys = [
     ],
     conservacion: "Congelado <-15°C o refrigerado <4°C",
     bg: "#2A5C10",
-    textClr: "#FDF3E3",
+    textClr: "var(--color-cream)",
     foto: "/images/kindy-light-350.png",
     fotoProducto: "/images/kindy-light-galon.png",
   },
@@ -56,17 +56,17 @@ export default function BebidasSection() {
   const ref = useRevealSection();
 
   return (
-    <section id="bebidas" ref={ref as React.RefObject<HTMLElement>} style={{ backgroundColor: "#FDF3E3" }}>
+    <section id="bebidas" ref={ref as React.RefObject<HTMLElement>} style={{ backgroundColor: "var(--color-cream)" }}>
 
       {/* Section header */}
-      <div style={{ backgroundColor: "#3D1505", padding: "clamp(60px, 8vh, 80px) clamp(24px, 5vw, 60px) clamp(40px, 5vh, 60px)" }}>
+      <div style={{ backgroundColor: "var(--color-brown)", padding: "clamp(60px, 8vh, 80px) clamp(24px, 5vw, 60px) clamp(40px, 5vh, 60px)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="reveal">
-            <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#E8732A", display: "block", marginBottom: "0.75rem" }}>
+            <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-orange)", display: "block", marginBottom: "0.75rem" }}>
               Bebidas
             </span>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "end" }} className="bebidas-header">
-              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "#FDF3E3", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "var(--color-cream)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
                 Kindy.
               </h2>
               <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(253,243,227,0.55)" }}>
@@ -177,7 +177,7 @@ export default function BebidasSection() {
 
       {/* CTA strip */}
       <div className="reveal" style={{
-        backgroundColor: "#F5E4C8",
+        backgroundColor: "var(--color-cream-mid)",
         padding: "2rem clamp(24px, 5vw, 60px)",
         display: "flex",
         alignItems: "center",
@@ -186,19 +186,19 @@ export default function BebidasSection() {
         flexWrap: "wrap",
       }}>
         <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 400, color: "#3D1505" }}>
+          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 400, color: "var(--color-brown)" }}>
             Disponible en presentaciones Food Service y Retail. Distribución nacional.
           </p>
           <button
             onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
             style={{
               fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 600,
-              color: "#FDF3E3", backgroundColor: "#3D1505", border: "none", cursor: "pointer",
+              color: "var(--color-cream)", backgroundColor: "var(--color-brown)", border: "none", cursor: "pointer",
               padding: "12px 28px", borderRadius: "6px", whiteSpace: "nowrap", flexShrink: 0,
               transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#E8732A"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#3D1505"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-brown)"; }}
           >
             Solicitar distribución
           </button>

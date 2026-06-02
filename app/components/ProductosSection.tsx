@@ -80,18 +80,18 @@ export default function ProductosSection() {
     <section id="productos" ref={ref as React.RefObject<HTMLElement>}>
 
       {/* Section header */}
-      <div style={{ backgroundColor: "#F5E4C8", padding: "clamp(60px, 8vh, 80px) clamp(24px, 5vw, 60px) clamp(40px, 5vh, 60px)" }}>
+      <div style={{ backgroundColor: "var(--color-cream-mid)", padding: "clamp(60px, 8vh, 80px) clamp(24px, 5vw, 60px) clamp(40px, 5vh, 60px)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="reveal" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
             <div>
-              <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#E8732A", display: "block", marginBottom: "0.75rem" }}>
+              <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-orange)", display: "block", marginBottom: "0.75rem" }}>
                 Productos
               </span>
-              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "#3D1505", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "var(--color-brown)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
                 Helados & Siropes.
               </h2>
             </div>
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.8, color: "#6B2E12", maxWidth: "44ch" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.8, color: "var(--color-brown-mid)", maxWidth: "44ch" }}>
               Producción artesanal con ingredientes seleccionados. Permisos sanitarios SENCAMER vigentes en todas las líneas.
             </p>
           </div>

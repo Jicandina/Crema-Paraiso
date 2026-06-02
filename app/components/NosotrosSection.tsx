@@ -19,7 +19,7 @@ export default function NosotrosSection() {
     <section
       id="nosotros"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "#FDF3E3", padding: "clamp(60px, 10vh, 100px) 0" }}
+      style={{ backgroundColor: "var(--color-cream)", padding: "clamp(60px, 10vh, 100px) 0" }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 48px)" }}>
 
@@ -40,7 +40,7 @@ export default function NosotrosSection() {
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#E8732A",
+                color: "var(--color-orange)",
                 display: "block",
                 marginBottom: "0.75rem",
               }}>
@@ -50,7 +50,7 @@ export default function NosotrosSection() {
                 fontFamily: "var(--font-playfair)",
                 fontSize: "clamp(2rem, 3.5vw, 3rem)",
                 fontWeight: 800,
-                color: "#3D1505",
+                color: "var(--color-brown)",
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
               }}>
@@ -78,7 +78,7 @@ export default function NosotrosSection() {
                 fontFamily: "var(--font-playfair)",
                 fontSize: "0.9rem",
                 fontWeight: 700,
-                color: "#E8732A",
+                color: "var(--color-orange)",
                 paddingTop: "2px",
               }}>
                 {h.year}
@@ -88,7 +88,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "1.05rem",
                   fontWeight: 600,
-                  color: "#3D1505",
+                  color: "var(--color-brown)",
                   marginBottom: "0.35rem",
                 }}>
                   {h.title}
@@ -98,7 +98,7 @@ export default function NosotrosSection() {
                   fontSize: "0.875rem",
                   fontWeight: 300,
                   lineHeight: 1.75,
-                  color: "#6B2E12",
+                  color: "var(--color-brown-mid)",
                   maxWidth: "60ch",
                 }}>
                   {h.desc}
@@ -138,7 +138,7 @@ export default function NosotrosSection() {
                   fontWeight: 700,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  color: "#E8732A",
+                  color: "var(--color-orange)",
                   display: "block",
                   marginBottom: "0.35rem",
                 }}>
@@ -148,7 +148,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "1.25rem",
                   fontWeight: 700,
-                  color: "#FDF3E3",
+                  color: "var(--color-cream)",
                   display: "block",
                   marginBottom: "0.5rem",
                 }}>

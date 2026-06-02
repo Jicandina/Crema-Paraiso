@@ -20,7 +20,7 @@ export default function HeroSection() {
 
   return (
     <section id="inicio" ref={ref} style={{
-      backgroundColor: "#3D1505",
+      backgroundColor: "var(--color-brown)",
       minHeight: "100dvh",
       display: "flex",
       flexDirection: "column",
@@ -59,7 +59,7 @@ export default function HeroSection() {
       </div>
 
       {/* Top orange bar */}
-      <div style={{ height: "5px", backgroundColor: "#E8732A", flexShrink: 0, position: "relative", zIndex: 1 }} />
+      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0, position: "relative", zIndex: 1 }} />
 
       {/* Main content */}
       <div style={{
@@ -92,7 +92,7 @@ export default function HeroSection() {
               fontWeight: 700,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "#E8732A",
+              color: "var(--color-orange)",
             }}>
               Fábrica Venezolana · Guarenas · Desde 1951
             </span>
@@ -103,7 +103,7 @@ export default function HeroSection() {
             fontSize: "clamp(3rem, 7vw, 7rem)",
             fontWeight: 900,
             lineHeight: 0.95,
-            color: "#FDF3E3",
+            color: "var(--color-cream)",
             letterSpacing: "-0.03em",
             marginBottom: "2rem",
             transitionDelay: "60ms",
@@ -112,7 +112,7 @@ export default function HeroSection() {
             <br />
             sabor de
             <br />
-            <span style={{ color: "#E8732A" }}>la tradición.</span>
+            <span style={{ color: "var(--color-orange)" }}>la tradición.</span>
           </h1>
 
           {/* Stats */}
@@ -135,7 +135,7 @@ export default function HeroSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "2rem",
                   fontWeight: 800,
-                  color: "#E8732A",
+                  color: "var(--color-orange)",
                   lineHeight: 1,
                   marginBottom: "0.25rem",
                 }}>
@@ -192,16 +192,16 @@ export default function HeroSection() {
                   fontSize: "0.85rem",
                   fontWeight: 600,
                   letterSpacing: "0.05em",
-                  color: "#3D1505",
-                  backgroundColor: "#E8732A",
+                  color: "var(--color-brown)",
+                  backgroundColor: "var(--color-orange)",
                   textDecoration: "none",
                   display: "inline-block",
                   padding: "14px 32px",
                   borderRadius: "6px",
                   transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#F5993D"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#E8732A"; e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange-light)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 Conocer más
               </a>
@@ -221,7 +221,7 @@ export default function HeroSection() {
                   borderRadius: "6px",
                   transition: "color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#FDF3E3"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.4)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.4)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253, 243, 227, 0.7)"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.18)"; }}
               >
                 Contacto
@@ -264,7 +264,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom orange bar */}
-      <div style={{ height: "5px", backgroundColor: "#E8732A", flexShrink: 0 }} />
+      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0 }} />
 
       <style>{`
         @media (max-width: 768px) {

@@ -48,8 +48,8 @@ export default function ContactoSection() {
     fontFamily: "var(--font-jakarta)",
     fontSize: "0.9rem",
     fontWeight: 400,
-    color: "#3D1505",
-    backgroundColor: "#FDF3E3",
+    color: "var(--color-brown)",
+    backgroundColor: "var(--color-cream)",
     borderRadius: "8px",
     padding: "13px 16px",
     width: "100%",
@@ -61,7 +61,7 @@ export default function ContactoSection() {
     <section
       id="contacto"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "#3D1505", padding: "clamp(80px, 12vh, 120px) 0" }}
+      style={{ backgroundColor: "var(--color-brown)", padding: "clamp(80px, 12vh, 120px) 0" }}
     >
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 48px)" }}>
 
@@ -72,7 +72,7 @@ export default function ContactoSection() {
             fontWeight: 700,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "#E8732A",
+            color: "var(--color-orange)",
             display: "block",
             marginBottom: "1rem",
           }}>
@@ -82,7 +82,7 @@ export default function ContactoSection() {
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
             fontWeight: 800,
-            color: "#FDF3E3",
+            color: "var(--color-cream)",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}>
@@ -118,7 +118,7 @@ export default function ContactoSection() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#E8732A",
+                    color: "var(--color-orange)",
                     flexShrink: 0,
                   }}>
                     <Icon size={16} weight="light" />
@@ -136,7 +136,7 @@ export default function ContactoSection() {
                     {href ? (
                       <a href={href} target="_blank" rel="noopener noreferrer"
                         style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.875rem", color: "rgba(253, 243, 227, 0.75)", textDecoration: "none", transition: "color 0.2s" }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = "#E8732A")}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-orange)")}
                         onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253, 243, 227, 0.75)")}
                       >
                         {value}
@@ -157,7 +157,7 @@ export default function ContactoSection() {
               {["Instagram", "TikTok", "Facebook"].map((red) => (
                 <a key={red} href={`https://${red.toLowerCase()}.com/cremaparaiso`} target="_blank" rel="noopener noreferrer"
                   style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 500, color: "rgba(253, 243, 227, 0.4)", border: "1px solid rgba(253, 243, 227, 0.1)", padding: "7px 14px", borderRadius: "6px", textDecoration: "none", transition: "color 0.2s, border-color 0.2s" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "#E8732A"; e.currentTarget.style.borderColor = "rgba(232, 115, 42, 0.3)"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-orange)"; e.currentTarget.style.borderColor = "rgba(232, 115, 42, 0.3)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253, 243, 227, 0.4)"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.1)"; }}
                 >
                   {red}
@@ -169,7 +169,7 @@ export default function ContactoSection() {
           {/* Form */}
           <div className="reveal-right">
             <div style={{
-              backgroundColor: "#F5E4C8",
+              backgroundColor: "var(--color-cream-mid)",
               borderRadius: "1.25rem",
               padding: "2.5rem",
               border: "1px solid rgba(232, 115, 42, 0.15)",
@@ -181,14 +181,14 @@ export default function ContactoSection() {
                       width: "48px", height: "48px", borderRadius: "50%",
                       backgroundColor: "rgba(232, 115, 42, 0.12)", border: "1px solid rgba(232, 115, 42, 0.25)",
                       display: "flex", alignItems: "center", justifyContent: "center",
-                      margin: "0 auto 1.25rem", color: "#E8732A",
+                      margin: "0 auto 1.25rem", color: "var(--color-orange)",
                     }}>
                       <ArrowUpRight size={20} weight="light" />
                     </div>
-                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#3D1505", marginBottom: "0.5rem" }}>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "var(--color-brown)", marginBottom: "0.5rem" }}>
                       Mensaje enviado
                     </div>
-                    <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.875rem", color: "#6B2E12", fontWeight: 300 }}>
+                    <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.875rem", color: "var(--color-brown-mid)", fontWeight: 300 }}>
                       Te respondemos en menos de 24 horas.
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export default function ContactoSection() {
                       <div key={field.id} style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                         <label
                           htmlFor={field.id}
-                          style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9B4A22" }}
+                          style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-brown-light)" }}
                         >
                           {field.label}
                         </label>
@@ -216,7 +216,7 @@ export default function ContactoSection() {
                           aria-describedby={errors[field.id] ? `${field.id}-error` : undefined}
                           style={{
                             ...inputBase,
-                            border: `1px solid ${errors[field.id] ? "#C0392B" : focused === field.id ? "#E8732A" : "rgba(61, 21, 5, 0.2)"}`,
+                            border: `1px solid ${errors[field.id] ? "#C0392B" : focused === field.id ? "var(--color-orange)" : "rgba(61, 21, 5, 0.2)"}`,
                           }}
                         />
                         {errors[field.id] && (
@@ -229,7 +229,7 @@ export default function ContactoSection() {
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                       <label
                         htmlFor="mensaje"
-                        style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9B4A22" }}
+                        style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-brown-light)" }}
                       >
                         Mensaje
                       </label>
@@ -247,7 +247,7 @@ export default function ContactoSection() {
                         aria-describedby={errors.mensaje ? "mensaje-error" : undefined}
                         style={{
                           ...inputBase,
-                          border: `1px solid ${errors.mensaje ? "#C0392B" : focused === "mensaje" ? "#E8732A" : "rgba(61, 21, 5, 0.2)"}`,
+                          border: `1px solid ${errors.mensaje ? "#C0392B" : focused === "mensaje" ? "var(--color-orange)" : "rgba(61, 21, 5, 0.2)"}`,
                           resize: "vertical",
                           minHeight: "110px",
                         }}
@@ -269,8 +269,8 @@ export default function ContactoSection() {
                         fontFamily: "var(--font-jakarta)",
                         fontSize: "0.875rem",
                         fontWeight: 600,
-                        color: "#FDF3E3",
-                        backgroundColor: loading ? "#9B4A22" : "#3D1505",
+                        color: "var(--color-cream)",
+                        backgroundColor: loading ? "var(--color-brown-light)" : "var(--color-brown)",
                         border: "none",
                         cursor: loading ? "not-allowed" : "pointer",
                         padding: "14px",
@@ -279,8 +279,8 @@ export default function ContactoSection() {
                         marginTop: "0.25rem",
                         transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                       }}
-                      onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#E8732A"; e.currentTarget.style.transform = "translateY(-1px)"; } }}
-                      onMouseLeave={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#3D1505"; e.currentTarget.style.transform = "translateY(0)"; } }}
+                      onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(-1px)"; } }}
+                      onMouseLeave={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "var(--color-brown)"; e.currentTarget.style.transform = "translateY(0)"; } }}
                     >
                       {loading ? "Enviando..." : "Enviar mensaje"}
                       {!loading && <ArrowUpRight size={16} weight="bold" />}
