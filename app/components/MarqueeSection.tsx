@@ -8,7 +8,6 @@ export default function MarqueeSection() {
       backgroundColor: "var(--color-brown)",
       overflow: "hidden",
       padding: "14px 0",
-      position: "relative",
       borderTop: "5px solid var(--color-orange)",
       borderBottom: "5px solid var(--color-orange)",
     }}>
