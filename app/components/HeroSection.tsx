@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import ParticlesCanvas from "./ParticlesCanvas";
 
+const SELLO = "/images/logo-sello.png";
+
 const categorias = ["Helados Duros", "Mezcla Suave", "Siropes", "Kindy", "Crema Topping", "CociCreme"];
 
 export default function HeroSection() {
@@ -80,7 +82,7 @@ export default function HeroSection() {
         zIndex: 2,
       }}>
         {/* Upper: headline block */}
-        <div style={{ maxWidth: "52%" }} className="hero-top">
+        <div style={{ maxWidth: "52%", position: "relative" }} className="hero-top">
 
           <div className="reveal-left" style={{
             display: "inline-block",
@@ -118,6 +120,22 @@ export default function HeroSection() {
             <br />
             <span style={{ color: "var(--color-orange)" }}>la tradición.</span>
           </h1>
+
+          {/* Sello circular */}
+          <div className="reveal-left" style={{
+            position: "absolute",
+            top: 0,
+            right: "-80px",
+            transitionDelay: "80ms",
+          }}>
+            <Image
+              src={SELLO}
+              alt="Crema Paraíso — desde 1951"
+              width={100}
+              height={100}
+              style={{ display: "block", borderRadius: "50%" }}
+            />
+          </div>
 
           {/* Stats */}
           <div className="reveal-left hero-stats" style={{

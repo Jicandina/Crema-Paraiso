@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { List, X } from "@phosphor-icons/react";
 
 const links = [
@@ -63,18 +64,15 @@ export default function Navbar() {
         <button
           onClick={(e) => { e.preventDefault(); document.querySelector("#inicio")?.scrollIntoView({ behavior: "smooth" }); }}
           aria-label="Crema Paraíso — ir al inicio"
-          style={{
-            fontFamily: "var(--font-playfair)",
-            fontSize: "1.25rem",
-            fontWeight: 700,
-            color: "var(--color-cream)",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            letterSpacing: "-0.01em",
-          }}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 0, lineHeight: 0 }}
         >
-          Crema<span style={{ color: "var(--color-orange)" }}>Paraíso</span>
+          <Image
+            src="/images/logo-navbar.png"
+            alt="Crema Paraíso"
+            width={52}
+            height={52}
+            style={{ mixBlendMode: "screen", display: "block" }}
+          />
         </button>
 
         {/* Desktop nav */}
