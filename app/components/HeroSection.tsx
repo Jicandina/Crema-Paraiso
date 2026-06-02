@@ -63,7 +63,7 @@ export default function HeroSection() {
       <ParticlesCanvas />
 
       {/* Top orange bar */}
-      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0, position: "relative", zIndex: 1 }} />
+      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0, position: "relative", zIndex: 2 }} />
 
       {/* Main content */}
       <div style={{
@@ -77,7 +77,7 @@ export default function HeroSection() {
         justifyContent: "space-between",
         gap: "4rem",
         position: "relative",
-        zIndex: 1,
+        zIndex: 2,
       }}>
         {/* Upper: headline block */}
         <div style={{ maxWidth: "52%" }} className="hero-top">
