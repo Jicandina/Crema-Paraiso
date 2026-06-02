@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import ParticlesCanvas from "./ParticlesCanvas";
 
 const categorias = ["Helados Duros", "Mezcla Suave", "Siropes", "Kindy", "Crema Topping", "CociCreme"];
 
@@ -57,6 +58,9 @@ export default function HeroSection() {
           background: "linear-gradient(to bottom, #3D1505 0%, transparent 12%, transparent 88%, #3D1505 100%)",
         }} />
       </div>
+
+      {/* Particles */}
+      <ParticlesCanvas />
 
       {/* Top orange bar */}
       <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0, position: "relative", zIndex: 1 }} />
