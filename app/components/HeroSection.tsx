@@ -167,7 +167,7 @@ export default function HeroSection() {
             display: "flex",
             flexDirection: "column",
             gap: "2rem",
-            marginBottom: "3rem",
+            marginBottom: "1.5rem",
           }}>
             <p className="reveal-left" style={{
               fontFamily: "var(--font-jakarta)",
