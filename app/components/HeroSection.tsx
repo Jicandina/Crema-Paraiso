@@ -81,7 +81,7 @@ export default function HeroSection() {
         zIndex: 2,
       }}>
         {/* Upper: headline block */}
-        <div style={{ maxWidth: "52%" }} className="hero-top">
+        <div style={{ maxWidth: "clamp(280px, 38vw, 560px)" }} className="hero-top">
 
           <div className="reveal-left" style={{
             display: "inline-block",
@@ -162,7 +162,7 @@ export default function HeroSection() {
         </div>
 
         {/* Lower: description + CTAs + categories */}
-        <div style={{ maxWidth: "52%" }} className="hero-lower">
+        <div style={{ maxWidth: "clamp(280px, 38vw, 560px)" }} className="hero-lower">
           <div style={{
             display: "flex",
             flexDirection: "column",
@@ -273,8 +273,8 @@ export default function HeroSection() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-top { max-width: 100% !important; }
-          .hero-lower { max-width: 100% !important; }
+          .hero-top { max-width: 100% !important; width: 100% !important; }
+          .hero-lower { max-width: 100% !important; width: 100% !important; }
           .hero-bg-image {
             width: 100% !important;
             opacity: 0.18 !important;
