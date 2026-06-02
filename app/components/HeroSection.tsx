@@ -162,6 +162,17 @@ export default function HeroSection() {
           </div>
         </div>
 
+        {/* Sello — bloque izquierdo, sobre fondo marrón */}
+        <div className="reveal-left" style={{ marginTop: "1.5rem", transitionDelay: "150ms" }}>
+          <Image
+            src={SELLO}
+            alt="Crema Paraíso — desde 1951"
+            width={88}
+            height={88}
+            style={{ display: "block" }}
+          />
+        </div>
+
         {/* Lower: description + CTAs + categories */}
         <div style={{ maxWidth: "52%" }} className="hero-lower">
           <div style={{
@@ -267,26 +278,6 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Sello — flota en la zona de la imagen con fade radial */}
-      <div className="reveal" style={{
-        position: "absolute",
-        top: "clamp(90px, 14vh, 140px)",
-        left: "58%",
-        zIndex: 2,
-        pointerEvents: "none",
-        WebkitMaskImage: "radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 55%, transparent 78%)",
-        maskImage: "radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 38%, rgba(0,0,0,0.6) 55%, transparent 78%)",
-        transitionDelay: "100ms",
-      }}>
-        <Image
-          src={SELLO}
-          alt="Crema Paraíso — desde 1951"
-          width={150}
-          height={150}
-          style={{ display: "block" }}
-        />
       </div>
 
       {/* Bottom orange bar */}
