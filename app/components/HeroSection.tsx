@@ -41,6 +41,7 @@ export default function HeroSection() {
           alt=""
           fill
           priority
+          sizes="(max-width: 768px) 100vw, 58vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
         {/* Left fade */}
@@ -145,7 +146,7 @@ export default function HeroSection() {
                   fontSize: "0.7rem",
                   fontWeight: 400,
                   lineHeight: 1.4,
-                  color: "rgba(253, 243, 227, 0.45)",
+                  color: "rgba(253, 243, 227, 0.6)",
                   whiteSpace: "pre-line",
                 }}>
                   {f.label}
@@ -247,7 +248,7 @@ export default function HeroSection() {
                   fontSize: "0.75rem",
                   fontWeight: 500,
                   letterSpacing: "0.06em",
-                  color: "rgba(253, 243, 227, 0.4)",
+                  color: "rgba(253, 243, 227, 0.55)",
                   padding: "0 1.25rem 0 0",
                   whiteSpace: "nowrap",
                 }}>

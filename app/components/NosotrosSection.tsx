@@ -123,6 +123,7 @@ export default function NosotrosSection() {
                 src="/images/sundae.png"
                 alt="Sundae de helado Crema Paraíso con topping de chantilly"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover", objectPosition: "center" }}
               />
               <div style={{

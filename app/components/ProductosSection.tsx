@@ -209,6 +209,7 @@ export default function ProductosSection() {
                           src={foto}
                           alt={p.nombre}
                           fill
+                          sizes="180px"
                           style={{ objectFit: "contain", objectPosition: "center", padding: "8px" }}
                         />
                       </div>

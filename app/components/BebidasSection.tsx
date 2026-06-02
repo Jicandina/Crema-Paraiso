@@ -95,7 +95,7 @@ export default function BebidasSection() {
             {/* Header with product photo */}
             <div style={{ marginBottom: "1.75rem", paddingBottom: "1.75rem", borderBottom: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "1rem" }}>
               <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.5)", marginBottom: "0.5rem" }}>
+                <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.65)", marginBottom: "0.5rem" }}>
                   {k.tag}
                 </div>
                 <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.75rem", fontWeight: 800, color: k.textClr, lineHeight: 1.1 }}>
@@ -108,6 +108,7 @@ export default function BebidasSection() {
                     src={k.fotoProducto}
                     alt={k.nombre}
                     fill
+                    sizes="70px"
                     style={{ objectFit: "contain", objectPosition: "center" }}
                   />
                 </div>
@@ -121,7 +122,7 @@ export default function BebidasSection() {
 
             {/* Data table */}
             <div style={{ marginBottom: "1.75rem" }}>
-              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.4)", marginBottom: "0.75rem" }}>
+              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.6)", marginBottom: "0.75rem" }}>
                 Datos técnicos
               </div>
               {k.datos.map((d) => (
@@ -133,7 +134,7 @@ export default function BebidasSection() {
                   borderBottom: "1px solid rgba(255,255,255,0.07)",
                   gap: "1rem",
                 }}>
-                  <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 400, color: "rgba(253,243,227,0.45)", flexShrink: 0 }}>
+                  <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 400, color: "rgba(253,243,227,0.65)", flexShrink: 0 }}>
                     {d.label}
                   </span>
                   <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 600, color: k.textClr, textAlign: "right" }}>
@@ -145,7 +146,7 @@ export default function BebidasSection() {
 
             {/* Presentations */}
             <div style={{ marginTop: "auto" }}>
-              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.4)", marginBottom: "0.75rem" }}>
+              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(253,243,227,0.6)", marginBottom: "0.75rem" }}>
                 Presentaciones
               </div>
               {k.presentaciones.map((pr) => (
@@ -160,13 +161,13 @@ export default function BebidasSection() {
                     {pr.formato}
                   </span>
                   {pr.rinde && (
-                    <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 300, color: "rgba(253,243,227,0.5)" }}>
+                    <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 300, color: "rgba(253,243,227,0.6)" }}>
                       {pr.rinde}
                     </span>
                   )}
                 </div>
               ))}
-              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 300, color: "rgba(253,243,227,0.35)", marginTop: "0.75rem", fontStyle: "italic" }}>
+              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 300, color: "rgba(253,243,227,0.55)", marginTop: "0.75rem", fontStyle: "italic" }}>
                 {k.conservacion}
               </div>
             </div>
