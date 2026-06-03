@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import ParticlesCanvas from "./ParticlesCanvas";
 
 const SELLO = "/images/logo-sello.png";
 
@@ -61,8 +60,6 @@ export default function HeroSection() {
         }} />
       </div>
 
-      {/* Particles */}
-      <ParticlesCanvas />
 
 
       {/* Main content */}

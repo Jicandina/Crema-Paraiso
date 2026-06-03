@@ -205,7 +205,7 @@ export default function NosotrosSection() {
             {hitos.map((h, i) => (
               <div
                 key={h.year}
-                className="reveal"
+                className="reveal nosotros-hito-row"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "5.5rem 1.5rem 1fr",
@@ -217,7 +217,7 @@ export default function NosotrosSection() {
               >
                 {/* Year */}
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <span style={{
+                  <span className="nosotros-year" style={{
                     fontFamily: "var(--font-playfair)",
                     fontSize: h.year === "Hoy" ? "2rem" : "clamp(1.6rem, 2.2vw, 2.4rem)",
                     fontWeight: 900,
@@ -433,6 +433,21 @@ export default function NosotrosSection() {
         @media (max-width: 900px) {
           .nosotros-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .nosotros-grid > div:last-child { position: static !important; }
+        }
+        @media (max-width: 640px) {
+          .nosotros-hito-row {
+            grid-template-columns: 3.8rem 1.25rem 1fr !important;
+            gap: 0 0.875rem !important;
+          }
+          .nosotros-year {
+            font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+          }
+          .nosotros-hito {
+            padding: 0.85rem 1rem !important;
+          }
+          .timeline-track {
+            left: calc(3.8rem + 0.875rem + 4px) !important;
+          }
         }
       `}</style>
     </section>
