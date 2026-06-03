@@ -3,8 +3,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
-const SELLO = "/images/logo-sello.png";
-
 const categorias = ["Helados Duros", "Mezcla Suave", "Siropes", "Kindy", "Crema Topping", "CociCreme"];
 
 export default function HeroSection() {
@@ -46,13 +44,11 @@ export default function HeroSection() {
           sizes="(max-width: 768px) 100vw, 58vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        {/* Left fade */}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to right, #3D1505 0%, rgba(61,21,5,0.7) 25%, rgba(61,21,5,0.15) 55%, transparent 100%)",
+          background: "linear-gradient(to right, #3D1505 0%, rgba(61,21,5,0.85) 30%, rgba(61,21,5,0.3) 60%, transparent 100%)",
         }} />
-        {/* Top and bottom fade */}
         <div style={{
           position: "absolute",
           inset: 0,
@@ -60,23 +56,21 @@ export default function HeroSection() {
         }} />
       </div>
 
-
-
       {/* Main content */}
       <div style={{
         flex: 1,
         width: "100%",
-        margin: "0",
         padding: "clamp(40px, 6vh, 64px) 0 clamp(40px, 6vh, 64px) clamp(16px, 3vw, 48px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        gap: "2.5rem",
+        gap: "1.5rem",
         position: "relative",
         zIndex: 2,
       }}>
+
         {/* Upper: headline block */}
-        <div style={{ maxWidth: "clamp(280px, 38vw, 560px)" }} className="hero-top">
+        <div style={{ maxWidth: "clamp(280px, 42vw, 620px)" }} className="hero-top">
 
           <div className="reveal-left" style={{
             display: "inline-block",
@@ -84,7 +78,7 @@ export default function HeroSection() {
             borderRadius: "4px",
             backgroundColor: "rgba(232, 115, 42, 0.15)",
             border: "1px solid rgba(232, 115, 42, 0.3)",
-            marginBottom: "1rem",
+            marginBottom: "1.25rem",
           }}>
             <span style={{
               fontFamily: "var(--font-jakarta)",
@@ -98,55 +92,79 @@ export default function HeroSection() {
             </span>
           </div>
 
+          {/* H1 — tipografía expresiva con EB Garamond */}
           <h1 className="reveal-left" style={{
             fontFamily: "var(--font-playfair)",
-            fontSize: "clamp(2.4rem, 5.5vw, 5.5rem)",
-            fontWeight: 900,
-            lineHeight: 0.95,
-            color: "var(--color-cream)",
+            lineHeight: 0.92,
             letterSpacing: "-0.03em",
-            marginBottom: "1.2rem",
+            marginBottom: "1.75rem",
             transitionDelay: "60ms",
           }}>
-            El divino
-            <br />
-            sabor de
-            <br />
-            <span style={{ color: "var(--color-orange)" }}>la tradición.</span>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.4rem, 4.5vw, 5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontStyle: "normal",
+            }}>
+              El divino
+            </span>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.4rem, 4.5vw, 5rem)",
+              fontWeight: 700,
+              color: "var(--color-cream)",
+              fontStyle: "normal",
+            }}>
+              sabor de
+            </span>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.6rem, 5.5vw, 5.5rem)",
+              fontWeight: 800,
+              color: "var(--color-orange)",
+              fontStyle: "italic",
+              lineHeight: 1,
+              marginTop: "0.1em",
+            }}>
+              la tradición.
+            </span>
           </h1>
 
-          {/* Stats */}
+          {/* Stats — más grandes y respiro */}
           <div className="reveal-left hero-stats" style={{
             display: "flex",
             gap: "0",
             transitionDelay: "120ms",
+            marginBottom: "0.5rem",
           }}>
             {[
-              { num: "74", label: "años de\nhistoria" },
-              { num: "6", label: "líneas de\nproducto" },
+              { num: "74", label: "años\nde historia" },
+              { num: "6", label: "líneas\nde producto" },
               { num: "1951", label: "año de\nfundación" },
             ].map((f, i) => (
               <div key={f.num} style={{
-                padding: "1rem 1.5rem",
-                borderLeft: i === 0 ? "none" : "1px solid rgba(253, 243, 227, 0.1)",
-                paddingLeft: i === 0 ? "0" : "1.5rem",
+                padding: "0.75rem 2rem 0.75rem 0",
+                borderLeft: i === 0 ? "none" : "1px solid rgba(253,243,227,0.1)",
+                paddingLeft: i === 0 ? "0" : "2rem",
               }}>
                 <div style={{
                   fontFamily: "var(--font-playfair)",
-                  fontSize: "1.6rem",
+                  fontSize: "clamp(1.8rem, 2.5vw, 2.5rem)",
                   fontWeight: 800,
                   color: "var(--color-orange)",
                   lineHeight: 1,
-                  marginBottom: "0.25rem",
+                  marginBottom: "0.3rem",
+                  letterSpacing: "-0.03em",
                 }}>
                   {f.num}
                 </div>
                 <div style={{
                   fontFamily: "var(--font-jakarta)",
-                  fontSize: "0.7rem",
+                  fontSize: "0.68rem",
                   fontWeight: 400,
                   lineHeight: 1.4,
-                  color: "rgba(253, 243, 227, 0.6)",
+                  color: "rgba(253,243,227,0.5)",
                   whiteSpace: "pre-line",
                 }}>
                   {f.label}
@@ -157,7 +175,7 @@ export default function HeroSection() {
         </div>
 
         {/* Lower: description + CTAs + categories */}
-        <div style={{ maxWidth: "clamp(280px, 38vw, 560px)" }} className="hero-lower">
+        <div style={{ maxWidth: "clamp(280px, 38vw, 520px)" }} className="hero-lower">
           <div style={{
             display: "flex",
             flexDirection: "column",
@@ -166,15 +184,13 @@ export default function HeroSection() {
           }}>
             <p className="reveal-left" style={{
               fontFamily: "var(--font-jakarta)",
-              fontSize: "clamp(0.9rem, 1.4vw, 1.05rem)",
+              fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
               fontWeight: 300,
-              lineHeight: 1.9,
-              color: "rgba(253, 243, 227, 0.6)",
+              lineHeight: 1.85,
+              color: "rgba(253,243,227,0.55)",
               transitionDelay: "180ms",
             }}>
-              Más de siete décadas fabricando helados artesanales, siropes, cremas y
-              bases para limonada. Distribuimos a restaurantes, hoteles, heladerías y
-              cadenas en toda Venezuela.
+              Más de siete décadas fabricando helados artesanales, siropes, cremas y bases para limonada. Distribuimos a restaurantes, hoteles, heladerías y cadenas en toda Venezuela.
             </p>
 
             <div className="reveal-left hero-ctas" style={{
@@ -212,78 +228,63 @@ export default function HeroSection() {
                   fontFamily: "var(--font-jakarta)",
                   fontSize: "0.85rem",
                   fontWeight: 500,
-                  color: "rgba(253, 243, 227, 0.7)",
+                  color: "rgba(253,243,227,0.7)",
                   backgroundColor: "transparent",
                   textDecoration: "none",
                   display: "inline-block",
-                  border: "1px solid rgba(253, 243, 227, 0.18)",
+                  border: "1px solid rgba(253,243,227,0.18)",
                   padding: "14px 32px",
                   borderRadius: "6px",
                   transition: "color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.4)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253, 243, 227, 0.7)"; e.currentTarget.style.borderColor = "rgba(253, 243, 227, 0.18)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(253,243,227,0.4)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253,243,227,0.7)"; e.currentTarget.style.borderColor = "rgba(253,243,227,0.18)"; }}
               >
                 Contacto
               </a>
             </div>
           </div>
 
-          {/* Category strip */}
-          <div className="hero-categories" style={{
-            borderTop: "1px solid rgba(253, 243, 227, 0.1)",
-            paddingTop: "1.5rem",
-            display: "flex",
-            gap: "0",
-            flexWrap: "nowrap",
-            overflowX: "auto",
-            scrollbarWidth: "none",
-          }}>
-            {categorias.map((cat, i) => (
-              <div key={cat} style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
+        {/* Category strip — ancho completo, fuera del maxWidth */}
+        <div className="hero-categories" style={{
+          display: "flex",
+          gap: "0",
+          flexWrap: "nowrap",
+          overflowX: "auto",
+          scrollbarWidth: "none",
+          borderTop: "1px solid rgba(253,243,227,0.1)",
+          paddingTop: "1rem",
+        }}>
+          {categorias.map((cat, i) => (
+            <div key={cat} style={{ display: "flex", alignItems: "center" }}>
+              <span style={{
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "0.75rem",
+                fontWeight: 500,
+                letterSpacing: "0.06em",
+                color: "rgba(253,243,227,0.45)",
+                whiteSpace: "nowrap",
+                padding: "0 1.25rem 0 0",
               }}>
-                <span style={{
-                  fontFamily: "var(--font-jakarta)",
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  color: "rgba(253, 243, 227, 0.55)",
-                  padding: "0 1.25rem 0 0",
-                  whiteSpace: "nowrap",
-                }}>
-                  {cat}
-                </span>
-                {i < categorias.length - 1 && (
-                  <div style={{ width: "1px", height: "14px", backgroundColor: "rgba(253, 243, 227, 0.15)", flexShrink: 0, marginRight: "1.25rem" }} />
-                )}
-              </div>
-            ))}
-          </div>
+                {cat}
+              </span>
+              {i < categorias.length - 1 && (
+                <div style={{ width: "1px", height: "14px", backgroundColor: "rgba(253,243,227,0.12)", flexShrink: 0, marginRight: "1.25rem" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
         </div>
       </div>
-
-      {/* Bottom orange bar */}
-      <div style={{ height: "5px", backgroundColor: "var(--color-orange)", flexShrink: 0 }} />
 
       <style>{`
         @media (max-width: 768px) {
           .hero-top { max-width: 100% !important; width: 100% !important; }
           .hero-lower { max-width: 100% !important; width: 100% !important; }
-          .hero-bg-image {
-            width: 100% !important;
-            opacity: 0.18 !important;
-          }
-          .hero-stats {
-            flex-wrap: wrap;
-            gap: 0.5rem 0;
-          }
-          .hero-ctas a {
-            flex: 1 1 calc(50% - 0.5rem);
-            text-align: center;
-          }
+          .hero-bg-image { width: 100% !important; opacity: 0.18 !important; }
+          .hero-stats { flex-wrap: wrap; gap: 0.5rem 0; }
+          .hero-ctas a { flex: 1 1 calc(50% - 0.5rem); text-align: center; }
           .hero-categories {
             overflow-x: auto;
             flex-wrap: nowrap !important;
@@ -294,11 +295,8 @@ export default function HeroSection() {
           }
           .hero-categories::-webkit-scrollbar { display: none; }
         }
-
         @media (max-width: 400px) {
-          .hero-ctas a {
-            flex: 1 1 100%;
-          }
+          .hero-ctas a { flex: 1 1 100%; }
         }
       `}</style>
     </section>
