@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRef, useEffect, useCallback } from "react";
 import { useRevealSection } from "./useReveal";
 
 const hitos: { year: string; title: string; desc: string; key: boolean; badge: string | null; today?: boolean }[] = [
@@ -21,6 +22,46 @@ const stats = [
 
 export default function NosotrosSection() {
   const ref = useRevealSection();
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // #4 — línea del timeline se dibuja al entrar en viewport
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) el.classList.add("track-visible"); },
+      { threshold: 0.05 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  // #5 — hover direccional: detecta de qué lado entra/sale el mouse
+  const handleHitoEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const { width, height, left, top } = el.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    let dx = 0, dy = -1;
+    if (x < width * 0.25) { dx = -1; dy = 0; }
+    else if (x > width * 0.75) { dx = 1; dy = 0; }
+    else if (y >= height * 0.5) { dy = 1; }
+    el.style.setProperty("--fill-x", `${dx * 105}%`);
+    el.style.setProperty("--fill-y", `${dy * 105}%`);
+  }, []);
+
+  const handleHitoLeave = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const { width, height, left, top } = el.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    let dx = 0, dy = -1;
+    if (x < 0) { dx = -1; dy = 0; }
+    else if (x > width) { dx = 1; dy = 0; }
+    else if (y > height) { dy = 1; }
+    el.style.setProperty("--fill-x", `${dx * 105}%`);
+    el.style.setProperty("--fill-y", `${dy * 105}%`);
+  }, []);
 
   return (
     <section
@@ -47,8 +88,6 @@ export default function NosotrosSection() {
 
         {/* Header */}
         <div className="reveal" style={{ marginBottom: "clamp(48px, 6vh, 72px)" }}>
-
-          {/* Top row: label + badge */}
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem", flexWrap: "wrap" }}>
             <span style={{
               fontFamily: "var(--font-jakarta)",
@@ -76,7 +115,6 @@ export default function NosotrosSection() {
             </span>
           </div>
 
-          {/* H2 */}
           <h2 style={{
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
@@ -90,7 +128,6 @@ export default function NosotrosSection() {
             Más de 74 años endulzando a Venezuela.
           </h2>
 
-          {/* Intro */}
           <p style={{
             fontFamily: "var(--font-jakarta)",
             fontSize: "clamp(0.9rem, 1.2vw, 1rem)",
@@ -103,7 +140,6 @@ export default function NosotrosSection() {
             Una empresa familiar que nació de la pasión de un inmigrante y se convirtió en parte del sabor nacional. Hoy operamos desde nuestra propia fábrica en Guarenas, con distribución a todo el país.
           </p>
 
-          {/* Stats chips */}
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {stats.map((s) => (
               <div key={s.value} style={{
@@ -150,16 +186,21 @@ export default function NosotrosSection() {
 
           {/* Timeline */}
           <div style={{ position: "relative" }}>
-            {/* Background vertical track */}
-            <div style={{
-              position: "absolute",
-              left: "calc(5.5rem + 1.5rem + 5px)",
-              top: "16px",
-              bottom: "16px",
-              width: "2px",
-              background: "linear-gradient(to bottom, rgba(46,18,8,0.2) 0%, rgba(249,168,37,0.4) 50%, rgba(46,18,8,0.1) 100%)",
-              borderRadius: "2px",
-            }} />
+            {/* #4 — Track animado */}
+            <div
+              ref={trackRef}
+              className="timeline-track"
+              style={{
+                position: "absolute",
+                left: "calc(5.5rem + 1.5rem + 5px)",
+                top: "16px",
+                bottom: "16px",
+                width: "2px",
+                background: "rgba(46,18,8,0.1)",
+                borderRadius: "2px",
+                transformOrigin: "top",
+              }}
+            />
 
             {hitos.map((h, i) => (
               <div
@@ -174,13 +215,8 @@ export default function NosotrosSection() {
                   position: "relative",
                 }}
               >
-                {/* Year — grande */}
-                <div style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-end",
-                  paddingTop: "0px",
-                }}>
+                {/* Year */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
                   <span style={{
                     fontFamily: "var(--font-playfair)",
                     fontSize: h.year === "Hoy" ? "2rem" : "clamp(1.6rem, 2.2vw, 2.4rem)",
@@ -197,71 +233,74 @@ export default function NosotrosSection() {
                 {/* Dot */}
                 <div style={{ display: "flex", justifyContent: "center", paddingTop: "7px" }}>
                   <div style={{
-                    width: h.today ? "16px" : h.key ? "14px" : "10px",
-                    height: h.today ? "16px" : h.key ? "14px" : "10px",
+                    width: h.today ? "16px" : "14px",
+                    height: h.today ? "16px" : "14px",
                     borderRadius: "50%",
-                    backgroundColor: h.today ? "var(--color-orange)" : h.key ? "var(--color-orange)" : "rgba(46,18,8,0.25)",
-                    border: `2px solid rgba(253,243,227,0.8)`,
+                    backgroundColor: "var(--color-orange)",
+                    border: "2px solid rgba(253,243,227,0.8)",
                     boxShadow: h.today
-                      ? `0 0 0 3px var(--color-orange), 0 0 20px rgba(249,168,37,0.5)`
-                      : h.key ? `0 0 0 2px var(--color-orange), 0 0 12px rgba(249,168,37,0.3)` : `0 0 0 1.5px rgba(46,18,8,0.2)`,
+                      ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(249,168,37,0.5)"
+                      : "0 0 0 2px var(--color-orange), 0 0 12px rgba(249,168,37,0.3)",
                     flexShrink: 0,
                     zIndex: 1,
-                    transition: "all 0.2s ease",
                   }} />
                 </div>
 
-                {/* Content */}
-                <div style={{
-                  backgroundColor: h.today
-                    ? "var(--color-brown)"
-                    : h.key ? "rgba(46,18,8,0.04)" : "transparent",
-                  border: h.today
-                    ? "1px solid rgba(249,168,37,0.25)"
-                    : h.key ? "1px solid rgba(46,18,8,0.08)" : "1px solid transparent",
-                  borderRadius: "1rem",
-                  padding: h.key ? "1rem 1.25rem" : "0 0",
-                  transition: "background 0.2s ease",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.45rem", flexWrap: "wrap" }}>
-                    <div style={{
-                      fontFamily: "var(--font-playfair)",
-                      fontSize: h.key ? "1.05rem" : "0.95rem",
-                      fontWeight: h.key ? 800 : 700,
-                      color: h.today ? "var(--color-cream)" : "var(--color-brown)",
-                      lineHeight: 1.3,
-                    }}>
-                      {h.title}
-                    </div>
-                    {h.badge && (
-                      <span style={{
-                        fontFamily: "var(--font-jakarta)",
-                        fontSize: "0.58rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: h.today ? "var(--color-brown)" : h.key ? "var(--color-orange)" : "rgba(46,18,8,0.5)",
-                        backgroundColor: h.today ? "var(--color-orange)" : h.key ? "rgba(249,168,37,0.12)" : "rgba(46,18,8,0.06)",
-                        border: `1px solid ${h.today ? "transparent" : h.key ? "rgba(249,168,37,0.3)" : "rgba(46,18,8,0.1)"}`,
-                        borderRadius: "999px",
-                        padding: "0.2rem 0.6rem",
-                        whiteSpace: "nowrap",
+                {/* Content card */}
+                <div
+                  className={h.key && !h.today ? "nosotros-hito" : ""}
+                  onMouseEnter={h.key && !h.today ? handleHitoEnter : undefined}
+                  onMouseLeave={h.key && !h.today ? handleHitoLeave : undefined}
+                  style={{
+                    backgroundColor: h.today ? "var(--color-brown)" : "rgba(46,18,8,0.04)",
+                    border: h.today ? "1px solid rgba(249,168,37,0.25)" : "1px solid rgba(46,18,8,0.08)",
+                    borderRadius: "1rem",
+                    padding: "1rem 1.25rem",
+                    transition: "border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                  }}
+                >
+                  {/* z-index para quedar sobre el ::after fill */}
+                  <div style={{ position: "relative", zIndex: 1 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.45rem", flexWrap: "wrap" }}>
+                      <div style={{
+                        fontFamily: "var(--font-playfair)",
+                        fontSize: "1.05rem",
+                        fontWeight: 800,
+                        color: h.today ? "var(--color-cream)" : "var(--color-brown)",
+                        lineHeight: 1.3,
                       }}>
-                        {h.badge}
-                      </span>
-                    )}
+                        {h.title}
+                      </div>
+                      {h.badge && (
+                        <span style={{
+                          fontFamily: "var(--font-jakarta)",
+                          fontSize: "0.58rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          color: h.today ? "var(--color-brown)" : "var(--color-orange)",
+                          backgroundColor: h.today ? "var(--color-orange)" : "rgba(249,168,37,0.12)",
+                          border: `1px solid ${h.today ? "transparent" : "rgba(249,168,37,0.3)"}`,
+                          borderRadius: "999px",
+                          padding: "0.2rem 0.6rem",
+                          whiteSpace: "nowrap",
+                        }}>
+                          {h.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p style={{
+                      fontFamily: "var(--font-jakarta)",
+                      fontSize: "0.85rem",
+                      fontWeight: 400,
+                      lineHeight: 1.8,
+                      color: h.today ? "rgba(253,243,227,0.75)" : "var(--color-brown-mid)",
+                      maxWidth: "50ch",
+                      margin: 0,
+                    }}>
+                      {h.desc}
+                    </p>
                   </div>
-                  <p style={{
-                    fontFamily: "var(--font-jakarta)",
-                    fontSize: "0.85rem",
-                    fontWeight: 400,
-                    lineHeight: 1.8,
-                    color: h.today ? "rgba(253,243,227,0.75)" : h.key ? "var(--color-brown-mid)" : "rgba(107,46,18,0.65)",
-                    maxWidth: "50ch",
-                    margin: 0,
-                  }}>
-                    {h.desc}
-                  </p>
                 </div>
               </div>
             ))}
@@ -274,13 +313,14 @@ export default function NosotrosSection() {
               overflow: "hidden",
               aspectRatio: "3/4",
               position: "relative",
-              boxShadow: "0 40px 100px rgba(46,18,8,0.22), 0 8px 24px rgba(46,18,8,0.12)",
+              boxShadow: "0 2px 16px rgba(46,18,8,0.07), 0 1px 4px rgba(46,18,8,0.04)",
               border: "1px solid rgba(46,18,8,0.06)",
             }}>
               <Image
                 src="/images/sundae.png"
                 alt="Sundae Crema Paraíso"
                 fill
+                priority
                 sizes="(max-width: 900px) 100vw, 380px"
                 style={{ objectFit: "cover", objectPosition: "center" }}
               />
@@ -290,7 +330,6 @@ export default function NosotrosSection() {
                 background: "linear-gradient(to top, rgba(46,18,8,0.92) 0%, rgba(46,18,8,0.2) 50%, transparent 100%)",
               }} />
 
-              {/* Top badge */}
               <div style={{
                 position: "absolute",
                 top: "1.5rem",
@@ -344,7 +383,6 @@ export default function NosotrosSection() {
                 }}>
                   Producción artesanal a gran escala. Distribución nacional a restaurantes, hoteles y cadenas.
                 </p>
-
               </div>
             </div>
           </div>
@@ -353,8 +391,44 @@ export default function NosotrosSection() {
       </div>
 
       <style>{`
+        /* #4 — track se dibuja en 1.8s al entrar en viewport */
+        .timeline-track {
+          transform: scaleY(0);
+          transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .timeline-track.track-visible { transform: scaleY(1); }
+
+        /* #2 — active state táctil */
+        .nosotros-hito:active {
+          transform: scale(0.99);
+          transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        /* #5 — hover fill direccional via ::after */
+        .nosotros-hito {
+          position: relative;
+          overflow: hidden;
+        }
+        .nosotros-hito::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(46,18,8,0.05);
+          transform: translate(var(--fill-x, 0%), var(--fill-y, -105%));
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          pointer-events: none;
+          border-radius: inherit;
+        }
+        .nosotros-hito:hover::after { transform: translate(0%, 0%) !important; }
+        .nosotros-hito:hover {
+          border-color: rgba(46,18,8,0.14) !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .reveal, .reveal-right { opacity: 1 !important; transform: none !important; transition: none !important; }
+          .timeline-track { transform: scaleY(1) !important; transition: none !important; }
+          .nosotros-hito::after { transition: none !important; }
         }
         @media (max-width: 900px) {
           .nosotros-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
