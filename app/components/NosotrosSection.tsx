@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useRef, useEffect, useCallback } from "react";
 import { useRevealSection } from "./useReveal";
 
-const hitos: { year: string; title: string; desc: string; key: boolean; badge: string | null; today?: boolean }[] = [
-  { year: "1951", title: "El fundador llega a Venezuela", desc: "Adalberto Katz, inmigrante checoslovaco formado en pastelería en París, trae el conocimiento que cambiaría el sabor del país.", key: true, badge: "El origen" },
-  { year: "1953", title: "Nace Crema Paraíso", desc: "Primera heladería en El Paraíso, Caracas. Nace la marca que definiría la cultura del helado venezolano.", key: true, badge: "Fundación" },
-  { year: "1974", title: "Expansión nacional", desc: "26 nuevas tiendas en Caracas, Los Teques, Guarenas, Maracay y Valencia. La cadena de fuentes de soda más famosa del país.", key: true, badge: "Crecimiento" },
-  { year: "1984", title: "Fábrica propia en Guarenas", desc: "Instalaciones propias en la Zona Industrial del Este. La misma fábrica que opera hasta hoy con tecnología nacional.", key: true, badge: "Hito mayor" },
-  { year: "1990", title: "Nace Kindy", desc: "Lanzamos Kindy, nuestra base cítrica natural para limonada. La opción para preparar limonada impecable a gran escala.", key: true, badge: "Expansión" },
-  { year: "2024", title: "Nueva junta directiva", desc: "Nueva generación al frente de la empresa. Se retoman las riendas con visión de crecimiento, modernización y expansión del portafolio a nivel nacional.", key: true, badge: "Renovación" },
-  { year: "Hoy", title: "74 años, la misma calidad", desc: "Nueva generación, misma tradición. Desde Guarenas para toda Venezuela, con los mismos valores desde el primer día.", key: true, badge: "Presente", today: true },
+const hitos: { year: string; title: string; desc: string; today?: boolean }[] = [
+  { year: "1951", title: "El fundador llega a Venezuela", desc: "Adalberto Katz, inmigrante checoslovaco formado en pastelería en París, trae el conocimiento que cambiaría el sabor del país." },
+  { year: "1953", title: "Nace Crema Paraíso", desc: "Primera heladería en El Paraíso, Caracas. Nace la marca que definiría la cultura del helado venezolano." },
+  { year: "1974", title: "Expansión nacional", desc: "26 nuevas tiendas en Caracas, Los Teques, Guarenas, Maracay y Valencia. La cadena de fuentes de soda más famosa del país." },
+  { year: "1984", title: "Fábrica propia en Guarenas", desc: "Instalaciones propias en la Zona Industrial del Este. La misma fábrica que opera hasta hoy con tecnología nacional." },
+  { year: "1990", title: "Nace Kindy", desc: "Lanzamos Kindy, nuestra base cítrica natural para limonada. La opción para preparar limonada impecable a gran escala." },
+  { year: "2024", title: "Nueva junta directiva", desc: "Nueva generación al frente de la empresa. Se retoman las riendas con visión de crecimiento, modernización y expansión del portafolio a nivel nacional." },
+  { year: "Hoy", title: "74 años, la misma calidad", desc: "Nueva generación, misma tradición. Desde Guarenas para toda Venezuela, con los mismos valores desde el primer día.", today: true },
 ];
 
 const stats = [
@@ -219,11 +219,12 @@ export default function NosotrosSection() {
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
                   <span className="nosotros-year" style={{
                     fontFamily: "var(--font-playfair)",
-                    fontSize: h.year === "Hoy" ? "2rem" : "clamp(1.6rem, 2.2vw, 2.4rem)",
-                    fontWeight: 900,
-                    color: h.today ? "var(--color-orange)" : h.key ? "var(--color-brown)" : "rgba(46,18,8,0.35)",
+                    fontSize: "clamp(1.6rem, 2.2vw, 2.4rem)",
+                    fontWeight: 800,
+                    color: h.today ? "var(--color-orange)" : "var(--color-brown)",
                     lineHeight: 1,
-                    letterSpacing: "-0.03em",
+                    letterSpacing: "-0.04em",
+                    fontStyle: h.today ? "italic" : "normal",
                     textShadow: h.today ? "0 0 24px rgba(249,168,37,0.4)" : "none",
                   }}>
                     {h.year}
@@ -231,16 +232,16 @@ export default function NosotrosSection() {
                 </div>
 
                 {/* Dot */}
-                <div style={{ display: "flex", justifyContent: "center", paddingTop: "7px" }}>
+                <div style={{ display: "flex", justifyContent: "center", paddingTop: "8px" }}>
                   <div style={{
-                    width: h.today ? "16px" : "14px",
-                    height: h.today ? "16px" : "14px",
+                    width: h.today ? "16px" : "12px",
+                    height: h.today ? "16px" : "12px",
                     borderRadius: "50%",
                     backgroundColor: "var(--color-orange)",
                     border: "2px solid rgba(253,243,227,0.8)",
                     boxShadow: h.today
                       ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(249,168,37,0.5)"
-                      : "0 0 0 2px var(--color-orange), 0 0 12px rgba(249,168,37,0.3)",
+                      : "0 0 0 2px var(--color-orange), 0 0 8px rgba(249,168,37,0.2)",
                     flexShrink: 0,
                     zIndex: 1,
                   }} />
@@ -248,53 +249,36 @@ export default function NosotrosSection() {
 
                 {/* Content card */}
                 <div
-                  className={h.key && !h.today ? "nosotros-hito" : ""}
-                  onMouseEnter={h.key && !h.today ? handleHitoEnter : undefined}
-                  onMouseLeave={h.key && !h.today ? handleHitoLeave : undefined}
+                  className={!h.today ? "nosotros-hito" : ""}
+                  onMouseEnter={!h.today ? handleHitoEnter : undefined}
+                  onMouseLeave={!h.today ? handleHitoLeave : undefined}
                   style={{
                     backgroundColor: h.today ? "var(--color-brown)" : "rgba(46,18,8,0.04)",
-                    border: h.today ? "1px solid rgba(249,168,37,0.25)" : "1px solid rgba(46,18,8,0.08)",
+                    border: h.today ? "1px solid rgba(249,168,37,0.25)" : "1px solid rgba(46,18,8,0.09)",
                     borderRadius: "1rem",
                     padding: "1rem 1.25rem",
                     transition: "border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
-                  {/* z-index para quedar sobre el ::after fill */}
                   <div style={{ position: "relative", zIndex: 1 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.45rem", flexWrap: "wrap" }}>
+                    <div style={{ marginBottom: "0.4rem" }}>
                       <div style={{
                         fontFamily: "var(--font-playfair)",
-                        fontSize: "1.05rem",
-                        fontWeight: 800,
+                        fontSize: "1rem",
+                        fontWeight: 700,
                         color: h.today ? "var(--color-cream)" : "var(--color-brown)",
                         lineHeight: 1.3,
+                        fontStyle: "italic",
                       }}>
                         {h.title}
                       </div>
-                      {h.badge && (
-                        <span style={{
-                          fontFamily: "var(--font-jakarta)",
-                          fontSize: "0.58rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          color: h.today ? "var(--color-brown)" : "var(--color-orange)",
-                          backgroundColor: h.today ? "var(--color-orange)" : "rgba(249,168,37,0.12)",
-                          border: `1px solid ${h.today ? "transparent" : "rgba(249,168,37,0.3)"}`,
-                          borderRadius: "999px",
-                          padding: "0.2rem 0.6rem",
-                          whiteSpace: "nowrap",
-                        }}>
-                          {h.badge}
-                        </span>
-                      )}
                     </div>
                     <p style={{
                       fontFamily: "var(--font-jakarta)",
                       fontSize: "0.85rem",
                       fontWeight: 400,
                       lineHeight: 1.8,
-                      color: h.today ? "rgba(253,243,227,0.75)" : "var(--color-brown-mid)",
+                      color: h.today ? "rgba(253,243,227,0.72)" : "var(--color-brown-mid)",
                       maxWidth: "50ch",
                       margin: 0,
                     }}>
