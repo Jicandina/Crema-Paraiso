@@ -179,7 +179,7 @@ export default function NosotrosSection() {
         {/* Grid: timeline + photo */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "1fr 380px",
+          gridTemplateColumns: "1fr 500px",
           gap: "5rem",
           alignItems: "start",
         }} className="nosotros-grid">
@@ -291,22 +291,22 @@ export default function NosotrosSection() {
           </div>
 
           {/* Photo sticky */}
-          <div className="reveal-right" style={{ position: "sticky", top: "168px" }}>
+          <div className="reveal-right" style={{ position: "sticky", top: "168px", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <div style={{
               borderRadius: "1.5rem",
               overflow: "hidden",
-              aspectRatio: "3/4",
+              aspectRatio: "4/3",
               position: "relative",
               boxShadow: "0 2px 16px rgba(46,18,8,0.07), 0 1px 4px rgba(46,18,8,0.04)",
               border: "1px solid rgba(46,18,8,0.06)",
             }}>
               <Image
-                src="/images/sundae.png"
-                alt="Sundae Crema Paraíso"
+                src="/images/camion.jpg"
+                alt="Camión de distribución Crema Paraíso, circa 1960"
                 fill
                 priority
-                sizes="(max-width: 900px) 100vw, 380px"
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                sizes="(max-width: 900px) 100vw, 500px"
+                style={{ objectFit: "cover", objectPosition: "center center" }}
               />
               <div style={{
                 position: "absolute",
@@ -329,7 +329,7 @@ export default function NosotrosSection() {
                   color: "var(--color-brown)",
                   letterSpacing: "-0.01em",
                 }}>
-                  Desde 1953
+                  Archivo histórico
                 </span>
               </div>
 
@@ -344,7 +344,7 @@ export default function NosotrosSection() {
                   display: "block",
                   marginBottom: "0.5rem",
                 }}>
-                  Guarenas, Miranda
+                  Caracas, circa 1960
                 </span>
                 <span style={{
                   fontFamily: "var(--font-playfair)",
@@ -354,8 +354,9 @@ export default function NosotrosSection() {
                   display: "block",
                   lineHeight: 1.2,
                   marginBottom: "0.6rem",
+                  fontStyle: "italic",
                 }}>
-                  Fábrica propia desde 1984
+                  Los primeros repartos
                 </span>
                 <p style={{
                   fontFamily: "var(--font-jakarta)",
@@ -365,8 +366,40 @@ export default function NosotrosSection() {
                   color: "rgba(253,243,227,0.7)",
                   margin: 0,
                 }}>
-                  Producción artesanal a gran escala. Distribución nacional a restaurantes, hoteles y cadenas.
+                  Desde los primeros camiones hasta la fábrica propia en Guarenas. Setenta años de llevar el sabor a cada rincón del país.
                 </p>
+              </div>
+            </div>
+
+            {/* Tarjeta de stats debajo de la foto */}
+            <div style={{
+              backgroundColor: "var(--color-brown)",
+              borderRadius: "1.25rem",
+              padding: "1.5rem 1.75rem",
+              border: "1px solid rgba(249,168,37,0.15)",
+            }}>
+              <p style={{
+                fontFamily: "var(--font-playfair)",
+                fontSize: "1rem",
+                fontWeight: 700,
+                fontStyle: "italic",
+                color: "var(--color-cream)",
+                lineHeight: 1.5,
+                marginBottom: "1.25rem",
+              }}>
+                "La misma receta, la misma calidad, desde que Adalberto Katz llegó a Venezuela con el oficio aprendido en París."
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(253,243,227,0.1)", paddingTop: "1.25rem" }}>
+                {[
+                  { v: "74", l: "años" },
+                  { v: "1951", l: "fundación" },
+                  { v: "B2B", l: "canal principal" },
+                ].map((s) => (
+                  <div key={s.v}>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "var(--color-orange)", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
+                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 500, color: "rgba(253,243,227,0.45)", marginTop: "0.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>{s.l}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
