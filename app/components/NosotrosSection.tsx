@@ -393,7 +393,7 @@ export default function NosotrosSection() {
                 {[
                   { v: "74", l: "años" },
                   { v: "1951", l: "fundación" },
-                  { v: "B2B", l: "canal principal" },
+                  { v: "1984", l: "fábrica propia" },
                 ].map((s) => (
                   <div key={s.v}>
                     <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "var(--color-orange)", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
