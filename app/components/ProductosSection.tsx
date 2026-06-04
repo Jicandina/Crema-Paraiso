@@ -47,7 +47,7 @@ const productos: Producto[] = [
     presentaciones: "Galón 3.78 L",
     foto: "/images/soft-galon.png",
     photoContain: true,
-    contentBg: "#F5E4C8", textColor: "#2E1208", accent: "#6B2E12",
+    contentBg: "#FDF3E3", textColor: "#2E1208", accent: "#9B4A22",
     specs: [
       { label: "Tipo", val: "Base para Soft Serve" },
       { label: "Almacenamiento (congelado)", val: "−15°C o menor" },
@@ -64,7 +64,7 @@ const productos: Producto[] = [
     presentaciones: "Galón 4.84 kg",
     foto: "/images/sirope-caramelo-galon.png",
     photoContain: true,
-    contentBg: "#F9A825", textColor: "#1A0A04", accent: "#1A0A04",
+    contentBg: "#2E1208", textColor: "#FDF3E3", accent: "#F9A825",
     specs: [
       { label: "Tipo", val: "Sirope de alta concentración" },
       { label: "Presentación", val: "Galón 4.84 kg" },
@@ -81,7 +81,7 @@ const productos: Producto[] = [
     presentaciones: "350 ml · 800 ml · Galón 3.78 L",
     foto: "/images/kindy-galon-original.png",
     photoContain: true,
-    contentBg: "#2E1208", textColor: "#FDF3E3", accent: "#F9A825",
+    contentBg: "#FDF3E3", textColor: "#2E1208", accent: "#9B4A22",
     specs: [
       { label: "Calorías", val: "245 Cal / 100g" },
       { label: "Carbohidratos", val: "61.0 g / 100g" },
@@ -100,7 +100,7 @@ const productos: Producto[] = [
     presentaciones: "350 ml · 800 ml · Galón 3.78 L",
     foto: "/images/kindy-galon-light.png",
     photoContain: true,
-    contentBg: "#1E3D10", textColor: "#F0FAE8", accent: "#9ED875",
+    contentBg: "#2E1208", textColor: "#FDF3E3", accent: "#F9A825",
     specs: [
       { label: "Calorías", val: "16 Cal / 100g" },
       { label: "Carbohidratos", val: "3.2 g / 100g" },
@@ -133,7 +133,7 @@ const productos: Producto[] = [
     chips: ["Salsas", "Sopas", "Gratinados", "Recetas saladas"],
     presentaciones: "Food Service",
     foto: null,
-    contentBg: "#1A0A04", textColor: "#FDF3E3", accent: "#F9A825",
+    contentBg: "#2E1208", textColor: "#FDF3E3", accent: "#F9A825",
     specs: [
       { label: "Tipo", val: "Crema para cocinar" },
       { label: "Propiedad clave", val: "Estable al calor" },
@@ -150,23 +150,24 @@ export default function ProductosSection() {
   const [expandedNum, setExpandedNum] = useState<string | null>(null);
 
   return (
-    <section id="productos" ref={ref as React.RefObject<HTMLElement>}>
+    <section id="productos" ref={ref as React.RefObject<HTMLElement>} style={{ borderTop: "2px solid rgba(46,18,8,0.18)" }}>
 
       {/* ── HEADER ── */}
-      <div style={{ backgroundColor: "var(--color-brown)", padding: "clamp(64px, 9vh, 96px) clamp(24px, 6vw, 72px)" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ background: "linear-gradient(180deg, #EED5B0 0%, #F5E4C8 45%, #FDF3E3 100%)", padding: "clamp(64px, 9vh, 96px) clamp(24px, 6vw, 72px)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`, backgroundSize: "256px 256px", opacity: 0.5, pointerEvents: "none" }} />
+        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
           <div className="reveal">
-            <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-orange)", display: "block", marginBottom: "1.25rem" }}>
+            <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(26,10,4,0.55)", display: "block", marginBottom: "1.25rem" }}>
               Productos
             </span>
             <div style={{ display: "grid", gridTemplateColumns: "1fr auto", alignItems: "flex-end", gap: "3rem" }} className="productos-header-grid">
-              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2.75rem, 6vw, 5rem)", fontWeight: 800, color: "var(--color-cream)", lineHeight: 1.0, letterSpacing: "-0.03em", margin: 0 }}>
+              <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)", fontWeight: 900, color: "var(--color-brown)", lineHeight: 1.05, letterSpacing: "-0.03em", margin: 0 }}>
                 Siete líneas.<br />
-                <em style={{ fontStyle: "italic", color: "var(--color-orange)" }}>Una sola fábrica.</em>
+                <em style={{ fontStyle: "italic", color: "var(--color-brown)" }}>Una sola fábrica.</em>
               </h2>
               <div style={{ textAlign: "right", paddingBottom: "0.5rem" }}>
-                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2.5rem, 4vw, 3.75rem)", fontWeight: 900, color: "rgba(253,243,227,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>1951</div>
-                <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(253,243,227,0.35)", marginTop: "0.25rem", letterSpacing: "0.06em" }}>Guarenas, Venezuela</div>
+                <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2.5rem, 4vw, 3.75rem)", fontWeight: 900, color: "rgba(26,10,4,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>1951</div>
+                <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(26,10,4,0.45)", marginTop: "0.25rem", letterSpacing: "0.06em" }}>Guarenas, Venezuela</div>
               </div>
             </div>
           </div>
