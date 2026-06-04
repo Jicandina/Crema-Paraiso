@@ -188,7 +188,7 @@ export default function ProductosSection() {
             >
               {/* Content */}
               <div style={{ backgroundColor: p.contentBg, padding: "clamp(2.5rem, 5vw, 4.5rem)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", position: "relative", overflow: "hidden", order: photoRight ? 1 : 2 }}>
-                <div style={{ maxWidth: "520px", width: "100%" }}>
+                <div style={{ maxWidth: "520px", width: "100%", marginLeft: photoRight ? "10rem" : undefined }}>
                 <div aria-hidden style={{ position: "absolute", bottom: "-1.5rem", right: "-0.75rem", fontFamily: "var(--font-playfair)", fontSize: "clamp(7rem, 14vw, 12rem)", fontWeight: 900, color: p.accent, opacity: 0.06, lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.06em" }}>
                   {p.num}
                 </div>
@@ -226,7 +226,7 @@ export default function ProductosSection() {
                       sizes="55vw"
                       style={{
                         objectFit: p.photoContain ? "contain" : "cover",
-                        objectPosition: "center",
+                        objectPosition: p.photoContain ? (photoRight ? "left center" : "right center") : "center",
                         padding: p.photoContain ? "clamp(2rem, 5vw, 4rem)" : undefined,
                         filter: p.photoContain ? "drop-shadow(0 8px 32px rgba(0,0,0,0.35))" : undefined,
                         transform: p.photoScale ? `scale(${p.photoScale})` : undefined,
