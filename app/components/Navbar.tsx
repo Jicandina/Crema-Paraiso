@@ -150,15 +150,17 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {open && (
-        <div
-          id="mobile-menu"
-          style={{
-            backgroundColor: "var(--color-brown)",
-            padding: "1rem 1.5rem 1.5rem",
-            borderTop: "1px solid rgba(232, 115, 42, 0.15)",
-          }}
-        >
+      <div
+        id="mobile-menu"
+        style={{
+          display: "grid",
+          gridTemplateRows: open ? "1fr" : "0fr",
+          opacity: open ? 1 : 0,
+          transition: "grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease",
+          overflow: "hidden",
+        }}
+      >
+        <div style={{ minHeight: 0, backgroundColor: "var(--color-brown)", borderTop: "1px solid rgba(232, 115, 42, 0.15)", padding: "1rem 1.5rem 1.5rem" }}>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
             {links.map((link) => (
               <li key={link.href}>
@@ -175,7 +177,7 @@ export default function Navbar() {
                     padding: "12px 16px",
                     borderRadius: "8px",
                     minHeight: "44px",
-                    transition: "color 0.2s, background-color 0.2s",
+                    transition: "color 180ms ease, background-color 180ms ease",
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.backgroundColor = "rgba(232, 115, 42, 0.1)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253, 243, 227, 0.8)"; e.currentTarget.style.backgroundColor = "transparent"; }}
@@ -186,7 +188,7 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-      )}
+      </div>
     </header>
   );
 }
