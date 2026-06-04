@@ -148,6 +148,7 @@ const productos: Producto[] = [
 export default function ProductosSection() {
   const ref = useRevealSection();
   const [expandedNum, setExpandedNum] = useState<string | null>(null);
+  const [hoveredNum, setHoveredNum] = useState<string | null>(null);
 
   return (
     <section id="productos" ref={ref as React.RefObject<HTMLElement>} style={{ borderTop: "2px solid rgba(46,18,8,0.18)" }}>
@@ -184,11 +185,11 @@ export default function ProductosSection() {
             {/* Editorial row */}
             <div
               className="reveal producto-row"
-              style={{ display: "grid", gridTemplateColumns: p.photoContain ? (photoRight ? "65% 35%" : "35% 65%") : (photoRight ? "45% 55%" : "55% 45%"), minHeight: "clamp(420px, 55vh, 600px)", transitionDelay: "80ms" }}
+              style={{ display: "grid", gridTemplateColumns: p.photoContain ? (photoRight ? "55% 45%" : "45% 55%") : (photoRight ? "45% 55%" : "55% 45%"), minHeight: "clamp(420px, 55vh, 600px)", transitionDelay: `${idx * 80}ms` }}
             >
               {/* Content */}
               <div style={{ backgroundColor: p.contentBg, padding: "clamp(2.5rem, 5vw, 4.5rem)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", position: "relative", overflow: "hidden", order: photoRight ? 1 : 2 }}>
-                <div style={{ maxWidth: "520px", width: "100%", marginLeft: photoRight ? "10rem" : undefined }}>
+                <div style={{ maxWidth: "520px", width: "100%", marginLeft: photoRight ? "clamp(1.5rem, 4vw, 5rem)" : undefined }}>
                 <div aria-hidden style={{ position: "absolute", bottom: "-1.5rem", right: "-0.75rem", fontFamily: "var(--font-playfair)", fontSize: "clamp(7rem, 14vw, 12rem)", fontWeight: 900, color: p.accent, opacity: 0.06, lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.06em" }}>
                   {p.num}
                 </div>
@@ -253,7 +254,7 @@ export default function ProductosSection() {
               style={{
                 width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
                 padding: "1.25rem clamp(24px, 6vw, 72px)",
-                backgroundColor: isOpen ? "#1A0A04" : "#2E1208",
+                backgroundColor: hoveredNum === p.num ? "#3D1810" : isOpen ? "#1A0A04" : "#2E1208",
                 border: "none",
                 borderTop: "3px solid var(--color-orange)",
                 borderBottom: isOpen ? "none" : "1px solid rgba(249,168,37,0.08)",
@@ -261,8 +262,8 @@ export default function ProductosSection() {
                 outline: "none",
                 transition: "background-color 0.25s ease",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#3D1810"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = isOpen ? "#1A0A04" : "#2E1208"; }}
+              onMouseEnter={() => setHoveredNum(p.num)}
+              onMouseLeave={() => setHoveredNum(null)}
               onFocus={(e) => { e.currentTarget.style.boxShadow = "inset 0 0 0 2px var(--color-orange)"; }}
               onBlur={(e) => { e.currentTarget.style.boxShadow = "none"; }}
             >
@@ -340,6 +341,9 @@ export default function ProductosSection() {
       </div>
 
       <style>{`
+        @media (max-width: 1024px) {
+          .specs-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
         @media (max-width: 768px) {
           .producto-row { grid-template-columns: 1fr !important; min-height: unset !important; }
           .producto-row > div { order: unset !important; }
