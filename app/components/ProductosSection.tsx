@@ -288,7 +288,7 @@ export default function ProductosSection() {
               display: "grid",
               gridTemplateRows: isOpen ? "1fr" : "0fr",
               opacity: isOpen ? 1 : 0,
-              transition: "grid-template-rows 0.27s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease",
+              transition: "grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease",
               backgroundColor: "#130601",
             }}>
               <div style={{ overflow: "hidden", minHeight: 0 }}>

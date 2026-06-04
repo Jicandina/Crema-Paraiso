@@ -98,7 +98,7 @@ export default function HeroSection() {
             lineHeight: 0.92,
             letterSpacing: "-0.03em",
             marginBottom: "1.75rem",
-            transitionDelay: "40ms",
+            transitionDelay: "60ms",
           }}>
             <span style={{
               display: "block",
@@ -135,7 +135,7 @@ export default function HeroSection() {
           <div className="reveal-left hero-stats" style={{
             display: "flex",
             gap: "0",
-            transitionDelay: "80ms",
+            transitionDelay: "120ms",
             marginBottom: "0.5rem",
           }}>
             {[
@@ -188,7 +188,7 @@ export default function HeroSection() {
               fontWeight: 300,
               lineHeight: 1.85,
               color: "rgba(253,243,227,0.55)",
-              transitionDelay: "120ms",
+              transitionDelay: "180ms",
             }}>
               Más de siete décadas fabricando helados artesanales, siropes, cremas y bases para limonada. Distribuimos a restaurantes, hoteles, heladerías y cadenas en toda Venezuela.
             </p>
@@ -198,7 +198,7 @@ export default function HeroSection() {
               gap: "1rem",
               flexWrap: "wrap",
               justifyContent: "flex-start",
-              transitionDelay: "160ms",
+              transitionDelay: "240ms",
             }}>
               <a
                 href="#nosotros"
@@ -214,7 +214,7 @@ export default function HeroSection() {
                   display: "inline-block",
                   padding: "14px 32px",
                   borderRadius: "6px",
-                  transition: "background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), transform 200ms cubic-bezier(0.16, 1, 0.3, 1)",
+                  transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange-light)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(0)"; }}
@@ -235,7 +235,7 @@ export default function HeroSection() {
                   border: "1px solid rgba(253,243,227,0.18)",
                   padding: "14px 32px",
                   borderRadius: "6px",
-                  transition: "color 200ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms cubic-bezier(0.16, 1, 0.3, 1)",
+                  transition: "color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(253,243,227,0.4)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(253,243,227,0.7)"; e.currentTarget.style.borderColor = "rgba(253,243,227,0.18)"; }}
