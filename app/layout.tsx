@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/favicon.jpg",
-    apple: "/favicon.jpg",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   openGraph: {

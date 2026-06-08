@@ -55,7 +55,7 @@ export default function HeroSection() {
       <div style={{
         flex: 1,
         width: "100%",
-        padding: "clamp(16px, 2.5vh, 28px) 0 clamp(40px, 6vh, 64px) clamp(16px, 3vw, 48px)",
+        padding: "clamp(48px, 8vh, 80px) 0 clamp(40px, 6vh, 64px) clamp(16px, 3vw, 48px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -260,9 +260,11 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
+        </div>
 
-        {/* Category strip — ancho completo, fuera del maxWidth */}
+        {/* Category strip — fuera de hero-lower, ancho propio */}
         <div className="hero-categories" style={{
+          maxWidth: "clamp(280px, 52vw, 760px)",
           display: "flex",
           gap: "0",
           flexWrap: "nowrap",
@@ -289,8 +291,6 @@ export default function HeroSection() {
               )}
             </div>
           ))}
-        </div>
-
         </div>
       </div>
 

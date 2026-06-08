@@ -4,6 +4,17 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRevealSection } from "./useReveal";
 
+const FLAVOR_SWATCHES: Record<string, string> = {
+  "Mantecado":      "#F5D78E",
+  "Chocolate":      "#3D1A00",
+  "Fresa":          "#FF6B8A",
+  "Coco":           "#F0EDE0",
+  "Vainilla":       "#FFF3A0",
+  "Yogurt Griego":  "#F0EBE0",
+  "Caramelo":       "#E8920A",
+  "Chocolate Savoy":"#3D1A00",
+};
+
 type Spec = { label: string; val: string };
 type Producto = {
   num: string;
@@ -210,11 +221,17 @@ export default function ProductosSection() {
                   {p.desc}
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.5rem" }}>
-                  {p.chips.map((chip) => (
-                    <span key={chip} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.72rem", fontWeight: 500, color: p.textColor, border: `1px solid ${p.textColor}30`, padding: "0.3rem 0.75rem", borderRadius: "100px", backgroundColor: `${p.textColor}08` }}>
-                      {chip}
-                    </span>
-                  ))}
+                  {p.chips.map((chip) => {
+                    const swatch = FLAVOR_SWATCHES[chip];
+                    return (
+                      <span key={chip} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.72rem", fontWeight: 500, color: p.textColor, border: `1px solid ${p.textColor}30`, padding: "0.3rem 0.75rem", borderRadius: "100px", backgroundColor: `${p.textColor}08`, display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+                        {swatch && (
+                          <span style={{ width: "9px", height: "9px", borderRadius: "50%", backgroundColor: swatch, flexShrink: 0, border: `1px solid ${p.textColor}20`, display: "inline-block" }} />
+                        )}
+                        {chip}
+                      </span>
+                    );
+                  })}
                 </div>
                 <div style={{ borderTop: `1px solid ${p.textColor}15`, paddingTop: "1rem", marginBottom: "1.5rem" }}>
                   <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#FFFFFF", marginRight: "0.75rem", opacity: 0.7 }}>Presentaciones</span>
