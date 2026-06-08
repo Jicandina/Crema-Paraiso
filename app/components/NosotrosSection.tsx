@@ -24,7 +24,6 @@ export default function NosotrosSection() {
   const ref = useRevealSection();
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // #4 — línea del timeline se dibuja al entrar en viewport
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -36,7 +35,6 @@ export default function NosotrosSection() {
     return () => obs.disconnect();
   }, []);
 
-  // #5 — hover direccional: detecta de qué lado entra/sale el mouse
   const handleHitoEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const el = e.currentTarget;
     const { width, height, left, top } = el.getBoundingClientRect();
@@ -68,14 +66,13 @@ export default function NosotrosSection() {
       id="nosotros"
       ref={ref as React.RefObject<HTMLElement>}
       style={{
-        background: "#D01020",
-        borderTop: "4px solid #FFD100",
+        background: "#B9D8EB",
+        borderTop: "4px solid #FCEF91",
         padding: "clamp(64px, 10vh, 100px) 0 clamp(32px, 5vh, 52px)",
         overflow: "hidden",
         position: "relative",
       }}
     >
-      {/* Noise texture overlay */}
       <div style={{
         position: "absolute",
         inset: 0,
@@ -96,7 +93,7 @@ export default function NosotrosSection() {
               fontWeight: 700,
               letterSpacing: "0.25em",
               textTransform: "uppercase",
-              color: "var(--color-orange)",
+              color: "#1A4A6A",
             }}>
               Nuestra historia
             </span>
@@ -106,9 +103,9 @@ export default function NosotrosSection() {
               fontWeight: 700,
               letterSpacing: "0.15em",
               textTransform: "uppercase",
-              color: "#FFFFFF",
-              backgroundColor: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.2)",
+              color: "#1A4A6A",
+              backgroundColor: "rgba(26,58,92,0.07)",
+              border: "1px solid rgba(26,58,92,0.15)",
               borderRadius: "999px",
               padding: "0.3rem 0.85rem",
             }}>
@@ -120,7 +117,7 @@ export default function NosotrosSection() {
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
             fontWeight: 900,
-            color: "#FFFFFF",
+            color: "#1A3A5C",
             lineHeight: 1.05,
             letterSpacing: "-0.03em",
             maxWidth: "20ch",
@@ -134,7 +131,7 @@ export default function NosotrosSection() {
             fontSize: "clamp(0.9rem, 1.2vw, 1rem)",
             fontWeight: 400,
             lineHeight: 1.75,
-            color: "rgba(255,255,255,0.8)",
+            color: "rgba(26,58,92,0.75)",
             maxWidth: "52ch",
             marginBottom: "2rem",
           }}>
@@ -147,8 +144,8 @@ export default function NosotrosSection() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.6rem",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                border: "1px solid rgba(255,255,255,0.18)",
+                backgroundColor: "rgba(26,58,92,0.07)",
+                border: "1px solid rgba(26,58,92,0.15)",
                 borderRadius: "0.75rem",
                 padding: "0.6rem 1.1rem",
                 backdropFilter: "blur(4px)",
@@ -157,7 +154,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "1.4rem",
                   fontWeight: 900,
-                  color: "#FFFFFF",
+                  color: "#1A3A5C",
                   lineHeight: 1,
                 }}>
                   {s.value}
@@ -166,7 +163,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-jakarta)",
                   fontSize: "0.72rem",
                   fontWeight: 500,
-                  color: "rgba(255,255,255,0.8)",
+                  color: "rgba(26,58,92,0.7)",
                   letterSpacing: "0.02em",
                   lineHeight: 1.3,
                 }}>
@@ -187,7 +184,6 @@ export default function NosotrosSection() {
 
           {/* Timeline */}
           <div style={{ position: "relative" }}>
-            {/* #4 — Track animado */}
             <div
               ref={trackRef}
               className="timeline-track"
@@ -197,7 +193,7 @@ export default function NosotrosSection() {
                 top: "16px",
                 bottom: "16px",
                 width: "2px",
-                background: "rgba(255,255,255,0.18)",
+                background: "rgba(26,58,92,0.18)",
                 borderRadius: "2px",
                 transformOrigin: "top",
               }}
@@ -222,7 +218,7 @@ export default function NosotrosSection() {
                     fontFamily: "var(--font-playfair)",
                     fontSize: "clamp(1.6rem, 2.2vw, 2.4rem)",
                     fontWeight: 800,
-                    color: "#FFFFFF",
+                    color: "#1A3A5C",
                     lineHeight: 1,
                     letterSpacing: "-0.04em",
                     fontStyle: "normal",
@@ -238,11 +234,11 @@ export default function NosotrosSection() {
                     width: h.today ? "16px" : "12px",
                     height: h.today ? "16px" : "12px",
                     borderRadius: "50%",
-                    backgroundColor: "var(--color-orange)",
-                    border: "2px solid rgba(255,255,255,0.85)",
+                    backgroundColor: "#2A6080",
+                    border: "2px solid #FCEF91",
                     boxShadow: h.today
-                      ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(208,16,32,0.6)"
-                      : "0 0 0 2px var(--color-orange), 0 0 8px rgba(249,168,37,0.2)",
+                      ? "0 0 0 3px #2A6080, 0 0 20px rgba(42,96,128,0.5)"
+                      : "0 0 0 2px #2A6080, 0 0 8px rgba(42,96,128,0.2)",
                     flexShrink: 0,
                     zIndex: 1,
                   }} />
@@ -254,8 +250,8 @@ export default function NosotrosSection() {
                   onMouseEnter={!h.today ? handleHitoEnter : undefined}
                   onMouseLeave={!h.today ? handleHitoLeave : undefined}
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    backgroundColor: "rgba(26,58,92,0.06)",
+                    border: "1px solid rgba(26,58,92,0.12)",
                     borderRadius: "1rem",
                     padding: "1rem 1.25rem",
                     transition: "border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -267,7 +263,7 @@ export default function NosotrosSection() {
                         fontFamily: "var(--font-playfair)",
                         fontSize: "1rem",
                         fontWeight: 700,
-                        color: "#FFFFFF",
+                        color: "#1A3A5C",
                         lineHeight: 1.3,
                         fontStyle: "italic",
                       }}>
@@ -279,7 +275,7 @@ export default function NosotrosSection() {
                       fontSize: "0.85rem",
                       fontWeight: 400,
                       lineHeight: 1.8,
-                      color: "rgba(255,255,255,0.8)",
+                      color: "rgba(26,58,92,0.75)",
                       maxWidth: "50ch",
                       margin: 0,
                     }}>
@@ -298,8 +294,8 @@ export default function NosotrosSection() {
               overflow: "hidden",
               aspectRatio: "4/3",
               position: "relative",
-              boxShadow: "0 2px 16px rgba(255,255,255,0.12), 0 1px 4px rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              boxShadow: "0 2px 16px rgba(26,58,92,0.12), 0 1px 4px rgba(26,58,92,0.08)",
+              border: "1px solid rgba(26,58,92,0.12)",
             }}>
               <Image
                 src="/images/camion.jpg"
@@ -319,7 +315,7 @@ export default function NosotrosSection() {
                 position: "absolute",
                 top: "1.5rem",
                 right: "1.5rem",
-                backgroundColor: "var(--color-orange)",
+                backgroundColor: "#2A6080",
                 borderRadius: "999px",
                 padding: "0.4rem 1rem",
               }}>
@@ -372,33 +368,33 @@ export default function NosotrosSection() {
               </div>
             </div>
 
-            {/* Tarjeta de stats debajo de la foto */}
+            {/* Stats card */}
             <div style={{
-              backgroundColor: "rgba(255,255,255,0.08)",
+              backgroundColor: "rgba(26,58,92,0.06)",
               borderRadius: "1.25rem",
               padding: "1.5rem 1.75rem",
-              border: "1px solid rgba(255,255,255,0.15)",
+              border: "1px solid rgba(26,58,92,0.12)",
             }}>
               <p style={{
                 fontFamily: "var(--font-playfair)",
                 fontSize: "1rem",
                 fontWeight: 700,
                 fontStyle: "italic",
-                color: "#FFFFFF",
+                color: "#1A3A5C",
                 lineHeight: 1.5,
                 marginBottom: "1.25rem",
               }}>
                 "La misma receta, la misma calidad, desde que Adalberto Katz llegó a Venezuela con el oficio aprendido en París."
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1.25rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(26,58,92,0.15)", paddingTop: "1.25rem" }}>
                 {[
                   { v: "74", l: "años" },
                   { v: "1951", l: "fundación" },
                   { v: "1984", l: "fábrica propia" },
                 ].map((s) => (
                   <div key={s.v}>
-                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "#FFFFFF", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
-                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginTop: "0.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>{s.l}</div>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "#1A3A5C", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
+                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 500, color: "rgba(26,58,92,0.6)", marginTop: "0.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -409,20 +405,17 @@ export default function NosotrosSection() {
       </div>
 
       <style>{`
-        /* #4 — track se dibuja en 1.8s al entrar en viewport */
         .timeline-track {
           transform: scaleY(0);
           transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .timeline-track.track-visible { transform: scaleY(1); }
 
-        /* #2 — active state táctil */
         .nosotros-hito:active {
           transform: scale(0.99);
           transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
-        /* #5 — hover fill direccional via ::after */
         .nosotros-hito {
           position: relative;
           overflow: hidden;
@@ -431,7 +424,7 @@ export default function NosotrosSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background: rgba(255,255,255,0.1);
+          background: rgba(26,58,92,0.05);
           transform: translate(var(--fill-x, 0%), var(--fill-y, -105%));
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           pointer-events: none;
@@ -439,8 +432,8 @@ export default function NosotrosSection() {
         }
         .nosotros-hito:hover::after { transform: translate(0%, 0%) !important; }
         .nosotros-hito:hover {
-          border-color: rgba(255,255,255,0.25) !important;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+          border-color: rgba(26,58,92,0.22) !important;
+          box-shadow: 0 2px 8px rgba(26,58,92,0.06);
         }
 
         @media (prefers-reduced-motion: reduce) {

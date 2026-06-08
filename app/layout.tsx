@@ -67,7 +67,7 @@ const jsonLd = {
   sameAs: [
     "https://instagram.com/cremaparaiso",
     "https://facebook.com/cremaparaiso",
-    "https://tiktok.com/@cremaparaiso",
+    "https://tiktok.com/@cremaparaisove",
   ],
 };
 
@@ -79,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${playfair.variable} ${jakarta.variable}`}>
       <head>
-        <meta name="theme-color" content="#FFE566" />
+        <meta name="theme-color" content="#FCEF91" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

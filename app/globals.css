@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #D01020;
-  --color-cream-mid: #B00E1A;
-  --color-cream-dark: #8A0C14;
-  --color-brown-dark: #E6B800;
-  --color-brown: #FFD100;
-  --color-brown-mid: #FFBF00;
-  --color-brown-light: #FFE566;
-  --color-orange: #D01020;
-  --color-orange-light: #F5B8BE;
-  --color-orange-pale: #FFF0F0;
+  --color-cream: #B9D8EB;
+  --color-cream-mid: #8ABCD6;
+  --color-cream-dark: #1A4A6A;
+  --color-brown-dark: #E0C940;
+  --color-brown: #FCEF91;
+  --color-brown-mid: #F5E670;
+  --color-brown-light: #FFF7CC;
+  --color-orange: #B9D8EB;
+  --color-orange-light: #D4ECFA;
+  --color-orange-pale: #EBF7FF;
 
   --font-display: var(--font-playfair);
   --font-body: var(--font-jakarta);
@@ -29,14 +29,14 @@ html {
 }
 
 body {
-  background-color: #D01020;
-  color: #FFD100;
+  background-color: #B9D8EB;
+  color: #1A3A5C;
 
   font-family: var(--font-jakarta), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
-/* Grain texture overlay — Nature Distilled aesthetic */
+/* Grain texture overlay */
 body::after {
   content: "";
   position: fixed;
@@ -77,9 +77,9 @@ body::after {
 }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-/* Focus indicator — WCAG 2.4.7 */
+/* Focus indicator */
 :focus-visible {
-  outline: 2px solid var(--color-orange);
+  outline: 2px solid #2A6080;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -89,7 +89,7 @@ button:active {
   opacity: 0.8;
 }
 
-/* Respect motion preferences — WCAG 2.3.3 */
+/* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-left,
@@ -97,6 +97,12 @@ button:active {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+  .mq-track {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto !important;
   }
 }
 
@@ -121,5 +127,5 @@ button:active {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #FFE566; }
-::-webkit-scrollbar-thumb { background: var(--color-cream); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #FFF7CC; }
+::-webkit-scrollbar-thumb { background: #2A6080; border-radius: 3px; }

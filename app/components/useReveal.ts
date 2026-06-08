@@ -8,6 +8,10 @@ export function useRevealSection() {
     const section = ref.current;
     if (!section) return;
     const els = section.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach((el) => el.classList.add("visible"));
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

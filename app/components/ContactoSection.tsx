@@ -73,7 +73,7 @@ export default function ContactoSection() {
     fontFamily: "var(--font-jakarta)",
     fontSize: "1rem",
     fontWeight: 400,
-    color: "#1a0000",
+    color: "#1A3A5C",
     backgroundColor: "#FFFFFF",
     borderRadius: "8px",
     padding: "13px 16px",
@@ -86,7 +86,7 @@ export default function ContactoSection() {
     <section
       id="contacto"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "#D01020", padding: "clamp(80px, 12vh, 120px) 0", position: "relative", overflow: "hidden" }}
+      style={{ backgroundColor: "#B9D8EB", padding: "clamp(80px, 12vh, 120px) 0", position: "relative", overflow: "hidden" }}
     >
       {/* Noise texture */}
       <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`, backgroundSize: "256px 256px", opacity: 0.5, pointerEvents: "none" }} />
@@ -95,10 +95,10 @@ export default function ContactoSection() {
 
         {/* Header */}
         <div className="reveal" style={{ marginBottom: "clamp(2.5rem, 5vh, 4rem)" }}>
-          <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#FFD100", display: "block", marginBottom: "1rem" }}>
+          <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#1A4A6A", display: "block", marginBottom: "1rem" }}>
             Contacto
           </span>
-          <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.05, letterSpacing: "-0.02em", margin: 0 }}>
+          <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: 800, color: "#1A3A5C", lineHeight: 1.05, letterSpacing: "-0.02em", margin: 0 }}>
             Hablemos de negocios.
           </h2>
         </div>
@@ -107,38 +107,38 @@ export default function ContactoSection() {
 
           {/* Info */}
           <div className="reveal-left">
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(255,255,255,0.75)", marginBottom: "2.5rem", maxWidth: "36ch" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "1rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(26,58,92,0.72)", marginBottom: "2.5rem", maxWidth: "36ch" }}>
               Distribuye nuestros productos o resuelve cualquier consulta. Te respondemos en menos de 24 horas.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem", marginBottom: "2.5rem" }}>
               {infoItems.map(({ Icon, label, value, href }) => (
                 <div key={label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
-                  <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FFD100", flexShrink: 0 }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(26,58,92,0.07)", border: "1px solid rgba(26,58,92,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "#2A6080", flexShrink: 0 }}>
                     <Icon size={17} weight="light" />
                   </div>
                   <div>
-                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.25rem" }}>
+                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(26,58,92,0.5)", marginBottom: "0.25rem" }}>
                       {label}
                     </div>
                     {href ? (
                       <a href={href} target="_blank" rel="noopener noreferrer"
-                        style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(255,255,255,0.9)", textDecoration: "none", transition: "color 0.2s" }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = "#FFD100")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
+                        style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(26,58,92,0.85)", textDecoration: "none", transition: "color 0.2s" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "#2A6080")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(26,58,92,0.85)")}
                       >
                         {value}
                       </a>
                     ) : (
-                      <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(255,255,255,0.9)" }}>{value}</span>
+                      <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(26,58,92,0.85)" }}>{value}</span>
                     )}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div style={{ height: "1px", backgroundColor: "rgba(255,255,255,0.12)", marginBottom: "1.75rem" }} />
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: "0.75rem" }}>
+            <div style={{ height: "1px", backgroundColor: "rgba(26,58,92,0.15)", marginBottom: "1.75rem" }} />
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(26,58,92,0.5)", marginBottom: "0.75rem" }}>
               Redes sociales
             </p>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -148,9 +148,9 @@ export default function ContactoSection() {
                 { label: "Facebook", href: "https://facebook.com/cremaparaiso" },
               ].map(({ label, href }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                  style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 500, color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)", padding: "8px 16px", borderRadius: "6px", textDecoration: "none", transition: "color 0.2s, border-color 0.2s, background-color 0.2s" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "#FFD100"; e.currentTarget.style.borderColor = "rgba(255,209,0,0.5)"; e.currentTarget.style.backgroundColor = "rgba(255,209,0,0.08)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.75)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.backgroundColor = "transparent"; }}
+                  style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 500, color: "rgba(26,58,92,0.7)", border: "1px solid rgba(26,58,92,0.2)", padding: "8px 16px", borderRadius: "6px", textDecoration: "none", transition: "color 0.2s, border-color 0.2s, background-color 0.2s" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "#2A6080"; e.currentTarget.style.borderColor = "rgba(42,96,128,0.4)"; e.currentTarget.style.backgroundColor = "rgba(42,96,128,0.07)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(26,58,92,0.7)"; e.currentTarget.style.borderColor = "rgba(26,58,92,0.2)"; e.currentTarget.style.backgroundColor = "transparent"; }}
                 >
                   {label}
                 </a>
@@ -164,10 +164,10 @@ export default function ContactoSection() {
               <div aria-live="polite" aria-atomic="true">
                 {enviado ? (
                   <div style={{ textAlign: "center", padding: "2.5rem 0" }}>
-                    <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "rgba(208,16,32,0.08)", border: "1px solid rgba(208,16,32,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem", color: "#D01020" }}>
+                    <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "rgba(42,96,128,0.08)", border: "1px solid rgba(42,96,128,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem", color: "#2A6080" }}>
                       <ArrowUpRight size={22} weight="light" />
                     </div>
-                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#D01020", marginBottom: "0.5rem" }}>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#2A6080", marginBottom: "0.5rem" }}>
                       Mensaje enviado
                     </div>
                     <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(0,0,0,0.5)", fontWeight: 300 }}>
@@ -179,7 +179,7 @@ export default function ContactoSection() {
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }} className="form-cols">
                       {fields.slice(0, 2).map((field) => (
                         <div key={field.id} style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                          <label htmlFor={field.id} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8A0C14" }}>
+                          <label htmlFor={field.id} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1A4A6A" }}>
                             {field.label}
                           </label>
                           <input
@@ -190,16 +190,16 @@ export default function ContactoSection() {
                             onFocus={() => setFocused(field.id)} onBlur={() => setFocused(null)}
                             aria-invalid={!!errors[field.id]}
                             aria-describedby={errors[field.id] ? `${field.id}-error` : undefined}
-                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#D01020" : focused === field.id ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(208,16,32,0.1)" : "none" }}
+                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#2A6080" : focused === field.id ? "#2A6080" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(42,96,128,0.12)" : "none" }}
                           />
-                          {errors[field.id] && <span id={`${field.id}-error`} role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#D01020" }}>{errors[field.id]}</span>}
+                          {errors[field.id] && <span id={`${field.id}-error`} role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#1A4A6A" }}>{errors[field.id]}</span>}
                         </div>
                       ))}
                     </div>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }} className="form-cols">
                       {fields.slice(2).map((field) => (
                         <div key={field.id} style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                          <label htmlFor={field.id} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8A0C14" }}>
+                          <label htmlFor={field.id} style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1A4A6A" }}>
                             {field.label}
                           </label>
                           <input
@@ -209,13 +209,13 @@ export default function ContactoSection() {
                             onChange={(e) => { setForm({ ...form, [field.id]: e.target.value }); if (errors[field.id]) setErrors({ ...errors, [field.id]: "" }); }}
                             onFocus={() => setFocused(field.id)} onBlur={() => setFocused(null)}
                             aria-invalid={!!errors[field.id]}
-                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#D01020" : focused === field.id ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(208,16,32,0.1)" : "none" }}
+                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#2A6080" : focused === field.id ? "#2A6080" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(42,96,128,0.12)" : "none" }}
                           />
                         </div>
                       ))}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                      <label htmlFor="mensaje" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8A0C14" }}>
+                      <label htmlFor="mensaje" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1A4A6A" }}>
                         Mensaje
                       </label>
                       <textarea
@@ -226,16 +226,16 @@ export default function ContactoSection() {
                         onFocus={() => setFocused("mensaje")} onBlur={() => setFocused(null)}
                         aria-invalid={!!errors.mensaje}
                         aria-describedby={errors.mensaje ? "mensaje-error" : undefined}
-                        style={{ ...inputStyle, border: `1.5px solid ${errors.mensaje ? "#D01020" : focused === "mensaje" ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === "mensaje" ? "0 0 0 3px rgba(208,16,32,0.1)" : "none", resize: "vertical", minHeight: "110px" }}
+                        style={{ ...inputStyle, border: `1.5px solid ${errors.mensaje ? "#2A6080" : focused === "mensaje" ? "#2A6080" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === "mensaje" ? "0 0 0 3px rgba(42,96,128,0.12)" : "none", resize: "vertical", minHeight: "110px" }}
                       />
-                      {errors.mensaje && <span id="mensaje-error" role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#D01020" }}>{errors.mensaje}</span>}
+                      {errors.mensaje && <span id="mensaje-error" role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#1A4A6A" }}>{errors.mensaje}</span>}
                     </div>
-                    {errors._server && <p role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.8rem", fontWeight: 500, color: "#D01020", textAlign: "center" }}>{errors._server}</p>}
+                    {errors._server && <p role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.8rem", fontWeight: 500, color: "#1A4A6A", textAlign: "center" }}>{errors._server}</p>}
                     <button
                       type="submit" disabled={loading}
-                      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 700, color: "#8A0C14", backgroundColor: loading ? "rgba(255,209,0,0.6)" : "#FFD100", border: "none", cursor: loading ? "not-allowed" : "pointer", padding: "15px", borderRadius: "8px", width: "100%", marginTop: "0.25rem", transition: "background-color 0.25s, transform 0.25s", letterSpacing: "0.02em" }}
-                      onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#FFE033"; e.currentTarget.style.transform = "translateY(-1px)"; } }}
-                      onMouseLeave={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#FFD100"; e.currentTarget.style.transform = "translateY(0)"; } }}
+                      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 700, color: "#1A4A6A", backgroundColor: loading ? "rgba(252,239,145,0.6)" : "#FCEF91", border: "none", cursor: loading ? "not-allowed" : "pointer", padding: "15px", borderRadius: "8px", width: "100%", marginTop: "0.25rem", transition: "background-color 0.25s, transform 0.25s", letterSpacing: "0.02em" }}
+                      onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#FFF4B0"; e.currentTarget.style.transform = "translateY(-1px)"; } }}
+                      onMouseLeave={(e) => { if (!loading) { e.currentTarget.style.backgroundColor = "#FCEF91"; e.currentTarget.style.transform = "translateY(0)"; } }}
                     >
                       {loading ? "Enviando..." : "Enviar mensaje"}
                       {!loading && <ArrowUpRight size={17} weight="bold" />}

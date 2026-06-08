@@ -17,7 +17,7 @@ const posts = [
   { src: "/images/frappe-kindy.jpg", alt: "Frappe Kindy Crema Paraíso" },
   { src: "/images/05_san_bernardino_HD.jpg", alt: "San Bernardino Crema Paraíso" },
   { src: "/images/merengada.jpg", alt: "Merengada Crema Paraíso" },
-  { src: "/images/sundae.png", alt: "Sundae Crema Paraíso" },
+  { src: "/images/sundae.webp", alt: "Sundae Crema Paraíso" },
 ];
 
 function IgIcon() {
@@ -110,7 +110,7 @@ export default function SocialSection() {
                     borderRadius: "0.75rem",
                     overflow: "hidden",
                     position: "relative",
-                    backgroundColor: "rgba(208,16,32,0.1)",
+                    backgroundColor: "rgba(42,96,128,0.1)",
                     cursor: "pointer",
                   }}
                 >
@@ -124,7 +124,7 @@ export default function SocialSection() {
                   <div className="social-overlay" style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundColor: "rgba(208,16,32,0.88)",
+                    backgroundColor: "rgba(42,96,128,0.88)",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -133,13 +133,13 @@ export default function SocialSection() {
                     opacity: 0,
                     transition: "opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}>
-                    <span style={{ color: "#FFD100" }}><IgIcon /></span>
+                    <span style={{ color: "#FCEF91" }}><IgIcon /></span>
                     <span style={{
                       fontFamily: "var(--font-jakarta)",
                       fontSize: "0.72rem",
                       fontWeight: 700,
                       letterSpacing: "0.07em",
-                      color: "#FFD100",
+                      color: "#FCEF91",
                       textTransform: "uppercase",
                     }}>
                       Ver en Instagram
@@ -176,7 +176,7 @@ export default function SocialSection() {
             onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <IgIcon />
-            @cremaparaiso
+            @cremaparaisove
           </a>
           <a
             href={TT_URL}
@@ -192,17 +192,17 @@ export default function SocialSection() {
               letterSpacing: "0.04em",
               color: "rgba(160,14,22,0.9)",
               backgroundColor: "transparent",
-              border: "1px solid rgba(208,16,32,0.3)",
+              border: "1px solid rgba(42,96,128,0.3)",
               textDecoration: "none",
               padding: "12px 26px",
               borderRadius: "6px",
               transition: "color 0.22s, border-color 0.22s, transform 0.22s",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(160,14,22,0.9)"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "#2A6080"; e.currentTarget.style.borderColor = "rgba(42,96,128,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(42,96,128,0.8)"; e.currentTarget.style.borderColor = "rgba(42,96,128,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <TkIcon />
-            @cremaparaiso
+            @cremaparaisove
           </a>
         </div>
       </div>

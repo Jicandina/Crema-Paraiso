@@ -48,10 +48,10 @@ export default function Navbar() {
     }
   };
 
-  const baseLinkColor = "rgba(208,16,32,0.75)";
-  const activeLinkColor = "var(--color-cream)";
-  const hoverLinkColor = "var(--color-cream)";
-  const hoverLinkBg = "rgba(208,16,32,0.1)";
+  const baseLinkColor = "rgba(26,74,106,0.75)";
+  const activeLinkColor = "#1A4A6A";
+  const hoverLinkColor = "#1A4A6A";
+  const hoverLinkBg = "rgba(26,74,106,0.1)";
   const ctaBg = "var(--color-orange)";
   const ctaTextColor = "var(--color-brown)";
   const activeUnderlineColor = "var(--color-cream)";
@@ -64,7 +64,7 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: "#FFD100",
+        backgroundColor: "#FCEF91",
         backdropFilter: "none",
         borderBottom: "none",
         transition: "background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -88,7 +88,7 @@ export default function Navbar() {
           style={{ background: "none", border: "none", cursor: "pointer", padding: 0, lineHeight: 0 }}
         >
           <Image
-            src="/images/logo-negativo2.png"
+            src="/images/logo-azul.webp"
             alt="Crema Paraíso"
             width={76}
             height={76}
@@ -197,7 +197,7 @@ export default function Navbar() {
           style={{
             backgroundColor: "var(--color-brown)",
             padding: "1rem 1.5rem 1.5rem",
-            borderTop: "1px solid rgba(208,16,32,0.2)",
+            borderTop: "1px solid rgba(26,74,106,0.2)",
           }}
         >
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
@@ -213,7 +213,7 @@ export default function Navbar() {
                       fontFamily: "var(--font-jakarta)",
                       fontSize: "0.95rem",
                       fontWeight: isActive ? 700 : 500,
-                      color: isActive ? "var(--color-cream)" : "rgba(208,16,32,0.85)",
+                      color: isActive ? "#1A4A6A" : "rgba(26,74,106,0.8)",
                       textDecoration: "none",
                       display: "block",
                       padding: "12px 16px",
@@ -223,10 +223,10 @@ export default function Navbar() {
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.color = "var(--color-cream)";
-                      e.currentTarget.style.backgroundColor = "rgba(208,16,32,0.1)";
+                      e.currentTarget.style.backgroundColor = "rgba(26,74,106,0.1)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = isActive ? "var(--color-cream)" : "rgba(208,16,32,0.85)";
+                      e.currentTarget.style.color = isActive ? "#1A4A6A" : "rgba(26,74,106,0.8)";
                       e.currentTarget.style.backgroundColor = "transparent";
                     }}
                   >
