@@ -48,13 +48,13 @@ export default function Navbar() {
     }
   };
 
-  const baseLinkColor = "rgba(208,16,32,0.75)";
-  const activeLinkColor = "#D01020";
-  const hoverLinkColor = "#D01020";
-  const hoverLinkBg = "rgba(208,16,32,0.1)";
-  const ctaBg = "#D01020";
+  const baseLinkColor = "rgba(230,31,62,0.75)";
+  const activeLinkColor = "#e61f3e";
+  const hoverLinkColor = "#e61f3e";
+  const hoverLinkBg = "rgba(230,31,62,0.1)";
+  const ctaBg = "#e61f3e";
   const ctaTextColor = "#FFD100";
-  const activeUnderlineColor = "#D01020";
+  const activeUnderlineColor = "#e61f3e";
 
   return (
     <header
@@ -175,7 +175,7 @@ export default function Navbar() {
           aria-controls="mobile-menu"
           className="md:hidden"
           style={{
-            color: "#D01020",
+            color: "#e61f3e",
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -197,7 +197,7 @@ export default function Navbar() {
           style={{
             backgroundColor: "#FFD100",
             padding: "1rem 1.5rem 1.5rem",
-            borderTop: "1px solid rgba(208,16,32,0.2)",
+            borderTop: "1px solid rgba(230,31,62,0.2)",
           }}
         >
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
@@ -213,7 +213,7 @@ export default function Navbar() {
                       fontFamily: "var(--font-jakarta)",
                       fontSize: "0.95rem",
                       fontWeight: isActive ? 700 : 500,
-                      color: isActive ? "#D01020" : "rgba(208,16,32,0.85)",
+                      color: isActive ? "#e61f3e" : "rgba(230,31,62,0.85)",
                       textDecoration: "none",
                       display: "block",
                       padding: "12px 16px",
@@ -222,11 +222,11 @@ export default function Navbar() {
                       transition: "color 0.2s, background-color 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#D01020";
-                      e.currentTarget.style.backgroundColor = "rgba(208,16,32,0.1)";
+                      e.currentTarget.style.color = "#e61f3e";
+                      e.currentTarget.style.backgroundColor = "rgba(230,31,62,0.1)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = isActive ? "#D01020" : "rgba(208,16,32,0.85)";
+                      e.currentTarget.style.color = isActive ? "#e61f3e" : "rgba(230,31,62,0.85)";
                       e.currentTarget.style.backgroundColor = "transparent";
                     }}
                   >

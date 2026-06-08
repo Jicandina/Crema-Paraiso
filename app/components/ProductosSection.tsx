@@ -42,7 +42,7 @@ const productos: Producto[] = [
     foto: "/images/02_2l_chocolate_arriba_HD.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Tipo", val: "Crema helada artesanal" },
       { label: "Almacenamiento", val: "−18°C o menor" },
@@ -60,7 +60,7 @@ const productos: Producto[] = [
     foto: "/images/soft-galon.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Tipo", val: "Base para Soft Serve" },
       { label: "Almacenamiento (congelado)", val: "−15°C o menor" },
@@ -78,7 +78,7 @@ const productos: Producto[] = [
     foto: "/images/sirope-caramelo-galon.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Tipo", val: "Sirope de alta concentración" },
       { label: "Presentación", val: "Galón 4.84 kg" },
@@ -96,7 +96,7 @@ const productos: Producto[] = [
     foto: "/images/kindy-galon-original.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Calorías", val: "245 Cal / 100g" },
       { label: "Carbohidratos", val: "61.0 g / 100g" },
@@ -116,7 +116,7 @@ const productos: Producto[] = [
     foto: "/images/kindy-galon-light.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Calorías", val: "16 Cal / 100g" },
       { label: "Carbohidratos", val: "3.2 g / 100g" },
@@ -136,7 +136,7 @@ const productos: Producto[] = [
     foto: "/images/topping-crema.png",
     photoContain: true,
     photoBg: "#3D0000",
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Tipo", val: "Crema chantilly lista para usar" },
       { label: "Usos principales", val: "Postres · Helados · Bebidas · Waffles · Pancakes" },
@@ -152,7 +152,7 @@ const productos: Producto[] = [
     chips: ["Salsas", "Sopas", "Gratinados", "Recetas saladas"],
     presentaciones: "Food Service",
     foto: null,
-    contentBg: "#D01020", textColor: "#FFFFFF", accent: "#FFD100",
+    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
     specs: [
       { label: "Tipo", val: "Crema para cocinar" },
       { label: "Propiedad clave", val: "Estable al calor" },
@@ -172,7 +172,7 @@ export default function ProductosSection() {
     <section id="productos" ref={ref as React.RefObject<HTMLElement>}>
 
       {/* ── HEADER ── */}
-      <div style={{ background: "#D01020", padding: "clamp(48px, 7vh, 80px) clamp(24px, 6vw, 72px)", position: "relative", overflow: "hidden", borderTop: "4px solid #FFFFFF", borderBottom: "4px solid #FFFFFF" }}>
+      <div style={{ background: "#e61f3e", padding: "clamp(48px, 7vh, 80px) clamp(24px, 6vw, 72px)", position: "relative", overflow: "hidden", borderTop: "4px solid #FFFFFF", borderBottom: "4px solid #FFFFFF" }}>
         <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`, backgroundSize: "256px 256px", opacity: 0.5, pointerEvents: "none" }} />
         <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
           <div className="reveal">
@@ -361,7 +361,7 @@ export default function ProductosSection() {
       })}
 
       {/* ── CTA ── */}
-      <div className="reveal" style={{ backgroundColor: "#D01020", padding: "clamp(2.5rem, 4vh, 3.5rem) clamp(24px, 6vw, 72px)", borderTop: "1px solid rgba(0,0,0,0.15)" }}>
+      <div className="reveal" style={{ backgroundColor: "#e61f3e", padding: "clamp(2.5rem, 4vh, 3.5rem) clamp(24px, 6vw, 72px)", borderTop: "1px solid rgba(0,0,0,0.15)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
           <div>
             <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.1rem, 2vw, 1.5rem)", fontWeight: 700, color: "#FFFFFF", marginBottom: "0.25rem" }}>Distribución nacional.</div>
@@ -369,9 +369,9 @@ export default function ProductosSection() {
           </div>
           <button
             onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.06em", color: "#FFFFFF", backgroundColor: "#D01020", border: "none", cursor: "pointer", padding: "14px 32px", borderRadius: "6px", whiteSpace: "nowrap", flexShrink: 0, transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)" }}
+            style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.06em", color: "#FFFFFF", backgroundColor: "#e61f3e", border: "none", cursor: "pointer", padding: "14px 32px", borderRadius: "6px", whiteSpace: "nowrap", flexShrink: 0, transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)" }}
             onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#F5B8BE"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#D01020"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#e61f3e"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             Solicitar distribución
           </button>

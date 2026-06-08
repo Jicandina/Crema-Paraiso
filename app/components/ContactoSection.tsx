@@ -86,7 +86,7 @@ export default function ContactoSection() {
     <section
       id="contacto"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "#D01020", padding: "clamp(80px, 12vh, 120px) 0", position: "relative", overflow: "hidden" }}
+      style={{ backgroundColor: "#e61f3e", padding: "clamp(80px, 12vh, 120px) 0", position: "relative", overflow: "hidden" }}
     >
       {/* Noise texture */}
       <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`, backgroundSize: "256px 256px", opacity: 0.5, pointerEvents: "none" }} />
@@ -164,10 +164,10 @@ export default function ContactoSection() {
               <div aria-live="polite" aria-atomic="true">
                 {enviado ? (
                   <div style={{ textAlign: "center", padding: "2.5rem 0" }}>
-                    <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "rgba(208,16,32,0.08)", border: "1px solid rgba(208,16,32,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem", color: "#D01020" }}>
+                    <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "rgba(230,31,62,0.08)", border: "1px solid rgba(230,31,62,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem", color: "#e61f3e" }}>
                       <ArrowUpRight size={22} weight="light" />
                     </div>
-                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#D01020", marginBottom: "0.5rem" }}>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "#e61f3e", marginBottom: "0.5rem" }}>
                       Mensaje enviado
                     </div>
                     <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", color: "rgba(0,0,0,0.5)", fontWeight: 300 }}>
@@ -190,9 +190,9 @@ export default function ContactoSection() {
                             onFocus={() => setFocused(field.id)} onBlur={() => setFocused(null)}
                             aria-invalid={!!errors[field.id]}
                             aria-describedby={errors[field.id] ? `${field.id}-error` : undefined}
-                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#D01020" : focused === field.id ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(208,16,32,0.1)" : "none" }}
+                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#e61f3e" : focused === field.id ? "#e61f3e" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(230,31,62,0.1)" : "none" }}
                           />
-                          {errors[field.id] && <span id={`${field.id}-error`} role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#D01020" }}>{errors[field.id]}</span>}
+                          {errors[field.id] && <span id={`${field.id}-error`} role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#e61f3e" }}>{errors[field.id]}</span>}
                         </div>
                       ))}
                     </div>
@@ -209,7 +209,7 @@ export default function ContactoSection() {
                             onChange={(e) => { setForm({ ...form, [field.id]: e.target.value }); if (errors[field.id]) setErrors({ ...errors, [field.id]: "" }); }}
                             onFocus={() => setFocused(field.id)} onBlur={() => setFocused(null)}
                             aria-invalid={!!errors[field.id]}
-                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#D01020" : focused === field.id ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(208,16,32,0.1)" : "none" }}
+                            style={{ ...inputStyle, border: `1.5px solid ${errors[field.id] ? "#e61f3e" : focused === field.id ? "#e61f3e" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === field.id ? "0 0 0 3px rgba(230,31,62,0.1)" : "none" }}
                           />
                         </div>
                       ))}
@@ -226,11 +226,11 @@ export default function ContactoSection() {
                         onFocus={() => setFocused("mensaje")} onBlur={() => setFocused(null)}
                         aria-invalid={!!errors.mensaje}
                         aria-describedby={errors.mensaje ? "mensaje-error" : undefined}
-                        style={{ ...inputStyle, border: `1.5px solid ${errors.mensaje ? "#D01020" : focused === "mensaje" ? "#D01020" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === "mensaje" ? "0 0 0 3px rgba(208,16,32,0.1)" : "none", resize: "vertical", minHeight: "110px" }}
+                        style={{ ...inputStyle, border: `1.5px solid ${errors.mensaje ? "#e61f3e" : focused === "mensaje" ? "#e61f3e" : "rgba(0,0,0,0.12)"}`, boxShadow: focused === "mensaje" ? "0 0 0 3px rgba(230,31,62,0.1)" : "none", resize: "vertical", minHeight: "110px" }}
                       />
-                      {errors.mensaje && <span id="mensaje-error" role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#D01020" }}>{errors.mensaje}</span>}
+                      {errors.mensaje && <span id="mensaje-error" role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 500, color: "#e61f3e" }}>{errors.mensaje}</span>}
                     </div>
-                    {errors._server && <p role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.8rem", fontWeight: 500, color: "#D01020", textAlign: "center" }}>{errors._server}</p>}
+                    {errors._server && <p role="alert" style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.8rem", fontWeight: 500, color: "#e61f3e", textAlign: "center" }}>{errors._server}</p>}
                     <button
                       type="submit" disabled={loading}
                       style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", fontFamily: "var(--font-jakarta)", fontSize: "0.9rem", fontWeight: 700, color: "#8A0C14", backgroundColor: loading ? "rgba(255,209,0,0.6)" : "#FFD100", border: "none", cursor: loading ? "not-allowed" : "pointer", padding: "15px", borderRadius: "8px", width: "100%", marginTop: "0.25rem", transition: "background-color 0.25s, transform 0.25s", letterSpacing: "0.02em" }}

@@ -43,7 +43,7 @@ export default function SocialSection() {
     <section
       id="redes"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "#FFD100", padding: "clamp(72px, 10vh, 100px) 0", borderTop: "4px solid #D01020" }}
+      style={{ backgroundColor: "#FFD100", padding: "clamp(72px, 10vh, 100px) 0", borderTop: "4px solid #e61f3e" }}
     >
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 48px)" }}>
 
@@ -55,7 +55,7 @@ export default function SocialSection() {
             fontWeight: 700,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "#D01020",
+            color: "#e61f3e",
             display: "block",
             marginBottom: "0.75rem",
           }}>
@@ -65,7 +65,7 @@ export default function SocialSection() {
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2rem, 4vw, 3rem)",
             fontWeight: 800,
-            color: "#D01020",
+            color: "#e61f3e",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
             marginBottom: "0.6rem",
@@ -110,7 +110,7 @@ export default function SocialSection() {
                     borderRadius: "0.75rem",
                     overflow: "hidden",
                     position: "relative",
-                    backgroundColor: "rgba(208,16,32,0.1)",
+                    backgroundColor: "rgba(230,31,62,0.1)",
                     cursor: "pointer",
                   }}
                 >
@@ -124,7 +124,7 @@ export default function SocialSection() {
                   <div className="social-overlay" style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundColor: "rgba(208,16,32,0.88)",
+                    backgroundColor: "rgba(230,31,62,0.88)",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -166,14 +166,14 @@ export default function SocialSection() {
               fontWeight: 600,
               letterSpacing: "0.04em",
               color: "#FFD100",
-              backgroundColor: "#D01020",
+              backgroundColor: "#e61f3e",
               textDecoration: "none",
               padding: "12px 26px",
               borderRadius: "6px",
               transition: "background-color 0.22s, transform 0.22s",
             }}
             onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#B00E1A"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#D01020"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#e61f3e"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <IgIcon />
             @cremaparaiso
@@ -192,14 +192,14 @@ export default function SocialSection() {
               letterSpacing: "0.04em",
               color: "rgba(160,14,22,0.9)",
               backgroundColor: "transparent",
-              border: "1px solid rgba(208,16,32,0.3)",
+              border: "1px solid rgba(230,31,62,0.3)",
               textDecoration: "none",
               padding: "12px 26px",
               borderRadius: "6px",
               transition: "color 0.22s, border-color 0.22s, transform 0.22s",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "#D01020"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(160,14,22,0.9)"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "#e61f3e"; e.currentTarget.style.borderColor = "rgba(230,31,62,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(160,14,22,0.9)"; e.currentTarget.style.borderColor = "rgba(230,31,62,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <TkIcon />
             @cremaparaiso

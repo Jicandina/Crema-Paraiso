@@ -20,7 +20,7 @@ export default function HeroSection() {
 
   return (
     <section id="inicio" ref={ref} style={{
-      backgroundColor: "#D01020",
+      backgroundColor: "#e61f3e",
       minHeight: "100dvh",
       display: "flex",
       flexDirection: "column",

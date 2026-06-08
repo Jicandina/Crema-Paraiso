@@ -68,7 +68,7 @@ export default function NosotrosSection() {
       id="nosotros"
       ref={ref as React.RefObject<HTMLElement>}
       style={{
-        background: "#D01020",
+        background: "#e61f3e",
         borderTop: "4px solid #FFD100",
         padding: "clamp(64px, 10vh, 100px) 0 clamp(32px, 5vh, 52px)",
         overflow: "hidden",
@@ -96,7 +96,7 @@ export default function NosotrosSection() {
               fontWeight: 700,
               letterSpacing: "0.25em",
               textTransform: "uppercase",
-              color: "#D01020",
+              color: "#e61f3e",
             }}>
               Nuestra historia
             </span>
@@ -238,11 +238,11 @@ export default function NosotrosSection() {
                     width: h.today ? "16px" : "12px",
                     height: h.today ? "16px" : "12px",
                     borderRadius: "50%",
-                    backgroundColor: "#D01020",
+                    backgroundColor: "#e61f3e",
                     border: "2px solid rgba(255,255,255,0.85)",
                     boxShadow: h.today
-                      ? "0 0 0 3px #D01020, 0 0 20px rgba(208,16,32,0.6)"
-                      : "0 0 0 2px #D01020, 0 0 8px rgba(249,168,37,0.2)",
+                      ? "0 0 0 3px #e61f3e, 0 0 20px rgba(230,31,62,0.6)"
+                      : "0 0 0 2px #e61f3e, 0 0 8px rgba(249,168,37,0.2)",
                     flexShrink: 0,
                     zIndex: 1,
                   }} />
@@ -319,7 +319,7 @@ export default function NosotrosSection() {
                 position: "absolute",
                 top: "1.5rem",
                 right: "1.5rem",
-                backgroundColor: "#D01020",
+                backgroundColor: "#e61f3e",
                 borderRadius: "999px",
                 padding: "0.4rem 1rem",
               }}>
