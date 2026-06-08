@@ -1,0 +1,16 @@
+{
+  "name": "Crema Paraíso",
+  "short_name": "Crema Paraíso",
+  "description": "Fábrica venezolana de helados artesanales desde 1951",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FF3D7F",
+  "theme_color": "#FFE566",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    }
+  ]
+}

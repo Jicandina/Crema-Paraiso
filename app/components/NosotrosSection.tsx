@@ -68,8 +68,9 @@ export default function NosotrosSection() {
       id="nosotros"
       ref={ref as React.RefObject<HTMLElement>}
       style={{
-        background: "linear-gradient(180deg, #FDF3E3 0%, #F5E4C8 60%, #EED5B0 100%)",
-        padding: "clamp(64px, 10vh, 100px) 0",
+        background: "#D01020",
+        borderTop: "4px solid #FFD100",
+        padding: "clamp(64px, 10vh, 100px) 0 clamp(32px, 5vh, 52px)",
         overflow: "hidden",
         position: "relative",
       }}
@@ -105,9 +106,9 @@ export default function NosotrosSection() {
               fontWeight: 700,
               letterSpacing: "0.15em",
               textTransform: "uppercase",
-              color: "var(--color-brown)",
-              backgroundColor: "rgba(46,18,8,0.07)",
-              border: "1px solid rgba(46,18,8,0.12)",
+              color: "#FFFFFF",
+              backgroundColor: "rgba(255,255,255,0.12)",
+              border: "1px solid rgba(255,255,255,0.2)",
               borderRadius: "999px",
               padding: "0.3rem 0.85rem",
             }}>
@@ -119,7 +120,7 @@ export default function NosotrosSection() {
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
             fontWeight: 900,
-            color: "var(--color-brown)",
+            color: "#FFFFFF",
             lineHeight: 1.05,
             letterSpacing: "-0.03em",
             maxWidth: "20ch",
@@ -133,7 +134,7 @@ export default function NosotrosSection() {
             fontSize: "clamp(0.9rem, 1.2vw, 1rem)",
             fontWeight: 400,
             lineHeight: 1.75,
-            color: "var(--color-brown-mid)",
+            color: "rgba(255,255,255,0.8)",
             maxWidth: "52ch",
             marginBottom: "2rem",
           }}>
@@ -146,8 +147,8 @@ export default function NosotrosSection() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.6rem",
-                backgroundColor: "rgba(46,18,8,0.06)",
-                border: "1px solid rgba(46,18,8,0.1)",
+                backgroundColor: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.18)",
                 borderRadius: "0.75rem",
                 padding: "0.6rem 1.1rem",
                 backdropFilter: "blur(4px)",
@@ -156,7 +157,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "1.4rem",
                   fontWeight: 900,
-                  color: "var(--color-brown)",
+                  color: "#FFFFFF",
                   lineHeight: 1,
                 }}>
                   {s.value}
@@ -165,7 +166,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-jakarta)",
                   fontSize: "0.72rem",
                   fontWeight: 500,
-                  color: "var(--color-brown-mid)",
+                  color: "rgba(255,255,255,0.8)",
                   letterSpacing: "0.02em",
                   lineHeight: 1.3,
                 }}>
@@ -196,7 +197,7 @@ export default function NosotrosSection() {
                 top: "16px",
                 bottom: "16px",
                 width: "2px",
-                background: "rgba(46,18,8,0.1)",
+                background: "rgba(255,255,255,0.18)",
                 borderRadius: "2px",
                 transformOrigin: "top",
               }}
@@ -221,11 +222,11 @@ export default function NosotrosSection() {
                     fontFamily: "var(--font-playfair)",
                     fontSize: "clamp(1.6rem, 2.2vw, 2.4rem)",
                     fontWeight: 800,
-                    color: h.today ? "var(--color-orange)" : "var(--color-brown)",
+                    color: "#FFFFFF",
                     lineHeight: 1,
                     letterSpacing: "-0.04em",
-                    fontStyle: h.today ? "italic" : "normal",
-                    textShadow: h.today ? "0 0 24px rgba(249,168,37,0.4)" : "none",
+                    fontStyle: "normal",
+                    textShadow: "none",
                   }}>
                     {h.year}
                   </span>
@@ -238,9 +239,9 @@ export default function NosotrosSection() {
                     height: h.today ? "16px" : "12px",
                     borderRadius: "50%",
                     backgroundColor: "var(--color-orange)",
-                    border: "2px solid rgba(253,243,227,0.8)",
+                    border: "2px solid rgba(255,255,255,0.85)",
                     boxShadow: h.today
-                      ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(249,168,37,0.5)"
+                      ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(208,16,32,0.6)"
                       : "0 0 0 2px var(--color-orange), 0 0 8px rgba(249,168,37,0.2)",
                     flexShrink: 0,
                     zIndex: 1,
@@ -253,8 +254,8 @@ export default function NosotrosSection() {
                   onMouseEnter={!h.today ? handleHitoEnter : undefined}
                   onMouseLeave={!h.today ? handleHitoLeave : undefined}
                   style={{
-                    backgroundColor: h.today ? "var(--color-brown)" : "rgba(46,18,8,0.04)",
-                    border: h.today ? "1px solid rgba(249,168,37,0.25)" : "1px solid rgba(46,18,8,0.09)",
+                    backgroundColor: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.15)",
                     borderRadius: "1rem",
                     padding: "1rem 1.25rem",
                     transition: "border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -266,7 +267,7 @@ export default function NosotrosSection() {
                         fontFamily: "var(--font-playfair)",
                         fontSize: "1rem",
                         fontWeight: 700,
-                        color: h.today ? "var(--color-cream)" : "var(--color-brown)",
+                        color: "#FFFFFF",
                         lineHeight: 1.3,
                         fontStyle: "italic",
                       }}>
@@ -278,7 +279,7 @@ export default function NosotrosSection() {
                       fontSize: "0.85rem",
                       fontWeight: 400,
                       lineHeight: 1.8,
-                      color: h.today ? "rgba(253,243,227,0.72)" : "var(--color-brown-mid)",
+                      color: "rgba(255,255,255,0.8)",
                       maxWidth: "50ch",
                       margin: 0,
                     }}>
@@ -297,8 +298,8 @@ export default function NosotrosSection() {
               overflow: "hidden",
               aspectRatio: "4/3",
               position: "relative",
-              boxShadow: "0 2px 16px rgba(46,18,8,0.07), 0 1px 4px rgba(46,18,8,0.04)",
-              border: "1px solid rgba(46,18,8,0.06)",
+              boxShadow: "0 2px 16px rgba(255,255,255,0.12), 0 1px 4px rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.1)",
             }}>
               <Image
                 src="/images/camion.jpg"
@@ -311,7 +312,7 @@ export default function NosotrosSection() {
               <div style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(to top, rgba(46,18,8,0.92) 0%, rgba(46,18,8,0.2) 50%, transparent 100%)",
+                background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)",
               }} />
 
               <div style={{
@@ -326,7 +327,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "0.85rem",
                   fontWeight: 900,
-                  color: "var(--color-brown)",
+                  color: "#FFFFFF",
                   letterSpacing: "-0.01em",
                 }}>
                   Archivo histórico
@@ -340,7 +341,7 @@ export default function NosotrosSection() {
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  color: "var(--color-orange)",
+                  color: "rgba(255,255,255,0.7)",
                   display: "block",
                   marginBottom: "0.5rem",
                 }}>
@@ -350,7 +351,7 @@ export default function NosotrosSection() {
                   fontFamily: "var(--font-playfair)",
                   fontSize: "1.35rem",
                   fontWeight: 800,
-                  color: "var(--color-cream)",
+                  color: "#FFFFFF",
                   display: "block",
                   lineHeight: 1.2,
                   marginBottom: "0.6rem",
@@ -363,7 +364,7 @@ export default function NosotrosSection() {
                   fontSize: "0.78rem",
                   fontWeight: 400,
                   lineHeight: 1.75,
-                  color: "rgba(253,243,227,0.7)",
+                  color: "rgba(255,255,255,0.75)",
                   margin: 0,
                 }}>
                   Desde los primeros camiones hasta la fábrica propia en Guarenas. Setenta años de llevar el sabor a cada rincón del país.
@@ -373,31 +374,31 @@ export default function NosotrosSection() {
 
             {/* Tarjeta de stats debajo de la foto */}
             <div style={{
-              backgroundColor: "var(--color-brown)",
+              backgroundColor: "rgba(255,255,255,0.08)",
               borderRadius: "1.25rem",
               padding: "1.5rem 1.75rem",
-              border: "1px solid rgba(249,168,37,0.15)",
+              border: "1px solid rgba(255,255,255,0.15)",
             }}>
               <p style={{
                 fontFamily: "var(--font-playfair)",
                 fontSize: "1rem",
                 fontWeight: 700,
                 fontStyle: "italic",
-                color: "var(--color-cream)",
+                color: "#FFFFFF",
                 lineHeight: 1.5,
                 marginBottom: "1.25rem",
               }}>
                 "La misma receta, la misma calidad, desde que Adalberto Katz llegó a Venezuela con el oficio aprendido en París."
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(253,243,227,0.1)", paddingTop: "1.25rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1.25rem" }}>
                 {[
                   { v: "74", l: "años" },
                   { v: "1951", l: "fundación" },
                   { v: "1984", l: "fábrica propia" },
                 ].map((s) => (
                   <div key={s.v}>
-                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "var(--color-orange)", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
-                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 500, color: "rgba(253,243,227,0.45)", marginTop: "0.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>{s.l}</div>
+                    <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 800, color: "#FFFFFF", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.v}</div>
+                    <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.65rem", fontWeight: 500, color: "rgba(255,255,255,0.6)", marginTop: "0.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -430,7 +431,7 @@ export default function NosotrosSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background: rgba(46,18,8,0.05);
+          background: rgba(255,255,255,0.1);
           transform: translate(var(--fill-x, 0%), var(--fill-y, -105%));
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           pointer-events: none;
@@ -438,7 +439,7 @@ export default function NosotrosSection() {
         }
         .nosotros-hito:hover::after { transform: translate(0%, 0%) !important; }
         .nosotros-hito:hover {
-          border-color: rgba(46,18,8,0.14) !important;
+          border-color: rgba(255,255,255,0.25) !important;
           box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 

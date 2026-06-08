@@ -18,10 +18,10 @@ export default function Footer() {
             <div style={{ fontFamily: "var(--font-playfair)", fontSize: "1.4rem", fontWeight: 700, color: "var(--color-cream)", marginBottom: "0.75rem" }}>
               Crema<span style={{ color: "var(--color-orange)" }}>Paraíso</span>
             </div>
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(253, 243, 227, 0.4)", maxWidth: "30ch" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(160,14,22,0.85)", maxWidth: "30ch" }}>
               Fábrica venezolana de helados, siropes, cremas y bases para limonada. Desde Guarenas para toda Venezuela.
             </p>
-            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(253, 243, 227, 0.25)", marginTop: "1rem" }}>
+            <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(0,0,0,0.4)", marginTop: "1rem" }}>
               R.I.F.: J-00009194-3
             </p>
           </div>
@@ -32,11 +32,11 @@ export default function Footer() {
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {[
+                { label: "Inicio", href: "#inicio" },
                 { label: "Nosotros", href: "#nosotros" },
                 { label: "Productos", href: "#productos" },
-                { label: "Bebidas", href: "#bebidas" },
-                { label: "Cremas", href: "#cremas" },
                 { label: "Contacto", href: "#contacto" },
+                { label: "Redes", href: "#redes" },
               ].map((item) => (
                 <li key={item.href}>
                   <a
@@ -44,11 +44,11 @@ export default function Footer() {
                     onClick={handleLink}
                     style={{
                       fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 400,
-                      color: "rgba(253, 243, 227, 0.4)", textDecoration: "none",
+                      color: "rgba(160,14,22,0.85)", textDecoration: "none",
                       display: "block", transition: "color 0.2s",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-cream)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253, 243, 227, 0.4)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(160,14,22,0.85)")}
                   >
                     {item.label}
                   </a>
@@ -62,14 +62,18 @@ export default function Footer() {
               Redes
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              {["Instagram", "TikTok", "Facebook"].map((red) => (
-                <li key={red}>
-                  <a href={`https://${red.toLowerCase()}.com/cremaparaiso`} target="_blank" rel="noopener noreferrer"
-                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 400, color: "rgba(253, 243, 227, 0.4)", textDecoration: "none", transition: "color 0.2s" }}
+              {[
+                { label: "Instagram", href: "https://instagram.com/cremaparaiso" },
+                { label: "TikTok", href: "https://tiktok.com/@cremaparaisove" },
+                { label: "Facebook", href: "https://facebook.com/cremaparaiso" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} target="_blank" rel="noopener noreferrer"
+                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 400, color: "rgba(160,14,22,0.85)", textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-cream)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253, 243, 227, 0.4)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(160,14,22,0.85)")}
                   >
-                    {red}
+                    {label}
                   </a>
                 </li>
               ))}
@@ -77,11 +81,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(253, 243, 227, 0.06)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(253, 243, 227, 0.2)" }}>
+        <div style={{ borderTop: "1px solid rgba(0,0,0,0.1)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(0,0,0,0.35)" }}>
             © {year} Crema Paraíso S.A. Fundada en 1951. Guarenas, Venezuela.
           </p>
-          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(253, 243, 227, 0.15)" }}>
+          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 300, color: "rgba(0,0,0,0.25)" }}>
             Nodo Studio
           </p>
         </div>
