@@ -96,7 +96,7 @@ export default function NosotrosSection() {
               fontWeight: 700,
               letterSpacing: "0.25em",
               textTransform: "uppercase",
-              color: "var(--color-orange)",
+              color: "#D01020",
             }}>
               Nuestra historia
             </span>
@@ -238,11 +238,11 @@ export default function NosotrosSection() {
                     width: h.today ? "16px" : "12px",
                     height: h.today ? "16px" : "12px",
                     borderRadius: "50%",
-                    backgroundColor: "var(--color-orange)",
+                    backgroundColor: "#D01020",
                     border: "2px solid rgba(255,255,255,0.85)",
                     boxShadow: h.today
-                      ? "0 0 0 3px var(--color-orange), 0 0 20px rgba(208,16,32,0.6)"
-                      : "0 0 0 2px var(--color-orange), 0 0 8px rgba(249,168,37,0.2)",
+                      ? "0 0 0 3px #D01020, 0 0 20px rgba(208,16,32,0.6)"
+                      : "0 0 0 2px #D01020, 0 0 8px rgba(249,168,37,0.2)",
                     flexShrink: 0,
                     zIndex: 1,
                   }} />
@@ -319,7 +319,7 @@ export default function NosotrosSection() {
                 position: "absolute",
                 top: "1.5rem",
                 right: "1.5rem",
-                backgroundColor: "var(--color-orange)",
+                backgroundColor: "#D01020",
                 borderRadius: "999px",
                 padding: "0.4rem 1rem",
               }}>

@@ -49,12 +49,12 @@ export default function Navbar() {
   };
 
   const baseLinkColor = "rgba(208,16,32,0.75)";
-  const activeLinkColor = "var(--color-cream)";
-  const hoverLinkColor = "var(--color-cream)";
+  const activeLinkColor = "#D01020";
+  const hoverLinkColor = "#D01020";
   const hoverLinkBg = "rgba(208,16,32,0.1)";
-  const ctaBg = "var(--color-orange)";
-  const ctaTextColor = "var(--color-brown)";
-  const activeUnderlineColor = "var(--color-cream)";
+  const ctaBg = "#D01020";
+  const ctaTextColor = "#FFD100";
+  const activeUnderlineColor = "#D01020";
 
   return (
     <header
@@ -157,7 +157,7 @@ export default function Navbar() {
             transition: "background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "var(--color-orange-light)";
+            e.currentTarget.style.backgroundColor = "#F5B8BE";
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
@@ -175,7 +175,7 @@ export default function Navbar() {
           aria-controls="mobile-menu"
           className="md:hidden"
           style={{
-            color: "var(--color-cream)",
+            color: "#D01020",
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -195,7 +195,7 @@ export default function Navbar() {
         <div
           id="mobile-menu"
           style={{
-            backgroundColor: "var(--color-brown)",
+            backgroundColor: "#FFD100",
             padding: "1rem 1.5rem 1.5rem",
             borderTop: "1px solid rgba(208,16,32,0.2)",
           }}
@@ -213,7 +213,7 @@ export default function Navbar() {
                       fontFamily: "var(--font-jakarta)",
                       fontSize: "0.95rem",
                       fontWeight: isActive ? 700 : 500,
-                      color: isActive ? "var(--color-cream)" : "rgba(208,16,32,0.85)",
+                      color: isActive ? "#D01020" : "rgba(208,16,32,0.85)",
                       textDecoration: "none",
                       display: "block",
                       padding: "12px 16px",
@@ -222,11 +222,11 @@ export default function Navbar() {
                       transition: "color 0.2s, background-color 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "var(--color-cream)";
+                      e.currentTarget.style.color = "#D01020";
                       e.currentTarget.style.backgroundColor = "rgba(208,16,32,0.1)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = isActive ? "var(--color-cream)" : "rgba(208,16,32,0.85)";
+                      e.currentTarget.style.color = isActive ? "#D01020" : "rgba(208,16,32,0.85)";
                       e.currentTarget.style.backgroundColor = "transparent";
                     }}
                   >

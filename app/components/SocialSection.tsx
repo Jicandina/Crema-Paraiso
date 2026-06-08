@@ -43,7 +43,7 @@ export default function SocialSection() {
     <section
       id="redes"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ backgroundColor: "var(--color-brown)", padding: "clamp(72px, 10vh, 100px) 0", borderTop: "4px solid var(--color-orange)" }}
+      style={{ backgroundColor: "#FFD100", padding: "clamp(72px, 10vh, 100px) 0", borderTop: "4px solid #D01020" }}
     >
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 48px)" }}>
 
@@ -55,7 +55,7 @@ export default function SocialSection() {
             fontWeight: 700,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "var(--color-orange)",
+            color: "#D01020",
             display: "block",
             marginBottom: "0.75rem",
           }}>
@@ -65,7 +65,7 @@ export default function SocialSection() {
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2rem, 4vw, 3rem)",
             fontWeight: 800,
-            color: "var(--color-cream)",
+            color: "#D01020",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
             marginBottom: "0.6rem",
@@ -165,15 +165,15 @@ export default function SocialSection() {
               fontSize: "0.85rem",
               fontWeight: 600,
               letterSpacing: "0.04em",
-              color: "var(--color-brown)",
-              backgroundColor: "var(--color-orange)",
+              color: "#FFD100",
+              backgroundColor: "#D01020",
               textDecoration: "none",
               padding: "12px 26px",
               borderRadius: "6px",
               transition: "background-color 0.22s, transform 0.22s",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--color-cream-mid)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(0)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#B00E1A"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#D01020"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <IgIcon />
             @cremaparaiso
@@ -198,7 +198,7 @@ export default function SocialSection() {
               borderRadius: "6px",
               transition: "color 0.22s, border-color 0.22s, transform 0.22s",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-cream)"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "#D01020"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.6)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(160,14,22,0.9)"; e.currentTarget.style.borderColor = "rgba(208,16,32,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             <TkIcon />

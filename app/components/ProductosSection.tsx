@@ -352,9 +352,9 @@ export default function ProductosSection() {
           </div>
           <button
             onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.06em", color: "#FFFFFF", backgroundColor: "var(--color-orange)", border: "none", cursor: "pointer", padding: "14px 32px", borderRadius: "6px", whiteSpace: "nowrap", flexShrink: 0, transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)" }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange-light)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "var(--color-orange)"; e.currentTarget.style.transform = "translateY(0)"; }}
+            style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.06em", color: "#FFFFFF", backgroundColor: "#D01020", border: "none", cursor: "pointer", padding: "14px 32px", borderRadius: "6px", whiteSpace: "nowrap", flexShrink: 0, transition: "background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)" }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#F5B8BE"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#D01020"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
             Solicitar distribución
           </button>
