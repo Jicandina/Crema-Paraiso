@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 type FlavorKey = "chocolate" | "mantecado" | "fresa" | "coco";
@@ -21,113 +21,129 @@ const IMG: Record<FlavorKey, [string, string, string]> = {
   chocolate: ["/images/helados-duros/chocolate_480ml.png", "/images/helados-duros/chocolate_2l.png", "/images/helados-duros/chocolate_4l.png"],
   mantecado: ["/images/helados-duros/mantecado_480ml.png", "/images/helados-duros/mantecado_2l.png", "/images/helados-duros/mantecado_4l.png"],
   fresa:     ["/images/helados-duros/fresa_480ml.png",     "/images/helados-duros/fresa_2l.png",     "/images/helados-duros/fresa_4l.png"],
-  coco:      ["/images/helados-duros/grupo.png",           "/images/helados-duros/grupo.png",         "/images/helados-duros/grupo.png"],
+  coco:      ["/images/helados-duros/coco_480ml.jpg",       "/images/helados-duros/coco_2l.jpg",        "/images/helados-duros/coco_4l.jpg"],
 };
 
-const TICK = 2500;
-const FADE = 270;
-
-export default function HeladosDurosShowcase() {
+export default function HeladosDurosShowcase({ onFlavorChange }: { onFlavorChange?: (f: FlavorKey) => void }) {
   const [flavor, setFlavor] = useState<FlavorKey>("chocolate");
-  const [sizeIdx, setSizeIdx] = useState(0);
-  const [show, setShow] = useState(true);
-  const loopRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const switchRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const nextFlavor = useRef<FlavorKey>("chocolate");
-
-  const stopLoop = () => { if (loopRef.current) clearInterval(loopRef.current); };
-
-  const startLoop = useCallback(() => {
-    stopLoop();
-    loopRef.current = setInterval(() => {
-      setShow(false);
-      setTimeout(() => { setSizeIdx(i => (i + 1) % 3); setShow(true); }, FADE);
-    }, TICK);
-  }, []);
-
-  useEffect(() => {
-    startLoop();
-    return stopLoop;
-  }, [flavor, startLoop]);
+  const [active, setActive] = useState(0);
 
   const switchFlavor = (key: FlavorKey) => {
-    if (key === nextFlavor.current) return;
-    nextFlavor.current = key;
-    stopLoop();
-    if (switchRef.current) clearTimeout(switchRef.current);
-    setShow(false);
-    switchRef.current = setTimeout(() => {
-      setFlavor(nextFlavor.current);
-      setSizeIdx(0);
-      setShow(true);
-    }, FADE);
+    if (key === flavor) return;
+    setFlavor(key);
+    setActive(0);
+    onFlavorChange?.(key);
   };
 
-  const size = SIZES[sizeIdx];
-
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%", backgroundColor: "#3D0000", display: "flex", flexDirection: "column" }}>
-      {/* Image area */}
-      <div style={{ flex: 1, position: "relative", minHeight: 0 }}>
-        <div style={{ position: "absolute", inset: 0, opacity: show ? 1 : 0, transition: `opacity ${FADE}ms ease` }}>
-          <Image
-            src={IMG[flavor][sizeIdx]}
-            alt={`Helado ${flavor} ${size.label}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 45vw"
-            style={{
-              objectFit: "contain",
-              padding: "clamp(1.5rem, 4vw, 3rem)",
-              filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.7)) drop-shadow(0 4px 12px rgba(0,0,0,0.5))",
-            }}
-          />
-        </div>
+    <div style={{
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#3D0000",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem)",
+      gap: "1.5rem",
+    }}>
 
-        {/* Size label */}
-        <div style={{
-          position: "absolute",
-          bottom: "1.5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          textAlign: "center",
-          opacity: show ? 1 : 0,
-          transition: `opacity ${FADE}ms ease`,
-          pointerEvents: "none",
-          whiteSpace: "nowrap",
-        }}>
-          <div style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.5rem, 2vw, 2rem)", fontWeight: 800, color: "#FFD100", lineHeight: 1 }}>
-            {size.label}
-          </div>
-          <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: "0.3rem" }}>
-            {size.sub}
-          </div>
-        </div>
-
-        {/* Progress dots */}
-        <div style={{ position: "absolute", top: "1rem", right: "1rem", display: "flex", gap: "0.35rem", alignItems: "center" }}>
-          {SIZES.map((_, i) => (
-            <div key={i} style={{
-              width: i === sizeIdx ? "16px" : "5px",
-              height: "5px",
-              borderRadius: "3px",
-              backgroundColor: i === sizeIdx ? "#FFD100" : "rgba(255,255,255,0.25)",
-              transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-            }} />
-          ))}
-        </div>
+      {/* ── Filmstrip: 3 presentaciones en 1 línea ── */}
+      <div style={{
+        display: "flex",
+        gap: "clamp(0.5rem, 1.5vw, 1rem)",
+        alignItems: "flex-end",
+        justifyContent: "center",
+        width: "100%",
+      }}>
+        {SIZES.map((size, i) => {
+          const isActive = i === active;
+          return (
+            <button
+              key={size.label}
+              onClick={() => setActive(i)}
+              aria-label={`Ver ${flavor} ${size.label}`}
+              style={{
+                position: "relative",
+                flex: "0 0 30%",
+                aspectRatio: "2/3",
+                backgroundColor: "#250000",
+                borderRadius: "10px",
+                overflow: "hidden",
+                border: `2px solid ${isActive ? "#FFD100" : "rgba(255,255,255,0.06)"}`,
+                transform: isActive ? "scale(1.1)" : "scale(1)",
+                transition: "transform 0.2s ease-out, opacity 0.2s ease-out, border-color 0.2s ease-out",
+                opacity: isActive ? 1 : 0.38,
+                zIndex: isActive ? 1 : 0,
+                cursor: "pointer",
+                padding: 0,
+                outline: "none",
+              }}
+            >
+              <Image
+                src={IMG[flavor][i]}
+                alt={`Helado ${flavor} ${size.label}`}
+                fill
+                sizes="(max-width: 768px) 40vw, 20vw"
+                style={{
+                  objectFit: "contain",
+                  padding: "clamp(0.5rem, 1.5vw, 1rem)",
+                  filter: isActive
+                    ? "drop-shadow(0 12px 32px rgba(0,0,0,0.75)) drop-shadow(0 4px 10px rgba(0,0,0,0.5))"
+                    : "drop-shadow(0 4px 10px rgba(0,0,0,0.4))",
+                  transition: "filter 0.2s ease",
+                }}
+              />
+              {/* Size label */}
+              <div style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: "0.5rem 0.4rem 0.4rem",
+                background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                textAlign: "center",
+                pointerEvents: "none",
+              }}>
+                <div style={{
+                  fontFamily: "var(--font-playfair)",
+                  fontSize: "clamp(0.7rem, 1.1vw, 0.9rem)",
+                  fontWeight: 800,
+                  color: isActive ? "#FFD100" : "rgba(255,255,255,0.45)",
+                  lineHeight: 1,
+                  transition: "color 0.2s ease",
+                }}>
+                  {size.label}
+                </div>
+                {isActive && (
+                  <div style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.55rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.45)",
+                    marginTop: "0.2rem",
+                  }}>
+                    {size.sub}
+                  </div>
+                )}
+              </div>
+            </button>
+          );
+        })}
       </div>
 
-      {/* Flavor selector row */}
+      {/* ── Flavor selector: 1 línea de chips ── */}
       <div style={{
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        padding: "0.875rem 1.25rem",
         display: "flex",
-        gap: "0.45rem",
-        flexWrap: "wrap",
-        backgroundColor: "rgba(0,0,0,0.25)",
+        gap: "0.4rem",
+        justifyContent: "center",
+        flexWrap: "nowrap",
+        width: "100%",
       }}>
         {FLAVORS.map(f => {
-          const active = f.key === flavor;
+          const isActiveFlavor = f.key === flavor;
           return (
             <button
               key={f.key}
@@ -137,30 +153,30 @@ export default function HeladosDurosShowcase() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "0.4rem",
+                gap: "0.35rem",
                 fontFamily: "var(--font-jakarta)",
-                fontSize: "0.7rem",
-                fontWeight: active ? 600 : 400,
-                color: active ? "#FFD100" : "rgba(255,255,255,0.5)",
-                backgroundColor: active ? "rgba(255,209,0,0.1)" : "transparent",
-                border: `1px solid ${active ? "rgba(255,209,0,0.35)" : "rgba(255,255,255,0.12)"}`,
-                padding: "0.3rem 0.7rem",
+                fontSize: "clamp(0.6rem, 0.9vw, 0.72rem)",
+                fontWeight: isActiveFlavor ? 600 : 400,
+                color: isActiveFlavor ? "#FFD100" : "rgba(255,255,255,0.48)",
+                backgroundColor: isActiveFlavor ? "rgba(255,209,0,0.1)" : "transparent",
+                border: `1px solid ${isActiveFlavor ? "rgba(255,209,0,0.35)" : "rgba(255,255,255,0.1)"}`,
+                padding: "0.28rem 0.65rem",
                 borderRadius: "100px",
                 cursor: "pointer",
-                transition: "all 0.25s ease",
+                transition: "color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease",
                 outline: "none",
-                letterSpacing: "0.03em",
+                whiteSpace: "nowrap",
               }}
             >
               <span style={{
-                width: "7px",
-                height: "7px",
+                width: "6px",
+                height: "6px",
                 borderRadius: "50%",
                 backgroundColor: f.swatch,
                 flexShrink: 0,
-                border: "1px solid rgba(255,255,255,0.2)",
-                boxShadow: active ? "0 0 0 2px rgba(255,209,0,0.3)" : "none",
-                transition: "box-shadow 0.25s ease",
+                border: "1px solid rgba(255,255,255,0.18)",
+                boxShadow: isActiveFlavor ? "0 0 0 2px rgba(255,209,0,0.28)" : "none",
+                transition: "box-shadow 0.2s ease",
               }} />
               {f.label}
             </button>

@@ -7,9 +7,11 @@ import { useRevealSection } from "./useReveal";
 const hitos: { year: string; title: string; desc: string; today?: boolean }[] = [
   { year: "1951", title: "El fundador llega a Venezuela", desc: "Adalberto Katz, inmigrante checoslovaco formado en pastelería en París, trae el conocimiento que cambiaría el sabor del país." },
   { year: "1953", title: "Nace Crema Paraíso", desc: "Primera heladería en El Paraíso, Caracas. Nace la marca que definiría la cultura del helado venezolano." },
+  { year: "1960", title: "Primera expansión", desc: "Expansión a Santa Mónica, Bello Monte y San Bernardino. Primera fábrica en San Martín." },
   { year: "1974", title: "Expansión nacional", desc: "26 nuevas tiendas en Caracas, Los Teques, Guarenas, Maracay y Valencia. La cadena de fuentes de soda más famosa del país." },
   { year: "1984", title: "Fábrica propia en Guarenas", desc: "Instalaciones propias en la Zona Industrial del Este. La misma fábrica que opera hasta hoy con tecnología nacional." },
-  { year: "1990", title: "Nace Kindy", desc: "Lanzamos Kindy, nuestra base cítrica natural para limonada. La opción para preparar limonada impecable a gran escala." },
+  { year: "1990", title: "Nace Kindy y CociCreme", desc: "Lanzamos Kindy, base de limón para limonada. Nace Topping y CociCreme." },
+  { year: "2008", title: "Nueva generación", desc: "Reingeniería total de marcas y productos para el siglo XXI." },
   { year: "2024", title: "Nueva junta directiva", desc: "Nueva generación al frente de la empresa. Se retoman las riendas con visión de crecimiento, modernización y expansión del portafolio a nivel nacional." },
   { year: "Hoy", title: "74 años, la misma calidad", desc: "Nueva generación, misma tradición. Desde Guarenas para toda Venezuela, con los mismos valores desde el primer día.", today: true },
 ];

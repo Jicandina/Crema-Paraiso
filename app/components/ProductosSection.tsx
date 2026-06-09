@@ -4,170 +4,38 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRevealSection } from "./useReveal";
 import HeladosDurosShowcase from "./HeladosDurosShowcase";
+import MezclasSuaveShowcase from "./MezclasSuaveShowcase";
+import SiropesShowcase from "./SiropesShowcase";
+import SizeShowcase from "./SizeShowcase";
+import SingleShowcase from "./SingleShowcase";
+import { FLAVOR_SWATCHES, productos } from "./productosData";
 
-const FLAVOR_SWATCHES: Record<string, string> = {
-  "Mantecado":      "#F5D78E",
-  "Chocolate":      "#3D1A00",
-  "Fresa":          "#FF6B8A",
-  "Coco":           "#F0EDE0",
-  "Vainilla":       "#FFF3A0",
-  "Yogurt Griego":  "#F0EBE0",
-  "Caramelo":       "#E8920A",
-  "Chocolate Savoy":"#3D1A00",
-};
-
-type Spec = { label: string; val: string };
-type Producto = {
-  num: string;
-  nombre: string;
-  categoria: string;
-  desc: string;
-  chips: string[];
-  presentaciones: string;
-  foto: string | null;
-  photoContain?: boolean;
-  photoBg?: string;
-  photoScale?: number;
-  contentBg: string;
-  textColor: string;
-  accent: string;
-  specs: Spec[];
-};
-
-const productos: Producto[] = [
-  {
-    num: "01", nombre: "Helados Duros", categoria: "Cuatro sabores · Tres presentaciones",
-    desc: "Sólidos lácteos, sabores naturales y recetas propias desde 1951. Cuatro variedades. Línea Chocolate certificada Hecho con Savoy de Nestlé.",
-    chips: ["Mantecado", "Chocolate", "Fresa", "Coco"],
-    presentaciones: "480 ml · 2 L · 4 L",
-    foto: "/images/02_2l_chocolate_arriba_HD.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Tipo", val: "Crema helada artesanal" },
-      { label: "Almacenamiento", val: "−18°C o menor" },
-      { label: "Presentaciones", val: "480 ml / 2 L / 4 L" },
-      { label: "Permisos", val: "SENCAMER vigentes" },
-      { label: "Certificación", val: "Hecho con Savoy de Nestlé (Chocolate)" },
-      { label: "Distribución", val: "Nacional — Retail y Food Service" },
-    ],
-  },
-  {
-    num: "02", nombre: "Mezcla Suave", categoria: "Base para máquinas Soft Serve",
-    desc: "Base artesanal lista para usar en máquinas Soft Serve. Almacenamiento dual: congelado o refrigerado. Galón de 3.78 litros.",
-    chips: ["Vainilla", "Chocolate", "Fresa", "Yogurt Griego"],
-    presentaciones: "Galón 3.78 L",
-    foto: "/images/soft-galon.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Tipo", val: "Base para Soft Serve" },
-      { label: "Almacenamiento (congelado)", val: "−15°C o menor" },
-      { label: "Almacenamiento (refrigerado)", val: "Menor a 4°C" },
-      { label: "Contenido", val: "Galón 3.78 L" },
-      { label: "Sabores", val: "Vainilla · Chocolate · Fresa · Yogurt Griego" },
-      { label: "Uso", val: "Máquinas Soft Serve" },
-    ],
-  },
-  {
-    num: "03", nombre: "Siropes", categoria: "Para helados, café y postres",
-    desc: "Alta concentración, consistencia suave. Certificación Hecho con Savoy de Nestlé en la variedad Chocolate. Para heladerías, cafeterías y repostería.",
-    chips: ["Fresa", "Chocolate Savoy", "Caramelo"],
-    presentaciones: "Galón 4.84 kg",
-    foto: "/images/sirope-caramelo-galon.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Tipo", val: "Sirope de alta concentración" },
-      { label: "Presentación", val: "Galón 4.84 kg" },
-      { label: "Variedades", val: "Fresa · Chocolate Savoy · Caramelo" },
-      { label: "Certificación", val: "Hecho con Savoy de Nestlé (Chocolate)" },
-      { label: "Indicaciones", val: "Agitar bien antes de usar" },
-      { label: "Uso", val: "Heladerías · Cafeterías · Repostería" },
-    ],
-  },
-  {
-    num: "04", nombre: "Kindy Tradicional", categoria: "Base cítrica para limonada",
-    desc: "100% jugo de limón. Preserva aceites esenciales, vitamina C y ácidos orgánicos. Un galón rinde entre 25 y 35 litros de limonada.",
-    chips: ["245 Cal/100g", "Brix 55–60°", "120 días vida útil"],
-    presentaciones: "350 ml · 800 ml · Galón 3.78 L",
-    foto: "/images/kindy-galon-original.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Calorías", val: "245 Cal / 100g" },
-      { label: "Carbohidratos", val: "61.0 g / 100g" },
-      { label: "Brix", val: "55° – 60°" },
-      { label: "Rendimiento (galón)", val: "25 – 35 L de limonada" },
-      { label: "Vida útil", val: "120 días desde fabricación" },
-      { label: "Almacenamiento", val: "Congelado −15°C · Refrigerado <4°C" },
-      { label: "Permiso sanitario", val: "A-39.140" },
-      { label: "Presentaciones", val: "350 ml · 800 ml · Galón 3.78 L" },
-    ],
-  },
-  {
-    num: "05", nombre: "Kindy Light", categoria: "Base cítrica con Sucralosa",
-    desc: "El mismo 100% de jugo de limón, endulzado con Sucralosa. Solo 16 calorías por vaso. Sin azúcar añadida.",
-    chips: ["16 Cal/100g", "Sin azúcar", "Sucralosa"],
-    presentaciones: "350 ml · 800 ml · Galón 3.78 L",
-    foto: "/images/kindy-galon-light.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Calorías", val: "16 Cal / 100g" },
-      { label: "Carbohidratos", val: "3.2 g / 100g" },
-      { label: "Endulzante", val: "Sucralosa (sin azúcar añadida)" },
-      { label: "Rendimiento (galón)", val: "25 – 35 L de limonada" },
-      { label: "Vida útil", val: "120 días desde fabricación" },
-      { label: "Almacenamiento", val: "Congelado −15°C · Refrigerado <4°C" },
-      { label: "Permiso sanitario", val: "A-106.604" },
-      { label: "Presentaciones", val: "350 ml · 800 ml · Galón 3.78 L" },
-    ],
-  },
-  {
-    num: "06", nombre: "Crema Topping", categoria: "Crema chantilly para batir",
-    desc: "Lista para usar. Para postres, helados, bebidas, waffles y pancakes. Distribuida en hoteles, cadenas de restaurantes y pastelerías de todo el país.",
-    chips: ["Postres", "Helados", "Bebidas calientes", "Waffles"],
-    presentaciones: "900 cc (cartón)",
-    foto: "/images/topping-crema.png",
-    photoContain: true,
-    photoBg: "#3D0000",
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Tipo", val: "Crema chantilly lista para usar" },
-      { label: "Usos principales", val: "Postres · Helados · Bebidas · Waffles · Pancakes" },
-      { label: "Canal", val: "Hoteles · Restaurantes · Pastelerías" },
-      { label: "Presentación", val: "900 cc (cartón)" },
-      { label: "Vida útil", val: "30 días" },
-      { label: "Distribución", val: "Nacional" },
-    ],
-  },
-  {
-    num: "07", nombre: "CociCreme", categoria: "Crema para cocinar",
-    desc: "Versátil, estable al calor. Para salsas, sopas, cremas, gratinados y todo tipo de recetas saladas. La preferida de las cocinas profesionales venezolanas.",
-    chips: ["Salsas", "Sopas", "Gratinados", "Recetas saladas"],
-    presentaciones: "Food Service",
-    foto: null,
-    contentBg: "#e61f3e", textColor: "#FFFFFF", accent: "#FFD100",
-    specs: [
-      { label: "Tipo", val: "Crema para cocinar" },
-      { label: "Propiedad clave", val: "Estable al calor" },
-      { label: "Usos principales", val: "Salsas · Sopas · Cremas · Gratinados" },
-      { label: "Canal", val: "Restaurantes · Hoteles · Cocinas profesionales" },
-      { label: "Presentación", val: "Food Service" },
-      { label: "Distribución", val: "Nacional" },
-    ],
-  },
+const KINDY_SIZES = [
+  { key: "350ml", label: "350 ml",      sub: "Retail",       img: "/images/09_kindy_350ml_azucar_HD.png" },
+  { key: "800ml", label: "800 ml",      sub: "Familiar",     img: "/images/16_kindy_800ml_azucar_HD.png" },
+  { key: "galon", label: "Galón 3.78 L", sub: "Food Service", img: "/images/kindy-galon-original.png" },
 ];
+const KINDY_LIGHT_SIZES = [
+  { key: "350ml", label: "350 ml",      sub: "Retail",       img: "/images/kindy-350.png" },
+  { key: "800ml", label: "800 ml",      sub: "Familiar",     img: "/images/kindy-light-350.png" },
+  { key: "galon", label: "Galón 3.78 L", sub: "Food Service", img: "/images/kindy-galon-light.png" },
+];
+
+const FLAVOR_LABEL: Record<string, string> = {
+  chocolate: "Chocolate", mantecado: "Mantecado", fresa: "Fresa", coco: "Coco",
+  vainilla: "Vainilla", yogurt: "Yogurt Griego", caramelo: "Caramelo",
+};
 
 export default function ProductosSection() {
   const ref = useRevealSection();
   const [expandedNum, setExpandedNum] = useState<string | null>(null);
+  const [activeFlavorMap, setActiveFlavorMap] = useState<Record<string, string>>({
+    "01": "chocolate",
+    "02": "vainilla",
+    "03": "caramelo",
+  });
+  const setFlavor = (num: string, f: string) =>
+    setActiveFlavorMap(prev => ({ ...prev, [num]: f }));
 
   return (
     <section id="productos" ref={ref as React.RefObject<HTMLElement>}>
@@ -253,9 +121,21 @@ export default function ProductosSection() {
               </div>
 
               {/* Photo */}
-              <div className={`producto-photo${p.num === "01" ? " no-zoom" : ""}`} style={{ position: "relative", overflow: "hidden", backgroundColor: p.photoBg ?? p.contentBg, order: photoRight ? 2 : 1 }}>
+              <div className={`producto-photo no-zoom`} style={{ position: "relative", overflow: "hidden", backgroundColor: p.photoBg ?? p.contentBg, order: photoRight ? 2 : 1 }}>
                 {p.num === "01" ? (
-                  <HeladosDurosShowcase />
+                  <HeladosDurosShowcase onFlavorChange={(f) => setFlavor("01", f)} />
+                ) : p.num === "02" ? (
+                  <MezclasSuaveShowcase onFlavorChange={(f) => setFlavor("02", f)} />
+                ) : p.num === "03" ? (
+                  <SiropesShowcase onFlavorChange={(f) => setFlavor("03", f)} />
+                ) : p.num === "04" ? (
+                  <SizeShowcase sizes={KINDY_SIZES} note="100% jugo de limón · Base para limonada" />
+                ) : p.num === "05" ? (
+                  <SizeShowcase sizes={KINDY_LIGHT_SIZES} note="Sucralosa · Solo 16 Cal por vaso" />
+                ) : p.num === "06" ? (
+                  <SingleShowcase src="/images/topping-crema.png" alt="Crema Topping" note="Chantilly lista para usar · 900 cc" />
+                ) : p.num === "07" ? (
+                  <SingleShowcase src="/images/cocicreme.png" alt="CociCreme" note="Crema para cocinar · Food Service" />
                 ) : p.foto ? (
                   <>
                     <Image
@@ -265,7 +145,7 @@ export default function ProductosSection() {
                       sizes="55vw"
                       style={{
                         objectFit: p.photoContain ? "contain" : "cover",
-                        objectPosition: p.photoContain ? (photoRight ? "left center" : "right center") : "center",
+                        objectPosition: "center",
                         padding: p.photoContain ? "clamp(2rem, 5vw, 4rem)" : undefined,
                         filter: p.photoContain ? "drop-shadow(0 16px 48px rgba(0,0,0,0.65)) drop-shadow(0 4px 16px rgba(0,0,0,0.45))" : undefined,
                         transform: p.photoScale ? `scale(${p.photoScale})` : undefined,
@@ -308,10 +188,15 @@ export default function ProductosSection() {
               onFocus={(e) => { e.currentTarget.style.outline = "2px solid rgba(255,255,255,0.5)"; e.currentTarget.style.outlineOffset = "−2px"; }}
               onBlur={(e) => { e.currentTarget.style.outline = "none"; }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
                 <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#FFFFFF" }}>
                   Ficha técnica
                 </span>
+                {p.flavorSections && (
+                  <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.68rem", fontWeight: 600, color: "#FFD100", letterSpacing: "0.06em" }}>
+                    · {FLAVOR_LABEL[activeFlavorMap[p.num]] ?? activeFlavorMap[p.num]}
+                  </span>
+                )}
                 <span style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.7rem", fontWeight: 300, color: "#FFFFFF", letterSpacing: "0.04em" }}>
                   — Ver especificaciones completas
                 </span>
@@ -330,32 +215,29 @@ export default function ProductosSection() {
               gridTemplateRows: isOpen ? "1fr" : "0fr",
               opacity: isOpen ? 1 : 0,
               transition: "grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease",
-              backgroundColor: "#3D0000",
+              backgroundColor: "#2A0000",
             }}>
               <div style={{ overflow: "hidden", minHeight: 0 }}>
-                <div style={{ padding: "2rem clamp(24px, 6vw, 72px) 2.5rem" }}>
-                  {(() => {
-                    const cols = 4;
-                    const rows = Math.ceil(p.specs.length / cols);
-                    return (
-                      <div className="specs-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0" }}>
-                        {p.specs.map((s, si) => {
-                          const col = si % cols;
-                          const row = Math.floor(si / cols);
-                          return (
-                            <div key={s.label} style={{ padding: "1rem 1.25rem", borderRight: col < cols - 1 ? "1px solid rgba(255,255,255,0.05)" : "none", borderBottom: row < rows - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}>
-                              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "#FFFFFF", marginBottom: "0.4rem" }}>
-                                {s.label}
-                              </div>
-                              <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.82rem", fontWeight: 400, color: "#FFFFFF", lineHeight: 1.5 }}>
-                                {s.val}
-                              </div>
-                            </div>
-                          );
-                        })}
+                <div style={{ padding: "2rem clamp(24px, 6vw, 72px) 2.5rem", display: "flex", flexDirection: "column", gap: "2rem" }}>
+                  {(p.flavorSections?.[activeFlavorMap[p.num]] ?? p.sections ?? []).map(sec => (
+                    <div key={sec.title}>
+                      <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#FFD100", marginBottom: "0.6rem", opacity: 0.9 }}>
+                        {sec.title}
                       </div>
-                    );
-                  })()}
+                      <div>
+                        {sec.items.map((s, si) => (
+                          <div key={s.label} className="ficha-row" style={{ display: "grid", gridTemplateColumns: "minmax(140px, 220px) 1fr", borderBottom: si < sec.items.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none", padding: "0.55rem 0" }}>
+                            <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.63rem", fontWeight: 600, color: "rgba(255,255,255,0.5)", letterSpacing: "0.04em", paddingRight: "1rem", alignSelf: "flex-start", paddingTop: "0.1rem" }}>
+                              {s.label}
+                            </div>
+                            <div style={{ fontFamily: "var(--font-jakarta)", fontSize: "0.8rem", fontWeight: 400, color: "#FFFFFF", lineHeight: 1.55 }}>
+                              {s.val}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -387,18 +269,13 @@ export default function ProductosSection() {
         .producto-photo img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important; }
         .producto-photo:not(.no-zoom):hover img { transform: scale(1.03) !important; }
 
-        @media (max-width: 1024px) {
-          .specs-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
         @media (max-width: 768px) {
           .producto-row { grid-template-columns: 1fr !important; min-height: unset !important; }
           .producto-row > div { order: unset !important; }
           .producto-row > div:last-child { min-height: 280px; }
           .productos-header-grid { grid-template-columns: 1fr !important; }
-          .specs-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 480px) {
-          .specs-grid { grid-template-columns: 1fr !important; }
+          .ficha-row { grid-template-columns: 1fr !important; gap: 0.2rem; }
+          .ficha-row > div:first-child { padding-top: 0.5rem; }
         }
         @media (prefers-reduced-motion: reduce) {
           .reveal { transition: none !important; animation: none !important; }

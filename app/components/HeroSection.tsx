@@ -89,40 +89,55 @@ export default function HeroSection() {
 
           {/* H1 — tipografía expresiva con EB Garamond */}
           <h1 className="reveal-left" style={{
-            fontFamily: "var(--font-playfair)",
-            lineHeight: 0.92,
-            letterSpacing: "-0.03em",
+            fontFamily: "var(--font-hero)",
+            lineHeight: 1,
             marginBottom: "1.75rem",
             transitionDelay: "60ms",
           }}>
+            {/* EL DIVINO */}
             <span style={{
               display: "block",
-              fontSize: "clamp(2.4rem, 4.5vw, 5rem)",
-              fontWeight: 700,
+              fontSize: "clamp(2.2rem, 4.2vw, 4.8rem)",
               color: "#FFFFFF",
-              fontStyle: "normal",
+              textTransform: "uppercase",
+              lineHeight: 0.95,
             }}>
               El divino
             </span>
+            {/* SABOR  DE. */}
             <span style={{
-              display: "block",
-              fontSize: "clamp(2.4rem, 4.5vw, 5rem)",
-              fontWeight: 700,
-              color: "#FFFFFF",
-              fontStyle: "normal",
-            }}>
-              sabor de
-            </span>
-            <span style={{
-              display: "block",
-              fontSize: "clamp(2.6rem, 5.5vw, 5.5rem)",
-              fontWeight: 800,
-              color: "#FFD100",
-              fontStyle: "italic",
+              display: "flex",
+              alignItems: "flex-end",
+              gap: "0.08em",
               lineHeight: 1,
-              marginTop: "0.1em",
             }}>
-              la tradición.
+              <span style={{
+                fontSize: "clamp(5rem, 11vw, 12rem)",
+                color: "#FFFFFF",
+                textTransform: "uppercase",
+                lineHeight: 0.88,
+              }}>
+                Sabor
+              </span>
+              <span style={{
+                fontSize: "clamp(1.8rem, 3.5vw, 4rem)",
+                color: "#FFFFFF",
+                textTransform: "uppercase",
+                paddingBottom: "0.14em",
+                lineHeight: 1,
+              }}>
+                de.
+              </span>
+            </span>
+            {/* LA TRADICIÓN */}
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2rem, 3.8vw, 4.4rem)",
+              color: "#FFFFFF",
+              textTransform: "uppercase",
+              lineHeight: 1,
+            }}>
+              La tradición
             </span>
           </h1>
 
