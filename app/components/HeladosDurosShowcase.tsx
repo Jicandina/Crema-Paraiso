@@ -61,6 +61,7 @@ export default function HeladosDurosShowcase({ onFlavorChange }: { onFlavorChang
           return (
             <button
               key={size.label}
+              onMouseEnter={() => setActive(i)}
               onClick={() => setActive(i)}
               aria-label={`Ver ${flavor} ${size.label}`}
               style={{
@@ -147,7 +148,6 @@ export default function HeladosDurosShowcase({ onFlavorChange }: { onFlavorChang
           return (
             <button
               key={f.key}
-              onMouseEnter={() => switchFlavor(f.key)}
               onClick={() => switchFlavor(f.key)}
               aria-label={`Ver sabor ${f.label}`}
               style={{

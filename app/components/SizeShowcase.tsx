@@ -23,6 +23,7 @@ export default function SizeShowcase({ sizes, note }: { sizes: SizeEntry[]; note
           return (
             <button
               key={s.key}
+              onMouseEnter={() => setActive(i)}
               onClick={() => setActive(i)}
               aria-label={`Ver ${s.label}`}
               style={{

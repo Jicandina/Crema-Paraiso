@@ -100,7 +100,6 @@ export default function MezclasSuaveShowcase({ onFlavorChange }: { onFlavorChang
           return (
             <button
               key={f.key}
-              onMouseEnter={() => switchFlavor(f.key)}
               onClick={() => switchFlavor(f.key)}
               aria-label={`Sabor ${f.label}`}
               style={{

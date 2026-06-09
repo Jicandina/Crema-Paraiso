@@ -98,7 +98,6 @@ export default function SiropesShowcase({ onFlavorChange }: { onFlavorChange?: (
           return (
             <button
               key={f.key}
-              onMouseEnter={() => switchFlavor(f.key)}
               onClick={() => switchFlavor(f.key)}
               aria-label={`Sabor ${f.label}`}
               style={{
