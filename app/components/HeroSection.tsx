@@ -287,7 +287,7 @@ export default function HeroSection() {
                 {cat}
               </span>
               {i < categorias.length - 1 && (
-                <div style={{ width: "1px", height: "14px", backgroundColor: "rgba(255,255,255,0.25)", flexShrink: 0, marginRight: "1.25rem" }} />
+                <div className="hero-cat-sep" style={{ width: "1px", height: "14px", backgroundColor: "rgba(255,255,255,0.25)", flexShrink: 0, marginRight: "1.25rem" }} />
               )}
             </div>
           ))}
@@ -302,14 +302,13 @@ export default function HeroSection() {
           .hero-stats { flex-wrap: wrap; gap: 0.5rem 0; }
           .hero-ctas a { flex: 1 1 calc(50% - 0.5rem); text-align: center; }
           .hero-categories {
-            overflow-x: auto;
-            flex-wrap: nowrap !important;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            padding-bottom: 0.5rem;
-            margin-bottom: -0.5rem;
+            max-width: 100% !important;
+            flex-wrap: wrap !important;
+            overflow-x: visible !important;
+            gap: 0.5rem 0 !important;
           }
-          .hero-categories::-webkit-scrollbar { display: none; }
+          .hero-cat-sep { display: none !important; }
+          .hero-categories span { padding: 0 0.875rem 0 0 !important; }
         }
         @media (max-width: 400px) {
           .hero-ctas a { flex: 1 1 100%; }
