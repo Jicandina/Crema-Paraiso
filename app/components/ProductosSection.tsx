@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRevealSection } from "./useReveal";
+import HeladosDurosShowcase from "./HeladosDurosShowcase";
 
 const FLAVOR_SWATCHES: Record<string, string> = {
   "Mantecado":      "#F5D78E",
@@ -35,7 +36,7 @@ type Producto = {
 
 const productos: Producto[] = [
   {
-    num: "01", nombre: "Helados Duros", categoria: "Cremas heladas artesanales",
+    num: "01", nombre: "Helados Duros", categoria: "Cuatro sabores · Tres presentaciones",
     desc: "Sólidos lácteos, sabores naturales y recetas propias desde 1951. Cuatro variedades. Línea Chocolate certificada Hecho con Savoy de Nestlé.",
     chips: ["Mantecado", "Chocolate", "Fresa", "Coco"],
     presentaciones: "480 ml · 2 L · 4 L",
@@ -252,8 +253,10 @@ export default function ProductosSection() {
               </div>
 
               {/* Photo */}
-              <div className="producto-photo" style={{ position: "relative", overflow: "hidden", backgroundColor: p.photoBg ?? p.contentBg, order: photoRight ? 2 : 1 }}>
-                {p.foto ? (
+              <div className={`producto-photo${p.num === "01" ? " no-zoom" : ""}`} style={{ position: "relative", overflow: "hidden", backgroundColor: p.photoBg ?? p.contentBg, order: photoRight ? 2 : 1 }}>
+                {p.num === "01" ? (
+                  <HeladosDurosShowcase />
+                ) : p.foto ? (
                   <>
                     <Image
                       src={p.foto}
@@ -380,9 +383,9 @@ export default function ProductosSection() {
 
       <style>{`
         .producto-photo { transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .producto-photo:hover { filter: brightness(1.06); }
+        .producto-photo:not(.no-zoom):hover { filter: brightness(1.06); }
         .producto-photo img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important; }
-        .producto-photo:hover img { transform: scale(1.03) !important; }
+        .producto-photo:not(.no-zoom):hover img { transform: scale(1.03) !important; }
 
         @media (max-width: 1024px) {
           .specs-grid { grid-template-columns: repeat(2, 1fr) !important; }
