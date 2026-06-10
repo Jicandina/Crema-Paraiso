@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Baloo_2, Poppins, Lilita_One } from "next/font/google";
+import { Baloo_2, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const lilitaOne = Lilita_One({
+const cooperBlack = localFont({
+  src: "../public/fonts/CooperBlackItalic.otf",
   variable: "--font-hero",
-  subsets: ["latin"],
-  weight: "400",
+  display: "swap",
 });
 
 const playfair = Baloo_2({
@@ -83,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${jakarta.variable} ${lilitaOne.variable}`}>
+    <html lang="es" className={`${playfair.variable} ${jakarta.variable} ${cooperBlack.variable}`}>
       <head>
         <meta name="theme-color" content="#FFE566" />
         <script

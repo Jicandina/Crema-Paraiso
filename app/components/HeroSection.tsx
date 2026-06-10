@@ -104,15 +104,15 @@ export default function HeroSection() {
             }}>
               El divino
             </span>
-            {/* SABOR  DE. */}
+            {/* SABOR DE */}
             <span style={{
               display: "flex",
               alignItems: "flex-end",
-              gap: "0.08em",
+              gap: "0.65em",
               lineHeight: 1,
             }}>
               <span style={{
-                fontSize: "clamp(5rem, 11vw, 12rem)",
+                fontSize: "clamp(4rem, 8.5vw, 9.5rem)",
                 color: "#FFFFFF",
                 textTransform: "uppercase",
                 lineHeight: 0.88,
@@ -126,7 +126,7 @@ export default function HeroSection() {
                 paddingBottom: "0.14em",
                 lineHeight: 1,
               }}>
-                de.
+                de
               </span>
             </span>
             {/* LA TRADICIÓN */}
