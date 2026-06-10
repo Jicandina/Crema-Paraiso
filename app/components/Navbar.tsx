@@ -52,8 +52,6 @@ export default function Navbar() {
   const activeLinkColor = "#e61f3e";
   const hoverLinkColor = "#e61f3e";
   const hoverLinkBg = "rgba(230,31,62,0.1)";
-  const ctaBg = "#e61f3e";
-  const ctaTextColor = "#FFD100";
   const activeUnderlineColor = "#e61f3e";
 
   return (
@@ -137,36 +135,6 @@ export default function Navbar() {
             );
           })}
         </ul>
-
-        <a
-          href="#contacto"
-          onClick={handleLink}
-          className="hidden md:block"
-          style={{
-            fontFamily: "var(--font-jakarta)",
-            fontSize: "0.8rem",
-            fontWeight: 600,
-            letterSpacing: "0.07em",
-            textTransform: "uppercase" as const,
-            color: ctaTextColor,
-            backgroundColor: ctaBg,
-            textDecoration: "none",
-            display: "block",
-            padding: "10px 22px",
-            borderRadius: "6px",
-            transition: "background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#F5B8BE";
-            e.currentTarget.style.transform = "translateY(-1px)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = ctaBg;
-            e.currentTarget.style.transform = "translateY(0)";
-          }}
-        >
-          Contáctanos
-        </a>
 
         <button
           onClick={() => setOpen(!open)}
