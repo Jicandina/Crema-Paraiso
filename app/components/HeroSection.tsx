@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
-const categorias = ["Helados Duros", "Mezcla Suave", "Siropes", "Kindy", "Crema Topping", "CociCreme"];
+const categorias = ["Helados Duros", "Mezcla Suave", "Siropes", "Kindy", "Kindy Light", "Crema Topping", "CociCreme"];
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -149,8 +149,8 @@ export default function HeroSection() {
             marginBottom: "0.5rem",
           }}>
             {[
-              { num: "74", label: "años\nde historia" },
-              { num: "6", label: "líneas\nde producto" },
+              { num: "75", label: "años\nde historia" },
+              { num: "7", label: "líneas\nde producto" },
               { num: "1951", label: "año de\nfundación" },
             ].map((f, i) => (
               <div key={f.num} style={{
@@ -282,9 +282,8 @@ export default function HeroSection() {
           maxWidth: "clamp(280px, 52vw, 760px)",
           display: "flex",
           gap: "0",
-          flexWrap: "nowrap",
-          overflowX: "auto",
-          scrollbarWidth: "none",
+          flexWrap: "wrap",
+          rowGap: "0.6rem",
           borderTop: "1px solid rgba(255,255,255,0.25)",
           paddingTop: "1rem",
         }}>

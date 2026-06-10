@@ -23,7 +23,7 @@ const jakarta = Poppins({
 
 export const metadata: Metadata = {
   title: "Crema Paraíso — Desde 1951",
-  description: "Más de 74 años fabricando los mejores helados, siropes, crema de leche y chantilly de Venezuela. Fábrica en Guarenas. Distribución nacional.",
+  description: "Más de 75 años fabricando los mejores helados, siropes, crema de leche y chantilly de Venezuela. Fábrica en Guarenas. Distribución nacional.",
   keywords: ["helados venezuela", "crema paraíso", "siropes", "chantilly", "soft serve", "kindy limonada", "helados guarenas", "distribuidor helados"],
   metadataBase: new URL("https://crema-paraiso1.pages.dev"),
   alternates: {

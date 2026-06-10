@@ -13,11 +13,11 @@ const hitos: { year: string; title: string; desc: string; today?: boolean }[] = 
   { year: "1990", title: "Nace Kindy y CociCreme", desc: "Lanzamos Kindy, base de limón para limonada. Nace Topping y CociCreme." },
   { year: "2008", title: "Nueva generación", desc: "Reingeniería total de marcas y productos para el siglo XXI." },
   { year: "2024", title: "Nueva junta directiva", desc: "Nueva generación al frente de la empresa. Se retoman las riendas con visión de crecimiento, modernización y expansión del portafolio a nivel nacional." },
-  { year: "Hoy", title: "74 años, la misma calidad", desc: "Nueva generación, misma tradición. Desde Guarenas para toda Venezuela, con los mismos valores desde el primer día.", today: true },
+  { year: "Hoy", title: "75 años de historia", desc: "Desde que Adalberto Katz llegó a Venezuela en 1951 y abrió la primera heladería en 1953, la misma calidad. Nueva generación, mismo sabor.", today: true },
 ];
 
 const stats = [
-  { value: "74", label: "años de historia" },
+  { value: "75", label: "años de historia" },
   { value: "26", label: "tiendas en expansión" },
   { value: "1984", label: "fábrica propia" },
 ];
@@ -128,7 +128,7 @@ export default function NosotrosSection() {
             maxWidth: "20ch",
             marginBottom: "1.25rem",
           }}>
-            Más de 74 años endulzando a Venezuela.
+            Más de 75 años endulzando a Venezuela.
           </h2>
 
           <p style={{
