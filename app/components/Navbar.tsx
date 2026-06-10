@@ -90,7 +90,9 @@ export default function Navbar() {
             alt="Crema Paraíso"
             width={76}
             height={76}
-            style={{ borderRadius: "50%", display: "block" }}
+            priority
+            sizes="60px"
+            style={{ borderRadius: "50%", display: "block", width: "clamp(46px, 11vw, 60px)", height: "auto" }}
           />
         </button>
 
