@@ -405,6 +405,152 @@ export default function NosotrosSection() {
                 ))}
               </div>
             </div>
+
+            {/* Tarjeta: evolución de marca */}
+            <div style={{
+              backgroundColor: "rgba(255,255,255,0.06)",
+              borderRadius: "1.25rem",
+              padding: "1.5rem 1.75rem",
+              border: "1px solid rgba(255,255,255,0.15)",
+            }}>
+              {/* Header */}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.25rem" }}>
+                <span style={{
+                  fontFamily: "var(--font-jakarta)",
+                  fontSize: "0.58rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.55)",
+                }}>
+                  Evolución de marca
+                </span>
+                <span style={{ height: "1px", flex: 1, backgroundColor: "rgba(255,255,255,0.15)" }} />
+              </div>
+
+              {/* OLD logo */}
+              <div style={{ marginBottom: "0.75rem" }}>
+                <div style={{
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: "0.75rem",
+                  padding: "1rem 1.25rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  height: "140px",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                }}>
+                  <Image
+                    src="/images/logo-viejo.jpg"
+                    alt="Logo original Crema Paraíso — Desde 1953"
+                    fill
+                    style={{ objectFit: "contain", padding: "0.5rem 0.75rem" }}
+                  />
+                </div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "0.45rem", padding: "0 0.25rem" }}>
+                  <span style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.6rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "#FFD100",
+                  }}>
+                    Logo original
+                  </span>
+                  <span style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.58rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}>
+                    Marca registrada · 1953
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow divider */}
+              <div style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                marginBottom: "0.75rem",
+                padding: "0 0.25rem",
+              }}>
+                <span style={{ height: "1px", flex: 1, backgroundColor: "rgba(255,255,255,0.1)" }} />
+                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                  <svg width="14" height="16" viewBox="0 0 14 16" fill="none" style={{ opacity: 0.4 }}>
+                    <path d="M7 0v12M2 8l5 5 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.58rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.35)",
+                  }}>
+                    2024
+                  </span>
+                </div>
+                <span style={{ height: "1px", flex: 1, backgroundColor: "rgba(255,255,255,0.1)" }} />
+              </div>
+
+              {/* NEW logo */}
+              <div style={{ marginBottom: "1.25rem" }}>
+                <div style={{
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: "0.75rem",
+                  padding: "1rem 1.25rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  height: "140px",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                }}>
+                  <Image
+                    src="/images/logo-nuevo.jpg"
+                    alt="Nueva identidad Crema Paraíso — wordmark 2024"
+                    fill
+                    style={{ objectFit: "contain", padding: "0.85rem 1.25rem" }}
+                  />
+                </div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "0.45rem", padding: "0 0.25rem" }}>
+                  <span style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.6rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "#FFD100",
+                  }}>
+                    Nueva identidad
+                  </span>
+                  <span style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "0.58rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}>
+                    Nueva generación · 2024
+                  </span>
+                </div>
+              </div>
+
+              {/* Caption */}
+              <p style={{
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "0.78rem",
+                fontWeight: 400,
+                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.65)",
+                margin: 0,
+                borderTop: "1px solid rgba(255,255,255,0.12)",
+                paddingTop: "1rem",
+              }}>
+                Desde 1953 con la misma esencia. En 2024, la nueva generación renueva la imagen manteniendo el espíritu de siempre.
+              </p>
+            </div>
           </div>
 
         </div>
