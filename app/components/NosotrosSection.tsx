@@ -394,7 +394,7 @@ export default function NosotrosSection() {
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem", borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1.25rem" }}>
                 {[
-                  { v: "74", l: "años" },
+                  { v: "75", l: "años" },
                   { v: "1951", l: "fundación" },
                   { v: "1984", l: "fábrica propia" },
                 ].map((s) => (
